@@ -114,12 +114,12 @@ public class Main {
     /**
      * Defines the power a Host uses, even if it's idle (in Watts).
      */
-    private static final double STATIC_POWER = 35;
+    private static final double STATIC_POWER = 80;
 
     /**
      * The max power a Host uses (in Watts).
      */
-    private static final int MAX_POWER = 50;
+    private static final int MAX_POWER = 800;
 
     /**
      * Defines a time interval to process cloudlets execution
