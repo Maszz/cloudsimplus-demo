@@ -38,6 +38,8 @@ import org.cloudsimplus.hosts.HostSimple;
 import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
+import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerSpaceShared;
+import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.util.Log;
 import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
@@ -216,6 +218,7 @@ public class Main {
                     .setShutDownPower(HOST_SHUT_DOWN_POWER);
             host.setStartupDelay(HOST_START_UP_DELAY).setShutDownDelay(HOST_SHUT_DOWN_DELAY);
             host.setId(i);
+            host.setVmScheduler(new VmSchedulerSpaceShared());
             host.setPowerModel(powerModel);
             host.enableUtilizationStats();
 
@@ -251,6 +254,7 @@ public class Main {
         for (int i = 0; i < VMS; i++) {
             // Uses a CloudletSchedulerTimeShared by default to schedule Cloudlets
             final var vm = new VmSimple(HOST_MIPS, VM_PES);
+            vm.setCloudletScheduler(new CloudletSchedulerSpaceShared());
             vm.setRam(VM_RAM).setBw(VM_BW).setSize(10_000);
             vm.enableUtilizationStats();
             vmList.add(vm);
@@ -270,7 +274,7 @@ public class Main {
 
         for (int i = 0; i < CLOUDLETS; i++) {
             final var cloudlet = new CloudletSimple(CLOUDLET_LENGTH, CLOUDLET_PES,
-                    new UtilizationModelDynamic(0.3).setUtilizationUpdateFunction(
+                    new UtilizationModelDynamic(1).setUtilizationUpdateFunction(
                             time -> {
                                 double mean = 0.5;
                                 double stdDev = 0.1;
