@@ -32,6 +32,7 @@ import org.cloudsimplus.cloudlets.Cloudlet;
 import org.cloudsimplus.cloudlets.CloudletSimple;
 import org.cloudsimplus.core.CloudSimPlus;
 import org.cloudsimplus.datacenters.Datacenter;
+import org.cloudsimplus.datacenters.DatacenterCharacteristicsSimple;
 import org.cloudsimplus.datacenters.DatacenterSimple;
 import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
@@ -45,6 +46,7 @@ import org.cloudsimplus.util.Log;
 import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
 import org.cloudsimplus.vms.HostResourceStats;
 import org.cloudsimplus.vms.Vm;
+import org.cloudsimplus.vms.VmCost;
 import org.cloudsimplus.vms.VmResourceStats;
 import org.cloudsimplus.vms.VmSimple;
 import static java.util.Comparator.comparingLong;
@@ -123,6 +125,11 @@ public class Main {
      */
     private static final int MAX_POWER = 800;
 
+    private static final double COST_PER_SECOND = 0.01;
+    private static final double COST_PER_MEM = 0.005;
+    private static final double COST_PER_STORAGE = 0.001;
+    private static final double COST_PER_BW = 0.002;
+
     /**
      * Defines a time interval to process cloudlets execution
      * and possibly collect data. Setting a value greater than 0
@@ -186,6 +193,30 @@ public class Main {
         new CloudletsTableBuilder(cloudletFinishedList).build();
         printHostsCpuUtilizationAndPowerConsumption();
         printVmsCpuUtilizationAndPowerConsumption();
+        printTotalVmsCost();
+    }
+
+    private void printTotalVmsCost() {
+        System.out.println();
+        double totalCost = 0.0;
+        int totalNonIdleVms = 0;
+        double processingTotalCost = 0, memoryTotaCost = 0, storageTotalCost = 0, bwTotalCost = 0;
+        for (final Vm vm : broker0.getVmCreatedList()) {
+            final var cost = new VmCost(vm);
+            processingTotalCost += cost.getProcessingCost();
+            memoryTotaCost += cost.getMemoryCost();
+            storageTotalCost += cost.getStorageCost();
+            bwTotalCost += cost.getBwCost();
+
+            totalCost += cost.getTotalCost();
+            totalNonIdleVms += vm.getTotalExecutionTime() > 0 ? 1 : 0;
+            System.out.println(cost);
+        }
+
+        System.out.printf(
+                "Total cost ($) for %3d created VMs from %3d in DC %d: %8.2f$ %13.2f$ %17.2f$ %12.2f$ %15.2f$%n",
+                totalNonIdleVms, broker0.getVmsNumber(), datacenter0.getId(),
+                processingTotalCost, memoryTotaCost, storageTotalCost, bwTotalCost, totalCost);
     }
 
     private String simulatedTime() {
@@ -227,6 +258,8 @@ public class Main {
 
         var dc = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
         dc.setSchedulingInterval(-1);
+        dc.setCharacteristics(
+                new DatacenterCharacteristicsSimple(COST_PER_SECOND, COST_PER_STORAGE, COST_PER_MEM, COST_PER_BW));
         return dc;
     }
 
