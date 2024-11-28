@@ -24,6 +24,8 @@
 package com.example.cloudsim.demo;
 
 import ch.qos.logback.classic.Level;
+
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicy;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
 import org.cloudsimplus.brokers.DatacenterBroker;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
@@ -39,11 +41,14 @@ import org.cloudsimplus.hosts.HostSimple;
 import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
+import org.cloudsimplus.schedulers.cloudlet.CloudletScheduler;
 import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.util.Log;
+import org.cloudsimplus.utilizationmodels.UtilizationModel;
 import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
+import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
 import org.cloudsimplus.vms.HostResourceStats;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.vms.VmCost;
@@ -176,6 +181,8 @@ public class Main {
         brokerSubmit();
 
         System.out.println("Starting simulation after " + actualElapsedTime());
+        configureLogs();
+
         simulation.start();
 
         final long submittedCloudlets = broker0.getCloudletSubmittedList().size();
@@ -194,6 +201,17 @@ public class Main {
         printHostsCpuUtilizationAndPowerConsumption();
         printVmsCpuUtilizationAndPowerConsumption();
         printTotalVmsCost();
+    }
+
+    private void configureLogs() {
+        // Enables just some level of log messages for all entities.
+        Log.setLevel(Level.INFO);
+
+        // Enable different log levels for specific classes of objects
+        Log.setLevel(DatacenterBroker.LOGGER, Level.INFO);
+        Log.setLevel(Datacenter.LOGGER, Level.WARN);
+        Log.setLevel(VmAllocationPolicy.LOGGER, Level.INFO);
+        Log.setLevel(CloudletScheduler.LOGGER, Level.WARN);
     }
 
     private void printTotalVmsCost() {
@@ -306,9 +324,10 @@ public class Main {
         // time
 
         for (int i = 0; i < CLOUDLETS; i++) {
+
             final var cloudlet = new CloudletSimple(CLOUDLET_LENGTH, CLOUDLET_PES,
                     new UtilizationModelDynamic(1).setUtilizationUpdateFunction(
-                            time -> {
+                            model -> {
                                 double mean = 0.5;
                                 double stdDev = 0.1;
                                 double utilization = mean + new Random().nextGaussian() * stdDev;
