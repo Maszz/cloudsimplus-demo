@@ -8,8 +8,8 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 
 project="$1"
-config_fliename="$2"
-config_file="src/main/resources/${config_fliename}.json"
+config_filename="$2"
+config_file="src/main/resources/${config_filename}.json"
 
 # Step 0: Generate new pom.xml
 template="pom.xml.template"
@@ -27,7 +27,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Step 2: Run the Java application and save output to a file named based on config file
-csv_output="output_${project}_${config_fliename}.txt"
+csv_output="output/output_${project}_${config_filename}.txt"
 echo "Running the application with config file $config_file and saving output to $csv_output..."
 java -cp "target/energy.$project-1.0-SNAPSHOT.jar:target/dependency/*" "energy.$project" "$config_file" > "$csv_output"
 

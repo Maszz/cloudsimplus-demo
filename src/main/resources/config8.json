@@ -1,0 +1,27 @@
+{
+    "RAM_PER_PE": 65536,
+    "HOSTS": 2000,
+    "HOST_PES": 256,
+    "HOST_MIPS": 1000000,
+    "HOST_BW": 1000000,
+    "HOST_STORAGE": 50000000000,
+    "VMS": 2000,
+    "VM_PES": 32,
+    "VM_RAM": 131072,
+    "VM_BW": 250000,
+    "VM_STORAGE": 5000000,
+    "CLOUDLET_LENGTH": 150000000,
+    "SCHEDULING_INTERVAL": 1.0,
+    "DATACENTERS": [
+      { "name": "Datacenter1", "hosts": 200 },
+      { "name": "Datacenter2", "hosts": 200 },
+      { "name": "Datacenter3", "hosts": 200 },
+      { "name": "Datacenter4", "hosts": 200 },
+      { "name": "Datacenter5", "hosts": 200 },
+      { "name": "Datacenter6", "hosts": 200 },
+      { "name": "Datacenter7", "hosts": 200 },
+      { "name": "Datacenter8", "hosts": 200 },
+      { "name": "Datacenter9", "hosts": 200 },
+      { "name": "Datacenter10", "hosts": 200 }
+    ]
+}

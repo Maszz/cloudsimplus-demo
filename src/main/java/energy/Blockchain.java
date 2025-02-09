@@ -1,111 +1,87 @@
 package energy;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
-import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.cloudlets.Cloudlet;
 import org.cloudsimplus.cloudlets.CloudletSimple;
 import org.cloudsimplus.core.CloudSimPlus;
-import org.cloudsimplus.datacenters.Datacenter;
 import org.cloudsimplus.datacenters.DatacenterSimple;
 import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
-import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.vms.VmSimple;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
+import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Blockchain {
-    private int ramPerPe;
-    private int hosts;
-    private int hostPes;
-    private int hostMips;
-    private long hostBw;
-    private long hostStorage;
-    private int vms;
-    private int vmPes;
-    private int cloudletLength;
-    private double schedulingInterval;
+    private static Config config;
 
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.err.println("Usage: java Blockchain <config-file>");
+            System.err.println("❌ ERROR: No config file specified! Usage: java Blockchain <config-file>");
             System.exit(1);
         }
 
-        Config config = new Config(args[0]);
-        new Blockchain(config).run();
-    }
-
-    public Blockchain(Config config) {
-        this.ramPerPe = config.getInt("RAM_PER_PE");
-        this.hosts = config.getInt("HOSTS");
-        this.hostPes = config.getInt("HOST_PES");
-        this.hostMips = config.getInt("HOST_MIPS");
-        this.hostBw = config.getLong("HOST_BW");
-        this.hostStorage = config.getLong("HOST_STORAGE");
-        this.vms = config.getInt("VMS");
-        this.vmPes = config.getInt("VM_PES");
-        this.cloudletLength = config.getInt("CLOUDLET_LENGTH");
-        this.schedulingInterval = config.getDouble("SCHEDULING_INTERVAL");
-    }
-
-    public void run() {
+        config = new Config(args[0]);
         CloudSimPlus simulation = new CloudSimPlus();
 
-        List<Host> hostList = createHosts();
-        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
-        datacenter.setSchedulingInterval(schedulingInterval);
+        JsonArray datacentersConfig = config.getArray("DATACENTERS");
+        List<DatacenterSimple> datacenters = new ArrayList<>();
 
-        List<Vm> vmList = createVms();
-        List<Cloudlet> cloudletList = createCloudlets();
+        for (JsonElement element : datacentersConfig) {
+            JsonObject dc = element.getAsJsonObject();
+            int numHosts = dc.get("hosts").getAsInt();
+            datacenters.add(createDatacenter(simulation, numHosts));
+        }
 
-        var broker = new DatacenterBrokerSimple(simulation);
-        broker.submitVmList(vmList);
-        broker.submitCloudletList(cloudletList);
+        DatacenterBrokerSimple broker = new DatacenterBrokerSimple(simulation);
+
+
+        int totalVMs = config.getInt("VMS");
+        int numDatacenters = datacentersConfig.size();
+        int remainingVMs = totalVMs;
+
+        for (int i = 0; i < numDatacenters; i++) {
+            int vmsForThisDatacenter = (i == numDatacenters - 1) ? remainingVMs : totalVMs / numDatacenters;
+            remainingVMs -= vmsForThisDatacenter;
+
+            List<Vm> vmList = new ArrayList<>();
+            for (int j = 0; j < vmsForThisDatacenter; j++) {
+                Vm vm = new VmSimple(config.getInt("HOST_MIPS"), config.getInt("VM_PES"))
+                        .setRam(config.getInt("VM_RAM"))
+                        .setBw(config.getInt("VM_BW"))
+                        .setSize(config.getInt("VM_STORAGE"));
+                vmList.add(vm);
+            }
+            broker.submitVmList(vmList);
+        }
 
         simulation.start();
-
         new CloudletsTableBuilder(broker.getCloudletFinishedList()).build();
     }
 
-    private List<Host> createHosts() {
-        List<Host> hostList = new ArrayList<>(hosts);
-        for (int i = 0; i < hosts; i++) {
-            List<Pe> peList = new ArrayList<>(hostPes);
-            for (int j = 0; j < hostPes; j++) {
-                peList.add(new PeSimple(hostMips));
+    private static DatacenterSimple createDatacenter(CloudSimPlus simulation, int numberOfHosts) {
+        List<Host> hostList = new ArrayList<>();
+        for (int i = 0; i < numberOfHosts; i++) {
+            List<Pe> peList = new ArrayList<>();
+            for (int j = 0; j < config.getInt("HOST_PES"); j++) {
+                peList.add(new PeSimple(config.getInt("HOST_MIPS") / config.getInt("HOST_PES")));
             }
-            Host host = new HostSimple(ramPerPe * hostPes, hostBw, hostStorage, peList);
-            host.setPowerModel(new PowerModelHostSimple(800, 80));
+            Host host = new HostSimple(
+                    config.getInt("RAM_PER_PE") * config.getInt("HOST_PES"),
+                    config.getLong("HOST_BW"),
+                    config.getLong("HOST_STORAGE"),
+                    peList
+            );
             hostList.add(host);
         }
-        return hostList;
-    }
-
-    private List<Vm> createVms() {
-        List<Vm> vmList = new ArrayList<>(vms);
-        for (int i = 0; i < vms; i++) {
-            Vm vm = new VmSimple(hostMips, vmPes);
-            vm.setRam(vmPes * ramPerPe).setBw(hostBw / vmPes).setSize(10000);
-            vmList.add(vm);
-        }
-        return vmList;
-    }
-
-    private List<Cloudlet> createCloudlets() {
-        List<Cloudlet> cloudletList = new ArrayList<>(vms);
-        for (int i = 0; i < vms; i++) {
-            Cloudlet cloudlet = new CloudletSimple(cloudletLength, vmPes);
-            cloudlet.setSizes(1024);
-            cloudletList.add(cloudlet);
-        }
-        return cloudletList;
+        return new DatacenterSimple(simulation, hostList, new VmAllocationPolicyBestFit()); // ✅ Updated to Best Fit policy
     }
 }

@@ -17,26 +17,22 @@ public class Config {
     }
 
     public int getInt(String key) {
-        return jsonObject.get(key).getAsInt();
+        return jsonObject.has(key) ? jsonObject.get(key).getAsInt() : 0;
     }
 
     public long getLong(String key) {
-        return jsonObject.get(key).getAsLong();
+        return jsonObject.has(key) ? jsonObject.get(key).getAsLong() : 0L;
     }
 
     public double getDouble(String key) {
-        return jsonObject.get(key).getAsDouble();
+        return jsonObject.has(key) ? jsonObject.get(key).getAsDouble() : 0.0;
     }
 
     public String getString(String key) {
-        return jsonObject.get(key).getAsString();
+        return jsonObject.has(key) ? jsonObject.get(key).getAsString() : "";
     }
 
     public JsonArray getArray(String key) {
-        return jsonObject.getAsJsonArray(key);
-    }
-
-    public JsonObject getObject(String key) {
-        return jsonObject.getAsJsonObject(key);
+        return jsonObject.has(key) ? jsonObject.getAsJsonArray(key) : new JsonArray();
     }
 }

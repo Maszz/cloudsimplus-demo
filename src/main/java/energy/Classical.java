@@ -2,7 +2,7 @@ package energy;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
 import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.cloudlets.Cloudlet;
@@ -53,22 +53,21 @@ public class Classical {
         this.vms = config.getInt("VMS");
         this.vmPes = config.getInt("VM_PES");
         this.cloudletLength = config.getInt("CLOUDLET_LENGTH");
-        this.schedulingInterval = config.getDouble("SCHEDULING_INTERVAL");
+        this.schedulingInterval = Math.max(1.0, config.getDouble("SCHEDULING_INTERVAL"));
     }
 
     public void run() {
         CloudSimPlus simulation = new CloudSimPlus();
 
         List<Host> hostList = createHosts();
-        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
+        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyBestFit());
         datacenter.setSchedulingInterval(schedulingInterval);
 
-        List<Vm> vmList = createVms();
-        List<Cloudlet> cloudletList = createCloudlets();
+        DatacenterBrokerSimple broker = new DatacenterBrokerSimple(simulation);
 
-        var broker = new DatacenterBrokerSimple(simulation);
-        broker.submitVmList(vmList);
-        broker.submitCloudletList(cloudletList);
+
+        broker.submitVmList(createVms());
+        broker.submitCloudletList(createCloudlets());
 
         simulation.start();
 
@@ -80,7 +79,7 @@ public class Classical {
         for (int i = 0; i < hosts; i++) {
             List<Pe> peList = new ArrayList<>(hostPes);
             for (int j = 0; j < hostPes; j++) {
-                peList.add(new PeSimple(hostMips));
+                peList.add(new PeSimple(hostMips / hostPes));
             }
             Host host = new HostSimple(ramPerPe * hostPes, hostBw, hostStorage, peList);
             host.setPowerModel(new PowerModelHostSimple(800, 80));
@@ -92,8 +91,10 @@ public class Classical {
     private List<Vm> createVms() {
         List<Vm> vmList = new ArrayList<>(vms);
         for (int i = 0; i < vms; i++) {
-            Vm vm = new VmSimple(hostMips, vmPes);
-            vm.setRam(vmPes * ramPerPe).setBw(hostBw / vmPes).setSize(10000);
+            Vm vm = new VmSimple(hostMips, vmPes)
+                    .setRam(vmPes * ramPerPe)
+                    .setBw(hostBw / vmPes)
+                    .setSize(10000);
             vmList.add(vm);
         }
         return vmList;
