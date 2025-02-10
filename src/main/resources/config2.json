@@ -1,0 +1,28 @@
+{
+    "SCHEDULING_INTERVAL": 1.0,
+    "CLOUDLET_LENGTH": 5000000,  
+    "CLOUDLET_PES": 4,
+    "CLOUDLETS": 130,
+
+    "DATACENTERS": [
+        { "name": "Datacenter1", "hosts": 50, "HOST_PES": 128, "HOST_MIPS": 2000000, "HOST_RAM": 65536, "HOST_BW": 5000000, "HOST_STORAGE": 200000000000 },
+        { "name": "Datacenter2", "hosts": 60, "HOST_PES": 64, "HOST_MIPS": 1500000, "HOST_RAM": 50000, "HOST_BW": 4000000, "HOST_STORAGE": 180000000000 },
+        { "name": "Datacenter3", "hosts": 70, "HOST_PES": 48, "HOST_MIPS": 1200000, "HOST_RAM": 40000, "HOST_BW": 3500000, "HOST_STORAGE": 160000000000 },
+        { "name": "Datacenter4", "hosts": 80, "HOST_PES": 32, "HOST_MIPS": 1000000, "HOST_RAM": 32768, "HOST_BW": 3000000, "HOST_STORAGE": 140000000000 },
+        { "name": "Datacenter5", "hosts": 90, "HOST_PES": 24, "HOST_MIPS": 800000, "HOST_RAM": 25000, "HOST_BW": 2500000, "HOST_STORAGE": 120000000000 },
+        { "name": "Datacenter6", "hosts": 100, "HOST_PES": 16, "HOST_MIPS": 600000, "HOST_RAM": 20000, "HOST_BW": 2000000, "HOST_STORAGE": 100000000000 },
+        { "name": "Datacenter7", "hosts": 110, "HOST_PES": 12, "HOST_MIPS": 500000, "HOST_RAM": 18000, "HOST_BW": 1800000, "HOST_STORAGE": 90000000000 },
+        { "name": "Datacenter8", "hosts": 120, "HOST_PES": 8, "HOST_MIPS": 400000, "HOST_RAM": 15000, "HOST_BW": 1600000, "HOST_STORAGE": 80000000000 },
+        { "name": "Datacenter9", "hosts": 130, "HOST_PES": 6, "HOST_MIPS": 300000, "HOST_RAM": 12000, "HOST_BW": 1400000, "HOST_STORAGE": 70000000000 },
+        { "name": "Datacenter10", "hosts": 140, "HOST_PES": 4, "HOST_MIPS": 200000, "HOST_RAM": 10000, "HOST_BW": 1200000, "HOST_STORAGE": 60000000000 },
+        { "name": "Datacenter11", "hosts": 150, "HOST_PES": 2, "HOST_MIPS": 150000, "HOST_RAM": 8000, "HOST_BW": 1000000, "HOST_STORAGE": 50000000000 },
+        { "name": "Datacenter12", "hosts": 160, "HOST_PES": 1, "HOST_MIPS": 100000, "HOST_RAM": 6000, "HOST_BW": 800000, "HOST_STORAGE": 40000000000 },
+        { "name": "Datacenter13", "hosts": 170, "HOST_PES": 1, "HOST_MIPS": 50000, "HOST_RAM": 4000, "HOST_BW": 600000, "HOST_STORAGE": 30000000000 }
+    ],
+
+    "VMS": 130,
+    "VM_PES": 4,
+    "VM_RAM": 8192,
+    "VM_BW": 500000,
+    "VM_STORAGE": 1000000
+}

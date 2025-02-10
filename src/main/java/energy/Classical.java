@@ -54,6 +54,8 @@ public class Classical {
         simulation.start();
 
         new CloudletsTableBuilder(broker.getCloudletFinishedList()).build();
+
+        printEnergyConsumption(); // ✅ Print energy report after simulation
     }
 
     private List<Datacenter> createDatacenters() {
@@ -61,7 +63,7 @@ public class Classical {
         JsonArray datacentersConfig = config.getArray("DATACENTERS");
 
         for (JsonElement element : datacentersConfig) {
-            JsonObject dcConfig = element.getAsJsonObject(); // ✅ Convert JsonElement to JsonObject
+            JsonObject dcConfig = element.getAsJsonObject();
             datacenterList.add(createDatacenter(dcConfig));
         }
 
@@ -84,7 +86,8 @@ public class Classical {
                 peList.add(new PeSimple(hostMips / hostPes));
             }
             Host host = new HostSimple(hostRam, hostBw, hostStorage, peList);
-            host.setPowerModel(new PowerModelHostSimple(800, 80)); // Power consumption model
+            host.setPowerModel(new PowerModelHostSimple(800, 80)); // ✅ Power consumption model
+            host.enableUtilizationStats(); // ✅ Enables CPU Utilization Tracking
             hostList.add(host);
         }
         System.out.printf("✅ Created Datacenter: %s with %d hosts%n", name, numHosts);
@@ -123,5 +126,33 @@ public class Classical {
         }
         System.out.printf("✅ Created %d Cloudlets%n", numCloudlets);
         return cloudletList;
+    }
+
+    private void printEnergyConsumption() {
+        System.out.println("\n================ ENERGY CONSUMPTION REPORT ================");
+
+        for (Datacenter dc : datacenters) {
+            double totalEnergy = 0.0;
+            System.out.printf("\n🔹 Datacenter: %s\n", dc.getName());
+            System.out.printf("%-10s %-15s %-15s %-20s\n", "Host ID", "CPU Usage (%)", "Power (W)", "Total Energy (kWh)");
+
+            for (Host host : dc.getHostList()) {
+                double utilization = host.getCpuUtilizationStats().getMean();
+                if (Double.isNaN(utilization)) utilization = 0.0; // ✅ Fix NaN issue
+
+                double power = host.getPowerModel().getPower(utilization);
+                if (Double.isNaN(power)) power = 0.0; // ✅ Fix NaN issue
+
+                double activeTime = simulation.clock() - host.getFirstStartTime();
+                double totalEnergyKWh = (power * activeTime) / (1000 * 3600);
+
+                totalEnergy += totalEnergyKWh;
+
+                System.out.printf("%-10d %-15.2f %-15.2f %-20.6f\n", 
+                    host.getId(), utilization * 100, power, totalEnergyKWh);
+            }
+
+            System.out.printf("\n⚡ Total Energy Consumption for %s: %.6f kWh\n", dc.getName(), totalEnergy);
+        }
     }
 }
