@@ -43,16 +43,10 @@ public class Classical {
     public void run() {
         simulation = new CloudSimPlus();
         broker = new DatacenterBrokerSimple(simulation);
-    
-        // ✅ First, create VMs to avoid null pointer exception
-        vmList = createVms();
-    
-        // ✅ Then, create datacenters
+        vmList = new ArrayList<>();
         datacenters = createDatacenters();
-    
         brokerSubmit();
         simulation.start();
-    
         printResults();
         printDatacenterEnergyConsumption();
     }
@@ -67,55 +61,60 @@ public class Classical {
             String dcName = dcConfig.get("name").getAsString();
             Datacenter datacenter = createDatacenter(dcConfig, dcName);
             datacenterList.add(datacenter);
-            
-            // ✅ Create cloudlets specifically for this datacenter
+    
+            // ✅ Create VMs specifically for this datacenter
+            List<Vm> vmsForDatacenter = createVms(dcConfig);
+            vmList.addAll(vmsForDatacenter);
+            broker.submitVmList(vmsForDatacenter);
+    
+            // ✅ Assign VMs to Hosts properly
+            List<Host> hostList = datacenter.getHostList();
+            for (int i = 0; i < vmsForDatacenter.size(); i++) {
+                Host host = hostList.get(i % hostList.size()); // Assign VMs round-robin to hosts
+                host.createVm(vmsForDatacenter.get(i));
+            }
+    
+            // ✅ Create and assign Cloudlets to VMs
             List<Cloudlet> cloudletsForDatacenter = createCloudlets(dcConfig);
             broker.submitCloudletList(cloudletsForDatacenter);
-    
-            // ✅ Distribute VMs equally across datacenters
-            int numVmsPerDatacenter = vmList.size() / datacentersConfig.size();
-            for (int i = 0; i < numVmsPerDatacenter; i++) {
-                Vm vm = vmList.get(i);
-                datacenter.getHostList().get(i % datacenter.getHostList().size()).createVm(vm);
-            }
         }
         return datacenterList;
     }
     
+    
 
     private Datacenter createDatacenter(JsonObject dcConfig, String name) {
-    int numHosts = dcConfig.get("hosts").getAsInt();
-    double MAX_POWER = dcConfig.get("MAX_POWER").getAsDouble();
-    double STATIC_POWER = dcConfig.get("STATIC_POWER").getAsDouble();
-    double HOST_START_UP_POWER = dcConfig.get("HOST_START_UP_POWER").getAsDouble();
-    double HOST_SHUT_DOWN_POWER = dcConfig.get("HOST_SHUT_DOWN_POWER").getAsDouble();
+        int numHosts = dcConfig.get("hosts").getAsInt();
+        JsonObject hostSpec = dcConfig.getAsJsonObject("host_spec");
+        JsonObject powerSpec = dcConfig.getAsJsonObject("power_spec");
 
-    List<Host> hostList = new ArrayList<>(numHosts);
-    for (int i = 0; i < numHosts; i++) {
-        Host host = createHost(dcConfig);
-        
-        // ✅ FIX: Use PowerModelHost instead of PowerModelHostSimple
-        PowerModelHost powerModel = new PowerModelHostSimple(MAX_POWER, STATIC_POWER)
-            .setStartupPower(HOST_START_UP_POWER)
-            .setShutDownPower(HOST_SHUT_DOWN_POWER);
-        
-        host.setPowerModel(powerModel);
-        host.enableUtilizationStats();
-        hostList.add(host);
+        double maxPower = powerSpec.get("MAX_POWER").getAsDouble();
+        double staticPower = powerSpec.get("STATIC_POWER").getAsDouble();
+        double startupPower = powerSpec.get("HOST_START_UP_POWER").getAsDouble();
+        double shutdownPower = powerSpec.get("HOST_SHUT_DOWN_POWER").getAsDouble();
+
+        List<Host> hostList = new ArrayList<>(numHosts);
+        for (int i = 0; i < numHosts; i++) {
+            Host host = createHost(hostSpec);
+            PowerModelHost powerModel = new PowerModelHostSimple(maxPower, staticPower)
+                .setStartupPower(startupPower)
+                .setShutDownPower(shutdownPower);
+            host.setPowerModel(powerModel);
+            host.enableUtilizationStats();
+            hostList.add(host);
+        }
+
+        DatacenterSimple datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
+        datacenter.setName(name);
+        return datacenter;
     }
 
-    DatacenterSimple datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
-    datacenter.setName(name);
-    return datacenter;
-}
-
-
-    private Host createHost(JsonObject dcConfig) {
-        int hostPes = dcConfig.get("HOST_PES").getAsInt();
-        int hostMips = dcConfig.get("HOST_MIPS").getAsInt();
-        int hostRam = dcConfig.get("HOST_RAM").getAsInt();
-        int hostBw = dcConfig.get("HOST_BW").getAsInt();
-        long hostStorage = dcConfig.get("HOST_STORAGE").getAsLong();
+    private Host createHost(JsonObject hostSpec) {
+        int hostPes = hostSpec.get("HOST_PES").getAsInt();
+        int hostMips = hostSpec.get("HOST_MIPS").getAsInt();
+        int hostRam = hostSpec.get("HOST_RAM").getAsInt();
+        int hostBw = hostSpec.get("HOST_BW").getAsInt();
+        long hostStorage = hostSpec.get("HOST_STORAGE").getAsLong();
 
         List<Pe> peList = new ArrayList<>();
         for (int i = 0; i < hostPes; i++) {
@@ -125,12 +124,14 @@ public class Classical {
         return new HostSimple(hostRam, hostBw, hostStorage, peList);
     }
 
-    private List<Vm> createVms() {
-        int numVms = config.getInt("VMS");
-        int vmPes = config.getInt("VM_PES");
-        int vmRam = config.getInt("VM_RAM");
-        int vmBw = config.getInt("VM_BW");
-        int vmStorage = config.getInt("VM_STORAGE");
+    private List<Vm> createVms(JsonObject dcConfig) {
+        int numVms = dcConfig.get("vm").getAsInt();
+        JsonObject vmSpec = dcConfig.getAsJsonObject("vm_spec");
+
+        int vmPes = vmSpec.get("VM_PES").getAsInt();
+        int vmRam = vmSpec.get("VM_RAM").getAsInt();
+        int vmBw = vmSpec.get("VM_BW").getAsInt();
+        int vmStorage = vmSpec.get("VM_STORAGE").getAsInt();
 
         List<Vm> vmList = new ArrayList<>();
         for (int i = 0; i < numVms; i++) {
@@ -142,12 +143,14 @@ public class Classical {
             vmList.add(vm);
         }
         return vmList;
-    }
+    }    
 
     private List<Cloudlet> createCloudlets(JsonObject dcConfig) {
         int numCloudlets = dcConfig.get("cloudlets").getAsInt();
-        int cloudletPes = config.getInt("CLOUDLET_PES");
-        int cloudletLength = config.getInt("CLOUDLET_LENGTH");
+        JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
+
+        int cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsInt();
+        int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
 
         List<Cloudlet> cloudletList = new ArrayList<>();
         for (int i = 0; i < numCloudlets; i++) {
