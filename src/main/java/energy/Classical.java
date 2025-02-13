@@ -3,7 +3,10 @@ package energy;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRoundRobin;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicySimple;
 import org.cloudsimplus.brokers.DatacenterBroker;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
 import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
@@ -17,11 +20,13 @@ import org.cloudsimplus.hosts.HostSimple;
 import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
+import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
 import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.vms.VmSimple;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +56,6 @@ public class Classical {
 
         simulation.start();
 
-        // printResults();
         brokers.forEach(Classical::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
     }
@@ -73,7 +77,9 @@ public class Classical {
             Host host = createHost(i, dcConfig);
             hostList.add(host);
         }
-        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyRoundRobin());
+        // Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyRoundRobin());
+        // Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyBestFit());
+        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicySimple());
         datacenter.setName(dcConfig.get("name").getAsString());
         datacenter.setSchedulingInterval(config.getDouble("SCHEDULING_INTERVAL"));
         return datacenter;
@@ -94,8 +100,8 @@ public class Classical {
         double HOST_START_UP_POWER = powerSpec.get("HOST_START_UP_POWER").getAsDouble();
         double HOST_SHUT_DOWN_POWER = powerSpec.get("HOST_SHUT_DOWN_POWER").getAsDouble();
         
-        final var vmScheduler = new VmSchedulerTimeShared();
-        
+        final var vmScheduler = new VmSchedulerSpaceShared();
+        // final var vmScheduler = new VmSchedulerTimeShared();
 
         List<Pe> peList = new ArrayList<>();
         for (int i = 0; i < hostPes; i++) {
@@ -120,27 +126,25 @@ public class Classical {
     }
 
     private void createBrokersVmsAndCloudlets(JsonArray datacentersConfig) {
+        int vmGlobalIndex = 0;
+        int cloudletGlobalIndex = 0;
         for (int index = 0; index < datacenters.size(); index++) {
-            int vmsNumber = 0;
-            int cloudletsNumber = 0;
-            if (index != 0) {
-                vmsNumber += datacentersConfig.get(index-1).getAsJsonObject().get("vm").getAsInt();
-                cloudletsNumber += datacentersConfig.get(index-1).getAsJsonObject().get("cloudlets").getAsInt();
-            }
             Datacenter dc = datacenters.get(index);
             JsonObject dcConfig = datacentersConfig.get(index).getAsJsonObject();
     
             DatacenterBrokerSimple broker = createBroker(dc, dcConfig);
-
-            final var vmList = createVms(vmsNumber, dcConfig);
-            final var cloudletList = createCloudlets(cloudletsNumber, dcConfig);
+    
+            final var vmList = createVms(vmGlobalIndex, dcConfig);
+            final var cloudletList = createCloudlets(cloudletGlobalIndex, dcConfig);
     
             broker.submitVmList(vmList);
             broker.submitCloudletList(cloudletList);
             brokers.add(broker);
+    
+            vmGlobalIndex += dcConfig.get("vm").getAsInt();
+            cloudletGlobalIndex += dcConfig.get("cloudlets").getAsInt();
         }
     }
-
     
     
     private DatacenterBrokerSimple createBroker(final Datacenter dc, JsonObject dcConfig) {
@@ -150,49 +154,50 @@ public class Classical {
         return broker;
     }
 
-    private List<Vm> createVms(int vmsNumber ,JsonObject dcConfig) {
+    private List<Vm> createVms(int startId, JsonObject dcConfig) {
         JsonObject vmSpec = dcConfig.getAsJsonObject("vm_spec");
-        JsonObject hostSpec = dcConfig.getAsJsonObject("host_spec");
-        int hostMips = hostSpec.get("HOST_MIPS").getAsInt();
-        int hostPes = hostSpec.get("HOST_PES").getAsInt();
+        int hostMips = dcConfig.getAsJsonObject("host_spec").get("HOST_MIPS").getAsInt();
+        int hostPes = dcConfig.getAsJsonObject("host_spec").get("HOST_PES").getAsInt();
         int vmPes = vmSpec.get("VM_PES").getAsInt();
         int vmRam = vmSpec.get("VM_RAM").getAsInt();
         int vmBw = vmSpec.get("VM_BW").getAsInt();
         int vmStorage = vmSpec.get("VM_STORAGE").getAsInt();
-
+    
         List<Vm> vmList = new ArrayList<>();
         int vmsPerDatacenter = dcConfig.get("vm").getAsInt();
         for (int i = 0; i < vmsPerDatacenter; i++) {
-            Vm vm = new VmSimple(vmsNumber+i, hostMips / hostPes, vmPes);
-            vm.setRam(vmRam).setBw(vmBw).setSize(vmStorage).enableUtilizationStats();
+            Vm vm = new VmSimple(startId + i, hostMips / hostPes, vmPes);
+            vm.setRam(vmRam).setBw(vmBw).setSize(vmStorage);
+            vm.enableUtilizationStats();
             vmList.add(vm);
         }
         return vmList;
     }
-
-    private List<Cloudlet> createCloudlets(int cloudletsNumber ,JsonObject dcConfig) {
+    
+    private List<Cloudlet> createCloudlets(int startId, JsonObject dcConfig) {
         JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
-
         int cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsInt();
         int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
         int fileSize = cloudletSpec.get("FILE_SIZE").getAsInt();
         int outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsInt();
         int cloudletCount = dcConfig.get("cloudlets").getAsInt();
-
+    
         List<Cloudlet> cloudletList = new ArrayList<>();
-        final var fullUtilization = new UtilizationModelFull();
-
+        final var dynamicUtilization = new UtilizationModelDynamic(0.5); // 50% dynamic CPU usage
+    
         for (int i = 0; i < cloudletCount; i++) {
-            Cloudlet cloudlet = new CloudletSimple(cloudletsNumber+i, cloudletLength, cloudletPes)
+            Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
                     .setFileSize(fileSize)
                     .setOutputSize(outputSize)
-                    .setUtilizationModelCpu(fullUtilization)
-                    .setUtilizationModelRam(fullUtilization)
-                    .setUtilizationModelBw(fullUtilization);
+                    .setUtilizationModelCpu(dynamicUtilization)
+                    .setUtilizationModelRam(dynamicUtilization)
+                    .setUtilizationModelBw(dynamicUtilization);
             cloudletList.add(cloudlet);
         }
         return cloudletList;
     }
+    
+
 
     private static void createCloudletsResultTable(final DatacenterBroker broker) {
         new CloudletsTableBuilder(broker.getCloudletFinishedList())
@@ -200,12 +205,39 @@ public class Classical {
                 .build();
     }
 
-    private void printResults() {
-        System.out.println("\n---------------- Simulation Results ----------------");
-        for (DatacenterBrokerSimple broker : brokers) {
-            new CloudletsTableBuilder(broker.getCloudletFinishedList()).build();
-        }
-    }
+    // private void printDatacenterEnergyConsumption() {
+    //     System.out.println("\n---------------- Detailed Datacenter Report ----------------");
+    
+    //     for (int i = 0; i < datacenters.size(); i++) {
+    //         Datacenter dc = datacenters.get(i);
+    //         DatacenterBrokerSimple broker = brokers.get(i);
+    
+    //         double totalEnergy = 0.0;
+    //         double totalUtilization = 0.0;
+    //         int utilizedHosts = 0;
+    //         int totalHosts = dc.getHostList().size();
+    
+    //         for (Host host : dc.getHostList()) {
+    //             double utilizationMean = host.getCpuUtilizationStats().getMean();
+    //             if (!Double.isNaN(utilizationMean)) {
+    //                 double powerUsage = host.getPowerModel().getPower(utilizationMean);
+    //                 totalEnergy += powerUsage;
+    //                 totalUtilization += utilizationMean;
+    //                 utilizedHosts++;
+    //             }
+    //         }
+    
+    //         double avgUtilization = utilizedHosts > 0 ? totalUtilization / utilizedHosts : 0.0;
+    
+    //         System.out.println("\nDatacenter Report:");
+    //         System.out.printf("Datacenter Name      : %s%n", dc.getName());
+    //         System.out.printf("Total Hosts          : %d%n", totalHosts);
+    //         System.out.printf("Total VMs            : %d%n", broker.getVmCreatedList().size());
+    //         System.out.printf("Total Cloudlets      : %d%n", broker.getCloudletSubmittedList().size());
+    //         System.out.printf("CPU Utilization      : %.2f%%%n", avgUtilization * 100);
+    //         System.out.printf("Total Energy Used    : %.6f kWh%n", totalEnergy / 1000);
+    //     }
+    // }
 
     private void printDatacenterEnergyConsumption() {
         System.out.println("\n---------------- Detailed Datacenter Report ----------------");
@@ -219,27 +251,42 @@ public class Classical {
             int utilizedHosts = 0;
             int totalHosts = dc.getHostList().size();
     
+            System.out.printf("\nDatacenter Name      : %s%n", dc.getName());
+            System.out.printf("Total Hosts          : %d%n", totalHosts);
+    
+            // Display Host Specifications and Utilization
+            boolean flag = false;
             for (Host host : dc.getHostList()) {
                 double utilizationMean = host.getCpuUtilizationStats().getMean();
                 if (!Double.isNaN(utilizationMean)) {
                     double powerUsage = host.getPowerModel().getPower(utilizationMean);
-                    totalEnergy += powerUsage;
+                    double energyConsumption = powerUsage * simulation.getLastCloudletProcessingUpdate() / 3600; // Convert to kWh
+                    totalEnergy += energyConsumption;
                     totalUtilization += utilizationMean;
                     utilizedHosts++;
+                    if (flag) {
+                        // Host Specifications
+                        System.out.printf("\nHost ID              : %d%n", host.getId());
+                        System.out.printf("  RAM                : %d MB%n", host.getRam().getCapacity());
+                        System.out.printf("  Bandwidth          : %d MBps%n", host.getBw().getCapacity());
+                        System.out.printf("  Storage            : %d MB%n", host.getStorage().getCapacity());
+                        System.out.printf("  Number of PEs      : %d%n", host.getPeList().size());
+                        System.out.printf("  Host CPU Utilization    : %.2f%%%n", utilizationMean * 100);
+                        System.out.printf("  Host Energy Consumption : %.6f kWh%n", energyConsumption);
+                        flag = false;
+                    }
                 }
             }
     
             double avgUtilization = utilizedHosts > 0 ? totalUtilization / utilizedHosts : 0.0;
     
-            System.out.println("\nDatacenter Report:");
-            System.out.printf("Datacenter Name      : %s%n", dc.getName());
-            System.out.printf("Total Hosts          : %d%n", totalHosts);
             System.out.printf("Total VMs            : %d%n", broker.getVmCreatedList().size());
             System.out.printf("Total Cloudlets      : %d%n", broker.getCloudletSubmittedList().size());
-            System.out.printf("CPU Utilization      : %.2f%%%n", avgUtilization * 100);
-            System.out.printf("Total Energy Used    : %.6f kWh%n", totalEnergy / 1000);
+            System.out.printf("Average CPU Utilization: %.2f%%%n", avgUtilization * 100);
+            System.out.printf("Total Energy Used    : %.6f kWh%n", totalEnergy);
         }
     }
+    
     
     
 }

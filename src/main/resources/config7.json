@@ -1,0 +1,435 @@
+{
+    "SCHEDULING_INTERVAL": 1.0,
+
+    "DATACENTERS": [
+        {
+            "name": "Node1",
+            "hosts": 50,
+            "host_spec": {
+                "HOST_PES": 128,
+                "HOST_MIPS": 2000000,
+                "HOST_RAM": 65536,
+                "HOST_BW": 5000000,
+                "HOST_STORAGE": 250000000000
+            },
+            "vm": 15,
+            "vm_spec": {
+                "VM_PES": 4,
+                "VM_RAM": 8192,
+                "VM_BW": 500000,
+                "VM_STORAGE": 1000000
+            },
+            "cloudlets": 15,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_PES": 4,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
+            }
+        },
+        {
+            "name": "Node2",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 5000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node3",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 500000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node4",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node5",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 2000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node6",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 1000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node7",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 3500000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node8",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 5500000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node9",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 1200000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node10",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 3300000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node11",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 5000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node12",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 5000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        },
+        {
+            "name": "Node13",
+            "hosts": 55,
+            "host_spec": {
+                "HOST_PES": 96,
+                "HOST_MIPS": 1800000,
+                "HOST_RAM": 60000,
+                "HOST_BW": 4800000,
+                "HOST_STORAGE": 190000000000
+            },
+            "vm": 12,
+            "vm_spec": {
+                "VM_PES": 2,
+                "VM_RAM": 4096,
+                "VM_BW": 300000,
+                "VM_STORAGE": 750000
+            },
+            "cloudlets": 12,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 5000000,
+                "CLOUDLET_PES": 2,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
+            },
+            "power_spec": {
+                "HOST_START_UP_DELAY": 0.2,
+                "HOST_SHUT_DOWN_DELAY": 0.1,
+                "HOST_START_UP_POWER": 5.0,
+                "HOST_SHUT_DOWN_POWER": 3.0,
+                "STATIC_POWER": 80.0,
+                "MAX_POWER": 780.0
+            }
+        }
+    ]
+}

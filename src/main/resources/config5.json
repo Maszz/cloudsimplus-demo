@@ -83,7 +83,7 @@
                 "VM_BW": 300000,
                 "VM_STORAGE": 750000
             },
-            "cloudlets": 12,
+            "cloudlets": 5,
             "cloudlet_spec": {
                 "CLOUDLET_LENGTH": 80000000,
                 "CLOUDLET_PES": 2,
