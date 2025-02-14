@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRoundRobin;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicySimple;
 import org.cloudsimplus.brokers.DatacenterBroker;
@@ -24,7 +25,9 @@ import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
 import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
+import org.cloudsimplus.vms.HostResourceStats;
 import org.cloudsimplus.vms.Vm;
+import org.cloudsimplus.vms.VmResourceStats;
 import org.cloudsimplus.vms.VmSimple;
 
 
@@ -79,7 +82,8 @@ public class Classical {
         }
         // Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyRoundRobin());
         // Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyBestFit());
-        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicySimple());
+        Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
+        // Datacenter datacenter = new DatacenterSimple(simulation, hostList, new VmAllocationPolicySimple());
         datacenter.setName(dcConfig.get("name").getAsString());
         datacenter.setSchedulingInterval(config.getDouble("SCHEDULING_INTERVAL"));
         return datacenter;
@@ -100,8 +104,8 @@ public class Classical {
         double HOST_START_UP_POWER = powerSpec.get("HOST_START_UP_POWER").getAsDouble();
         double HOST_SHUT_DOWN_POWER = powerSpec.get("HOST_SHUT_DOWN_POWER").getAsDouble();
         
-        final var vmScheduler = new VmSchedulerSpaceShared();
-        // final var vmScheduler = new VmSchedulerTimeShared();
+        // final var vmScheduler = new VmSchedulerSpaceShared();
+        final var vmScheduler = new VmSchedulerTimeShared();
 
         List<Pe> peList = new ArrayList<>();
         for (int i = 0; i < hostPes; i++) {
@@ -183,15 +187,16 @@ public class Classical {
         int cloudletCount = dcConfig.get("cloudlets").getAsInt();
     
         List<Cloudlet> cloudletList = new ArrayList<>();
-        final var dynamicUtilization = new UtilizationModelDynamic(0.5); // 50% dynamic CPU usage
+        // final var Utilization = new UtilizationModelFull(); // 50% dynamic CPU usage
+        final var Utilization = new UtilizationModelDynamic(0.5); // 50% dynamic CPU usage
     
         for (int i = 0; i < cloudletCount; i++) {
             Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
                     .setFileSize(fileSize)
                     .setOutputSize(outputSize)
-                    .setUtilizationModelCpu(dynamicUtilization)
-                    .setUtilizationModelRam(dynamicUtilization)
-                    .setUtilizationModelBw(dynamicUtilization);
+                    .setUtilizationModelCpu(Utilization)
+                    .setUtilizationModelRam(Utilization)
+                    .setUtilizationModelBw(Utilization);
             cloudletList.add(cloudlet);
         }
         return cloudletList;
@@ -204,40 +209,6 @@ public class Classical {
                 .setTitle(broker.getName())
                 .build();
     }
-
-    // private void printDatacenterEnergyConsumption() {
-    //     System.out.println("\n---------------- Detailed Datacenter Report ----------------");
-    
-    //     for (int i = 0; i < datacenters.size(); i++) {
-    //         Datacenter dc = datacenters.get(i);
-    //         DatacenterBrokerSimple broker = brokers.get(i);
-    
-    //         double totalEnergy = 0.0;
-    //         double totalUtilization = 0.0;
-    //         int utilizedHosts = 0;
-    //         int totalHosts = dc.getHostList().size();
-    
-    //         for (Host host : dc.getHostList()) {
-    //             double utilizationMean = host.getCpuUtilizationStats().getMean();
-    //             if (!Double.isNaN(utilizationMean)) {
-    //                 double powerUsage = host.getPowerModel().getPower(utilizationMean);
-    //                 totalEnergy += powerUsage;
-    //                 totalUtilization += utilizationMean;
-    //                 utilizedHosts++;
-    //             }
-    //         }
-    
-    //         double avgUtilization = utilizedHosts > 0 ? totalUtilization / utilizedHosts : 0.0;
-    
-    //         System.out.println("\nDatacenter Report:");
-    //         System.out.printf("Datacenter Name      : %s%n", dc.getName());
-    //         System.out.printf("Total Hosts          : %d%n", totalHosts);
-    //         System.out.printf("Total VMs            : %d%n", broker.getVmCreatedList().size());
-    //         System.out.printf("Total Cloudlets      : %d%n", broker.getCloudletSubmittedList().size());
-    //         System.out.printf("CPU Utilization      : %.2f%%%n", avgUtilization * 100);
-    //         System.out.printf("Total Energy Used    : %.6f kWh%n", totalEnergy / 1000);
-    //     }
-    // }
 
     private void printDatacenterEnergyConsumption() {
         System.out.println("\n---------------- Detailed Datacenter Report ----------------");
@@ -255,38 +226,67 @@ public class Classical {
             System.out.printf("Total Hosts          : %d%n", totalHosts);
     
             // Display Host Specifications and Utilization
-            boolean flag = false;
+            boolean flag = true;
             for (Host host : dc.getHostList()) {
-                double utilizationMean = host.getCpuUtilizationStats().getMean();
-                if (!Double.isNaN(utilizationMean)) {
-                    double powerUsage = host.getPowerModel().getPower(utilizationMean);
-                    double energyConsumption = powerUsage * simulation.getLastCloudletProcessingUpdate() / 3600; // Convert to kWh
-                    totalEnergy += energyConsumption;
-                    totalUtilization += utilizationMean;
-                    utilizedHosts++;
-                    if (flag) {
-                        // Host Specifications
-                        System.out.printf("\nHost ID              : %d%n", host.getId());
-                        System.out.printf("  RAM                : %d MB%n", host.getRam().getCapacity());
-                        System.out.printf("  Bandwidth          : %d MBps%n", host.getBw().getCapacity());
-                        System.out.printf("  Storage            : %d MB%n", host.getStorage().getCapacity());
-                        System.out.printf("  Number of PEs      : %d%n", host.getPeList().size());
-                        System.out.printf("  Host CPU Utilization    : %.2f%%%n", utilizationMean * 100);
-                        System.out.printf("  Host Energy Consumption : %.6f kWh%n", energyConsumption);
-                        flag = false;
-                    }
+                // Mean CPU utilization and power consumption
+                final HostResourceStats cpuStats = host.getCpuUtilizationStats();
+                final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
+                final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power consumption
+                // Calculate host alive time (in seconds)
+                final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
+                // Calculate total power consumption in watt-seconds (Joules)
+                final double hostPowerConsumptionWatts = wattsMean * hostAliveTime;
+                // Convert total power consumption to kilowatt-hours (kWh)
+                final double hostPowerConsumptionKWh = hostPowerConsumptionWatts / (1000 * 3600);
+                totalEnergy += hostPowerConsumptionKWh;
+                totalUtilization += utilizationPercentMean;
+                utilizedHosts++;
+                if (flag) {
+                    // Host Specifications
+                    System.out.printf("  Host ID              : %d%n", host.getId());
+                    System.out.printf("  RAM                : %d MB%n", host.getRam().getCapacity());
+                    System.out.printf("  Bandwidth          : %d MBps%n", host.getBw().getCapacity());
+                    System.out.printf("  Storage            : %d MB%n", host.getStorage().getCapacity());
+                    System.out.printf("  Number of PEs      : %d%n", host.getPeList().size());
+                    System.out.printf("  CPU Usage mean: %6.1f%%", utilizationPercentMean * 100);
+                    System.out.printf("  Power Consumption mean: %8.0f W", wattsMean);
+                    System.out.printf("  Host Power Consumption: %.1f W-s (%.6f kWh)", hostPowerConsumptionWatts, hostPowerConsumptionKWh);
+                    System.out.printf("  Host Alive Time: %.1f s%n", hostAliveTime);
+                    flag = false;
                 }
             }
     
-            double avgUtilization = utilizedHosts > 0 ? totalUtilization / utilizedHosts : 0.0;
+            double avgUtilization = utilizedHosts > 0 ? totalUtilization / utilizedHosts : -1;
     
             System.out.printf("Total VMs            : %d%n", broker.getVmCreatedList().size());
             System.out.printf("Total Cloudlets      : %d%n", broker.getCloudletSubmittedList().size());
             System.out.printf("Average CPU Utilization: %.2f%%%n", avgUtilization * 100);
             System.out.printf("Total Energy Used    : %.6f kWh%n", totalEnergy);
+            System.out.println("------------------------------");
         }
     }
-    
-    
+
+    private void printHostCpuUtilizationAndPowerConsumption(final Host host) { 
+        // Mean CPU utilization and power consumption
+        final HostResourceStats cpuStats = host.getCpuUtilizationStats();
+        final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
+        final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power consumption
+
+        // Calculate host alive time (in seconds)
+        final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
+
+        // Calculate total power consumption in watt-seconds (Joules)
+        final double totalPowerConsumptionWatts = wattsMean * hostAliveTime;
+
+        // Convert total power consumption to kilowatt-hours (kWh)
+        final double totalPowerConsumptionKWh = totalPowerConsumptionWatts / (1000 * 3600);
+
+        // Print results
+        System.out.printf(
+                "Host %2d CPU Usage mean: %6.1f%% | Power Consumption mean: %8.0f W | Total Power Consumption: %.1f W-s (%.6f kWh) | Host Alive Time: %.1f s%n",
+                host.getId(), utilizationPercentMean * 100, wattsMean, totalPowerConsumptionWatts,
+                totalPowerConsumptionKWh, hostAliveTime);
+
+    }
     
 }
