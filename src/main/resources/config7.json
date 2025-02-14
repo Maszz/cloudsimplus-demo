@@ -1,6 +1,5 @@
 {
     "SCHEDULING_INTERVAL": 1.0,
-
     "DATACENTERS": [
         {
             "name": "Node1",
@@ -37,35 +36,35 @@
         },
         {
             "name": "Node2",
-            "hosts": 40,
+            "hosts": 50,
             "host_spec": {
-                "HOST_PES": 64,
-                "HOST_MIPS": 100000,
-                "HOST_RAM": 131072,
-                "HOST_BW": 1000000,
-                "HOST_STORAGE": 1000000000000
+                "HOST_PES": 128,
+                "HOST_MIPS": 2000000,
+                "HOST_RAM": 65536,
+                "HOST_BW": 5000000,
+                "HOST_STORAGE": 250000000000
             },
-            "vm": 40,
+            "vm": 15,
             "vm_spec": {
                 "VM_PES": 4,
                 "VM_RAM": 8192,
-                "VM_BW": 100000,
-                "VM_STORAGE": 100000
+                "VM_BW": 500000,
+                "VM_STORAGE": 1000000
             },
-            "cloudlets": 40,
+            "cloudlets": 20,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 100000,
-                "CLOUDLET_PES": 2,
-                "FILE_SIZE": 300,
-                "OUTPUT_SIZE": 300
+                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_PES": 4,
+                "FILE_SIZE": 2048,
+                "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.1,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 10.0,
-                "HOST_SHUT_DOWN_POWER": 5.0,
-                "STATIC_POWER": 50.0,
-                "MAX_POWER": 250.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -93,12 +92,12 @@
                 "OUTPUT_SIZE": 300
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.1,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 10.0,
-                "HOST_SHUT_DOWN_POWER": 5.0,
-                "STATIC_POWER": 50.0,
-                "MAX_POWER": 250.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -126,12 +125,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -159,12 +158,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -192,12 +191,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -225,12 +224,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -258,12 +257,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -291,12 +290,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -324,12 +323,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -357,12 +356,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -390,12 +389,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         },
         {
@@ -423,12 +422,12 @@
                 "OUTPUT_SIZE": 2048
             },
             "power_spec": {
-                "HOST_START_UP_DELAY": 0.2,
-                "HOST_SHUT_DOWN_DELAY": 0.1,
-                "HOST_START_UP_POWER": 5.0,
-                "HOST_SHUT_DOWN_POWER": 3.0,
-                "STATIC_POWER": 80.0,
-                "MAX_POWER": 780.0
+                "HOST_START_UP_DELAY": 0.0,
+                "HOST_SHUT_DOWN_DELAY": 0.0,
+                "HOST_START_UP_POWER": 4.5,
+                "HOST_SHUT_DOWN_POWER": 2.5,
+                "STATIC_POWER": 75.0,
+                "MAX_POWER": 850.0
             }
         }
     ]
