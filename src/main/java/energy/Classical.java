@@ -188,8 +188,7 @@ public class Classical {
         DatacenterBrokerSimple broker = new DatacenterBrokerSimple(simulation);
         broker.setName(dcConfig.get("name").getAsString());
         broker.setLastSelectedDc(dc);
-        broker.setVmDestructionDelay(100);
-
+        broker.setVmDestructionDelay(Double.MAX_VALUE); // Never destroy VMs until simulation ends
         return broker;
     }
 
@@ -327,7 +326,7 @@ public class Classical {
     }
 
     private void printDatacenterEnergyConsumptionCSV() {
-    String fileName = "output/" + config.get_filename() + ".csv";
+    String fileName = "output/csv/" + config.get_filename() + ".csv";
     try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
         // Write CSV header
         writer.println("Datacenter Name,Total Energy Used (kWh), cloudlets");

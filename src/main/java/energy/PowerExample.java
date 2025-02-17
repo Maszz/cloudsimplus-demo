@@ -131,15 +131,10 @@ public class PowerExample {
 
     private final CloudSimPlus simulation;
     private final DatacenterBroker broker0;
-    private final DatacenterBroker broker1;
-    private List<Vm> vmList0;
-    private List<Vm> vmList1;
-    private List<Cloudlet> cloudletList0;
-    private List<Cloudlet> cloudletList1;
+    private List<Vm> vmList;
+    private List<Cloudlet> cloudletList;
     private Datacenter datacenter0;
-    private Datacenter datacenter1;
-    private final List<Host> hostList0;
-    private final List<Host> hostList1;
+    private final List<Host> hostList;
 
     public static void main(String[] args) {
         new PowerExample();
@@ -151,40 +146,26 @@ public class PowerExample {
         //Log.setLevel(ch.qos.logback.classic.Level.WARN);
 
         simulation = new CloudSimPlus();
-        hostList0 = new ArrayList<>(HOSTS);
-        hostList1 = new ArrayList<>(HOSTS);
-        datacenter0 = createDatacenter0();
-        datacenter1 = createDatacenter1();
-
+        hostList = new ArrayList<>(HOSTS);
+        datacenter0 = createDatacenter();
         //Creates a broker that is a software acting on behalf of a cloud customer to manage his/her VMs and Cloudlets
         broker0 = new DatacenterBrokerSimple(simulation);
-        broker1 = new DatacenterBrokerSimple(simulation);
 
-        vmList0 = createVms();
-        vmList1 = createVms();
-        cloudletList0 = createCloudlets();
-        cloudletList1 = createCloudlets();
-        broker0.submitVmList(vmList0);
-        broker0.submitCloudletList(cloudletList0);
-        broker1.submitVmList(vmList1);
-        broker1.submitCloudletList(cloudletList1);
+        vmList = createVms();
+        cloudletList = createCloudlets();
+        broker0.submitVmList(vmList);
+        broker0.submitCloudletList(cloudletList);
 
         simulation.start();
 
         System.out.println("------------------------------- SIMULATION FOR SCHEDULING INTERVAL = " + SCHEDULING_INTERVAL+" -------------------------------");
-        final var cloudletFinishedList0 = broker0.getCloudletFinishedList();
-        final var cloudletFinishedList1 = broker1.getCloudletFinishedList();
-        final Comparator<Cloudlet> hostComparator0 = comparingLong(cl -> cl.getVm().getHost().getId());
-        cloudletFinishedList0.sort(hostComparator0.thenComparing(cl -> cl.getVm().getId()));
-        final Comparator<Cloudlet> hostComparator1 = comparingLong(cl -> cl.getVm().getHost().getId());
-        cloudletFinishedList1.sort(hostComparator1.thenComparing(cl -> cl.getVm().getId()));
+        final var cloudletFinishedList = broker0.getCloudletFinishedList();
+        final Comparator<Cloudlet> hostComparator = comparingLong(cl -> cl.getVm().getHost().getId());
+        cloudletFinishedList.sort(hostComparator.thenComparing(cl -> cl.getVm().getId()));
 
-        new CloudletsTableBuilder(cloudletFinishedList0).build();
-        printHostsCpuUtilizationAndPowerConsumption0();
-        printVmsCpuUtilizationAndPowerConsumption0();
-        new CloudletsTableBuilder(cloudletFinishedList1).build();
-        printHostsCpuUtilizationAndPowerConsumption1();
-        printVmsCpuUtilizationAndPowerConsumption1();
+        new CloudletsTableBuilder(cloudletFinishedList).build();
+        printHostsCpuUtilizationAndPowerConsumption();
+        printVmsCpuUtilizationAndPowerConsumption();
     }
 
     /**
@@ -219,26 +200,9 @@ public class PowerExample {
      * is computed here, that detail is abstracted.
      * </p>
      */
-    private void printVmsCpuUtilizationAndPowerConsumption0() {
-        vmList0.sort(comparingLong(vm -> vm.getHost().getId()));
-        for (Vm vm : vmList0) {
-            final var powerModel = vm.getHost().getPowerModel();
-            final double hostStaticPower = powerModel instanceof PowerModelHostSimple powerModelHost ? powerModelHost.getStaticPower() : 0;
-            final double hostStaticPowerByVm = hostStaticPower / vm.getHost().getVmCreatedList().size();
-
-            //VM CPU utilization relative to the host capacity
-            final double vmRelativeCpuUtilization = vm.getCpuUtilizationStats().getMean() / vm.getHost().getVmCreatedList().size();
-            final double vmPower = powerModel.getPower(vmRelativeCpuUtilization) - hostStaticPower + hostStaticPowerByVm; // W
-            final VmResourceStats cpuStats = vm.getCpuUtilizationStats();
-            System.out.printf(
-                "Vm   %2d CPU Usage Mean: %6.1f%% | Power Consumption Mean: %8.0f W%n",
-                vm.getId(), cpuStats.getMean() *100, vmPower);
-        }
-    }
-
-    private void printVmsCpuUtilizationAndPowerConsumption1() {
-        vmList1.sort(comparingLong(vm -> vm.getHost().getId()));
-        for (Vm vm : vmList1) {
+    private void printVmsCpuUtilizationAndPowerConsumption() {
+        vmList.sort(comparingLong(vm -> vm.getHost().getId()));
+        for (Vm vm : vmList) {
             final var powerModel = vm.getHost().getPowerModel();
             final double hostStaticPower = powerModel instanceof PowerModelHostSimple powerModelHost ? powerModelHost.getStaticPower() : 0;
             final double hostStaticPowerByVm = hostStaticPower / vm.getHost().getVmCreatedList().size();
@@ -258,17 +222,9 @@ public class PowerExample {
      * if VMs utilization history is enabled by calling
      * {@code vm.getUtilizationHistory().enable()}.
      */
-    private void printHostsCpuUtilizationAndPowerConsumption0() {
+    private void printHostsCpuUtilizationAndPowerConsumption() {
         System.out.println();
-        for (final Host host : hostList0) {
-            printHostCpuUtilizationAndPowerConsumption(host);
-        }
-        System.out.println();
-    }
-
-    private void printHostsCpuUtilizationAndPowerConsumption1() {
-        System.out.println();
-        for (final Host host : hostList1) {
+        for (final Host host : hostList) {
             printHostCpuUtilizationAndPowerConsumption(host);
         }
         System.out.println();
@@ -288,26 +244,14 @@ public class PowerExample {
     /**
      * Creates a {@link Datacenter} and its {@link Host}s.
      */
-    private Datacenter createDatacenter0() {
+    private Datacenter createDatacenter() {
 
         for(int i = 0; i < HOSTS; i++) {
             final var host = createPowerHost(i);
-            hostList0.add(host);
+            hostList.add(host);
         }
 
-        final var dc = new DatacenterSimple(simulation, hostList0);
-        dc.setSchedulingInterval(SCHEDULING_INTERVAL);
-        return dc;
-    }
-
-    private Datacenter createDatacenter1() {
-
-        for(int i = 0; i < HOSTS; i++) {
-            final var host = createPowerHost(i);
-            hostList1.add(host);
-        }
-
-        final var dc = new DatacenterSimple(simulation, hostList1);
+        final var dc = new DatacenterSimple(simulation, hostList);
         dc.setSchedulingInterval(SCHEDULING_INTERVAL);
         return dc;
     }

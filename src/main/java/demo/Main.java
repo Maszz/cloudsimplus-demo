@@ -83,23 +83,15 @@ import static org.cloudsimplus.util.TimeUtil.secondsToStr;
  * @since ClodSimPlus 7.3.1
  */
 public class Main {
+    private static final double SCHEDULING_INTERVAL = -1;
     private static final int RAM_PER_PE = 2048;
     private static final int HOSTS = 1000;
     private static final int HOST_PES = 16;
     private static final int HOST_MIPS = 38400; // in MIPS
-    private static final int HOST_RAM = HOST_PES * RAM_PER_PE; // in Megabytes
     private static final long HOST_BW = 1024; // in Megabits/s
     private static final long HOST_STORAGE = 1_000_000; // in Megabytes
-
     private static final int VMS = 4000;
-    private static final int VM_PES = 4;
-    private static final int VM_RAM = VM_PES * RAM_PER_PE; // in Megabytes
-    private static final int VM_BW = (int) (HOST_BW / VM_PES); // in Megabits/s
-
-    private static final int CLOUDLETS = VMS;
-    private static final int CLOUDLET_PES = VM_PES;
     private static final int CLOUDLET_LENGTH = 34_500_000;
-
     /** Indicates the time (in seconds) the Host takes to start up. */
     private static final double HOST_START_UP_DELAY = 0;
     /** Indicates the time (in seconds) the Host takes to shut down. */
@@ -110,7 +102,6 @@ public class Main {
 
     /** Indicates Host power consumption (in Watts) during shutdown. */
     private static final double HOST_SHUT_DOWN_POWER = 3;
-
     /**
      * Defines the power a Host uses, even if it's idle (in Watts).
      */
@@ -121,6 +112,15 @@ public class Main {
      */
     private static final int MAX_POWER = 800;
 
+    private static final int HOST_RAM = HOST_PES * RAM_PER_PE; // in Megabytes
+    private static final int VM_PES = HOST_PES / (VMS/HOSTS);
+    private static final int VM_RAM = VM_PES * RAM_PER_PE; // in Megabytes
+    private static final int VM_BW = (int) (HOST_BW / VM_PES); // in Megabits/s
+    private static final int CLOUDLETS = VMS;
+    private static final int CLOUDLET_PES = VM_PES;
+
+
+
     /**
      * Defines a time interval to process cloudlets execution
      * and possibly collect data. Setting a value greater than 0
@@ -129,7 +129,6 @@ public class Main {
      *
      * @see Datacenter#setSchedulingInterval(double)
      */
-    private static final double SCHEDULING_INTERVAL = -1;
 
     private final CloudSimPlus simulation;
     private final DatacenterBroker broker0;

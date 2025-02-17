@@ -1,29 +1,26 @@
 {
-    "SCHEDULING_INTERVAL": 0,
     "DATACENTERS": [
         {
             "name": "Node1",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "vm": 1,
+            "cloudlets": 10,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -36,27 +33,25 @@
         },
         {
             "name": "Node2",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 2,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 30,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -69,27 +64,25 @@
         },
         {
             "name": "Node3",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 3,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 50,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -102,27 +95,25 @@
         },
         {
             "name": "Node4",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 4,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 70,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -135,27 +126,25 @@
         },
         {
             "name": "Node5",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 5,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 90,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -168,27 +157,25 @@
         },
         {
             "name": "Node6",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 10,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 110,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -201,27 +188,25 @@
         },
         {
             "name": "Node7",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 20,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 130,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -234,27 +219,25 @@
         },
         {
             "name": "Node8",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 30,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 150,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -267,27 +250,25 @@
         },
         {
             "name": "Node9",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 40,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 170,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -300,27 +281,25 @@
         },
         {
             "name": "Node10",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 50,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 190,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -333,27 +312,25 @@
         },
         {
             "name": "Node11",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 100,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 210,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -366,27 +343,25 @@
         },
         {
             "name": "Node12",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 500,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 230,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
@@ -399,27 +374,25 @@
         },
         {
             "name": "Node13",
-            "hosts": 2,
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
             "host_spec": {
                 "HOST_PES": 128,
                 "HOST_MIPS": 2000000,
-                "HOST_RAM": 65536,
-                "HOST_BW": 5000000,
+                "HOST_RAM": 131072,
+                "HOST_BW": 500000000,
                 "HOST_STORAGE": 250000000000
             },
-            "vm": 4,
-            "vm_spec": {
-                "VM_PES": 32,
-                "VM_RAM": 16384,
-                "VM_BW": 1250000,
-                "VM_STORAGE": 62500000000
-            },
-            "cloudlets": 1000,
+            "vm": 1,
+            "VmAllocationPolicy": "BF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "F",
+            "cloudlets": 250,
             "cloudlet_spec": {
-                "CLOUDLET_LENGTH": 7000000,
+                "CLOUDLET_LENGTH": 1000,
                 "CLOUDLET_PES": 4,
-                "FILE_SIZE": 2048,
-                "OUTPUT_SIZE": 2048
+                "FILE_SIZE": 1024,
+                "OUTPUT_SIZE": 1024
             },
             "power_spec": {
                 "HOST_START_UP_DELAY": 0.0,
