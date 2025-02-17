@@ -5,11 +5,20 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Config {
+    private String fileName;
     private JsonObject jsonObject;
 
     public Config(String fileName) {
         try (FileReader reader = new FileReader(fileName)) {
-            jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+            this.jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
+            // Get the last part of the path (filename itself)
+            String[] pathParts = fileName.split("/");
+            String lastPart = pathParts[pathParts.length - 1]; // Last element after splitting by "/"
+
+            // Remove the file extension
+            String[] nameParts = lastPart.split("\\.");
+            this.fileName = nameParts[0]; // First element before the dot
+
         } catch (IOException e) {
             System.err.println("Error reading configuration file: " + e.getMessage());
             System.exit(1);
@@ -35,4 +44,9 @@ public class Config {
     public JsonArray getArray(String key) {
         return jsonObject.has(key) ? jsonObject.getAsJsonArray(key) : new JsonArray();
     }
+
+    public String get_filename() {
+        return fileName;
+    }
+    
 }

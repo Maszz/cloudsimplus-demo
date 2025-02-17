@@ -27,9 +27,9 @@ if [ $? -ne 0 ]; then
 fi
 
 # Step 2: Run the Java application and save output to a file named based on config file
-csv_output="output/output_${project}_${config_filename}.txt"
-echo "Running the application with config file $config_file and saving output to $csv_output..."
-java -cp "target/energy.$project-1.0-SNAPSHOT.jar:target/dependency/*" "energy.$project" "$config_file" > "$csv_output"
+output="output/output_${project}_${config_filename}.txt"
+echo "Running the application with config file $config_file and saving output to $output..."
+java -cp "target/energy.$project-1.0-SNAPSHOT.jar:target/dependency/*" "energy.$project" "$config_file" > "$output"
 
 if [ $? -ne 0 ]; then
   echo "Application failed to run. Check for errors above."
