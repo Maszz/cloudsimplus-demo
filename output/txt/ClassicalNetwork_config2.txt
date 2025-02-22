@@ -1,0 +1,319 @@
+[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 1 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 2 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 3 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 4 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 5 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 6 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 7 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 8 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 9 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 10 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 11 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 12 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 13 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 14 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 15 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 16 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 17 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 18 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 19 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 20 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 21 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 22 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 23 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 24 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 25 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 26 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 27 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 28 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 29 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 30 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 31 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 32 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 33 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 34 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 35 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 36 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 37 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 38 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 39 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 40 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 41 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 42 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 43 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 44 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 45 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 46 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 47 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 48 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 49 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 50 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 51 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 52 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 53 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 54 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 1 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 2 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 3 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 4 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 5 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 6 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 7 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 8 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 9 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 10 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 11 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 12 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 13 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 14 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 15 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 16 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 17 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 18 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 19 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 20 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 21 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 22 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 23 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 24 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 25 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 26 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 27 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 28 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 29 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 30 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 31 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 32 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 33 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 34 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 35 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 36 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 37 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 38 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 39 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 40 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 41 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 42 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 43 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 44 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 45 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 46 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 47 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 48 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 49 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 50 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 51 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 52 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 53 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 54 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  Topology file: src/main/resources/brite/topology.brite
+[0;39m✅ Mapped Node1 to BRITE Node 0
+✅ Mapped Node2 to BRITE Node 1
+🎯 Network topology successfully applied!
+[34mINFO  
+================== Starting CloudSim Plus 8.5.1 ==================
+
+[0;39m[34mINFO  0.00: #Datacenter 1 is starting...
+[0;39m[34mINFO  0.00: Host 0/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 1/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 2/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 3/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 4/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 5/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 6/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 7/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 8/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 9/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 10/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 11/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 12/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 13/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 14/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 15/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 16/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 17/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 18/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 19/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 20/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 21/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 22/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 23/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 24/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 25/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 26/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 27/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 28/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 29/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 30/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 31/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 32/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 33/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 34/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 35/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 36/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 37/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 38/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 39/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 40/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 41/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 42/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 43/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 44/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 45/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 46/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 47/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 48/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 49/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 50/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 51/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 52/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 53/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 54/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: #Datacenter 2 is starting...
+[0;39m[34mINFO  0.00: Host 0/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 1/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 2/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 3/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 4/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 5/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 6/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 7/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 8/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 9/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 10/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 11/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 12/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 13/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 14/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 15/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 16/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 17/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 18/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 19/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 20/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 21/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 22/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 23/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 24/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 25/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 26/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 27/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 28/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 29/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 30/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 31/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 32/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 33/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 34/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 35/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 36/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 37/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 38/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 39/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 40/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 41/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 42/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 43/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 44/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 45/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 46/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 47/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 48/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 49/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 50/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 51/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 52/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 53/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 54/#DC 2 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  Broker 3 is starting...
+[0;39m[34mINFO  Broker 4 is starting...
+[0;39m[34mINFO  Entities started.
+[0;39m[34mINFO  0.00: Node1: List of 2 datacenters(s) received.
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 4 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 5 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 6 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 7 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 8 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node1: Trying to create Vm 9 inside #Datacenter 1
+[0;39m[34mINFO  0.00: Node2: List of 2 datacenters(s) received.
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 10 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 11 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 12 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 13 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 14 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 15 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 16 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 17 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 18 inside #Datacenter 2
+[0;39m[34mINFO  0.00: Node2: Trying to create Vm 19 inside #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 4 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 5 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 6 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 7 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 8 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 9 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 10 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 11 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 12 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 13 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 14 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 15 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 16 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 17 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 18 in #Datacenter 2
+[0;39m[31mWARN  0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 19 in #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 0 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 1 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 2 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 3 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 4 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 5 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 6 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 7 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 8 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node1: Trying to create Vm 9 inside #Datacenter 2
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 10 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 11 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 12 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 13 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 14 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 15 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 16 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 17 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 18 inside #Datacenter 1
+[0;39m[34mINFO  0.10: Node2: Trying to create Vm 19 inside #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 10 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 11 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 12 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 13 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 14 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 15 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 16 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 17 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 18 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 19 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 0 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 1 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 2 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 3 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 4 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 5 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 6 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 7 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 8 in #Datacenter 2
+[0;39m[31mWARN  0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 9 in #Datacenter 2
+[0;39m[34mINFO  0.20: Node1: List of 40 Cloudlets submitted to the broker during simulation execution.
+[0;39m[34mINFO  Cloudlets creation request sent to Datacenter.
+[0;39m[34mINFO  0.20: Node2: List of 40 Cloudlets submitted to the broker during simulation execution.
+[0;39m[34mINFO  Cloudlets creation request sent to Datacenter.
+[0;39m

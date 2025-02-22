@@ -34,6 +34,18 @@ HOST_BW=${HOST_BW:-1024}
 read -p "Enter HOST_STORAGE in Megabytes (default: 1_000_000): " HOST_STORAGE
 HOST_STORAGE=${HOST_STORAGE:-1000000}
 
+read -p "Enter HOST_START_UP_DELAY (default: 5): " HOST_START_UP_DELAY
+HOST_START_UP_DELAY=${HOST_START_UP_DELAY:-5}
+
+read -p "Enter HOST_SHUT_DOWN_DELAY (default: 3): " HOST_SHUT_DOWN_DELAY
+HOST_SHUT_DOWN_DELAY=${HOST_SHUT_DOWN_DELAY:-3}
+
+read -p "Enter HOST_START_UP_POWER (default: 5): " HOST_START_UP_POWER
+HOST_START_UP_POWER=${HOST_START_UP_POWER:-5}
+
+read -p "Enter HOST_SHUT_DOWN_POWER (default: 3): " HOST_SHUT_DOWN_POWER
+HOST_SHUT_DOWN_POWER=${HOST_SHUT_DOWN_POWER:-3}
+
 read -p "Enter VMs per host (default: 4): " VM_PER_HOST
 VM_PER_HOST=${VM_PER_HOST:-4}
 
@@ -42,18 +54,18 @@ echo "FF: FirstFit"
 echo "BF: BestFit"
 echo "RR: RoundRobin"
 echo "RD: Random"
-read -p "Enter VmAllocationPolicy (SP/FF/BF/RR/RD) (default: SP): " VmAllocationPolicy
-VmAllocationPolicy=${VmAllocationPolicy:-SP}
+read -p "Enter VmAllocationPolicy (SP/FF/BF/RR/RD) (default: BF): " VmAllocationPolicy
+VmAllocationPolicy=${VmAllocationPolicy:-BF}
 
 echo "TS: TimeShare"
 echo "SS: SpaceShare"
-read -p "Enter VmScheduler (TS/SS) (default: SS): " VmScheduler
-VmScheduler=${VmScheduler:-SS}
+read -p "Enter VmScheduler (TS/SS) (default: TS): " VmScheduler
+VmScheduler=${VmScheduler:-TS}
 
 echo "F: Full"
 echo "D: Dynamic"
-read -p "Enter UtilizationModel (default: F): " UtilizationModel
-UtilizationModel=${UtilizationModel:-F}
+read -p "Enter UtilizationModel (default: D): " UtilizationModel
+UtilizationModel=${UtilizationModel:-D}
 
 read -p "Enter CLOUDLET_LENGTH (default: 1000): " CLOUDLET_LENGTH
 CLOUDLET_LENGTH=${CLOUDLET_LENGTH:-1000}
@@ -61,29 +73,17 @@ CLOUDLET_LENGTH=${CLOUDLET_LENGTH:-1000}
 read -p "Enter CLOUDLET_PES (default: 4): " CLOUDLET_PES
 CLOUDLET_PES=${CLOUDLET_PES:-4}
 
-read -p "Enter FILE_SIZE (default: 1024): " FILE_SIZE
-FILE_SIZE=${CLOUDLET_LENGTH:-1024}
+read -p "Enter FILE_SIZE (default: 15212544): " FILE_SIZE
+FILE_SIZE=${CLOUDLET_LENGTH:-15212544}
 
-read -p "Enter OUTPUT_SIZE (default: 1024): " OUTPUT_SIZE
-OUTPUT_SIZE=${OUTPUT_SIZE:-1024}
+read -p "Enter OUTPUT_SIZE (default: 15212544): " OUTPUT_SIZE
+OUTPUT_SIZE=${OUTPUT_SIZE:-15212544}
 
 read -p "Enter POWER_SPEC_FILENAME (N to manual set) (default: N)" POWER_SPEC_FILENAME
 POWER_SPEC_FILENAME=${POWER_SPEC_FILENAME:-N}
-POWER_SPEC_PATH="/src/main/resources/power_spec/${POWER_SPEC_FILENAME}.txt"
+POWER_SPEC_PATH="src/main/resources/power_spec/${POWER_SPEC_FILENAME}.txt"
 
 if [[ "$POWER_SPEC_FILENAME" == "N" ]]; then
-    read -p "Enter HOST_START_UP_DELAY (default: 5): " HOST_START_UP_DELAY
-    HOST_START_UP_DELAY=${HOST_START_UP_DELAY:-5}
-
-    read -p "Enter HOST_SHUT_DOWN_DELAY (default: 3): " HOST_SHUT_DOWN_DELAY
-    HOST_SHUT_DOWN_DELAY=${HOST_SHUT_DOWN_DELAY:-3}
-
-    read -p "Enter HOST_START_UP_POWER (default: 5): " HOST_START_UP_POWER
-    HOST_START_UP_POWER=${HOST_START_UP_POWER:-5}
-
-    read -p "Enter HOST_SHUT_DOWN_POWER (default: 3): " HOST_SHUT_DOWN_POWER
-    HOST_SHUT_DOWN_POWER=${HOST_SHUT_DOWN_POWER:-3}
-
     read -p "Enter STATIC_POWER (default: 75.0): " STATIC_POWER
     STATIC_POWER=${STATIC_POWER:-75.0}
 
@@ -99,8 +99,11 @@ for ((i=1; i<=NUM_DATACENTERS; i++))
 do
     echo -e "\n🔹 Configuring Datacenter $i"
     if [[ "$CONFIG_DC" == "Y" ]]; then
-        read -p "Enter Cloudlets per host for Node$i (default: 2): " CLOUDLET_PER_HOST
-        CLOUDLET_PER_HOST=${CLOUDLET_PER_HOST:-2}
+        read -p "Enter Cloudlets per host for Node$i (default: 29): " CLOUDLET_PER_HOST
+        CLOUDLET_PER_HOST=${CLOUDLET_PER_HOST:-29}
+
+        read -p "Enter lastCloudlets per host for Node$i (default: 290): " lastCloudlets
+        lastCloudlets=${lastCloudlets:-290}
     else
         CLOUDLET_PER_HOST=2
     fi
@@ -109,38 +112,73 @@ do
     HOST_RAM=$((HOST_PES * RAM_PER_PE))
     VM_RAM=$((VM_PES * RAM_PER_PE))
 
-    # Write to JSON file
-    echo '{
-        "name": "Node'"$i"'",
-        "SCHEDULING_INTERVAL": '$SCHEDULING_INTERVAL',
-        "hosts": '$HOSTS',
-        "host_spec": {
-            "HOST_PES": '$HOST_PES',
-            "HOST_MIPS": '$HOST_MIPS',
-            "HOST_RAM": '$HOST_RAM',
-            "HOST_BW": '$HOST_BW',
-            "HOST_STORAGE": '$HOST_STORAGE'
-        },
-        "VmAllocationPolicy": "'"$VmAllocationPolicy"'",
-        "VmScheduler": "'"$VmScheduler"'",
-        "UtilizationModel": "'"$UtilizationModel"'",
-        "vm": '$VM_PER_HOST',
-        "cloudlets": '$CLOUDLET_PER_HOST',
-        "cloudlet_spec": {
-            "CLOUDLET_LENGTH": '$CLOUDLET_LENGTH',
-            "CLOUDLET_PES": '$CLOUDLET_PES',
-            "FILE_SIZE": '$FILE_SIZE',
-            "OUTPUT_SIZE": '$OUTPUT_SIZE'
-        },
-        "power_spec": {
-            "HOST_START_UP_DELAY": '$HOST_START_UP_DELAY',
-            "HOST_SHUT_DOWN_DELAY": '$HOST_SHUT_DOWN_DELAY',
-            "HOST_START_UP_POWER": '$HOST_START_UP_POWER',
-            "HOST_SHUT_DOWN_POWER": '$HOST_SHUT_DOWN_POWER',
-            "STATIC_POWER": '$STATIC_POWER',
-            "MAX_POWER": '$MAX_POWER'
-        }
-    }' >> "$CONFIG_FILE"
+    if [[ "$POWER_SPEC_FILENAME" == "N" ]]; then
+        # Write to JSON file
+        echo '{
+            "name": "Node'"$i"'",
+            "SCHEDULING_INTERVAL": '$SCHEDULING_INTERVAL',
+            "hosts": '$HOSTS',
+            "host_spec": {
+                "HOST_PES": '$HOST_PES',
+                "HOST_MIPS": '$HOST_MIPS',
+                "HOST_RAM": '$HOST_RAM',
+                "HOST_BW": '$HOST_BW',
+                "HOST_STORAGE": '$HOST_STORAGE',
+                "HOST_START_UP_DELAY": '$HOST_START_UP_DELAY',
+                "HOST_SHUT_DOWN_DELAY": '$HOST_SHUT_DOWN_DELAY',
+                "HOST_START_UP_POWER": '$HOST_START_UP_POWER',
+                "HOST_SHUT_DOWN_POWER": '$HOST_SHUT_DOWN_POWER'
+            },
+            "VmAllocationPolicy": "'"$VmAllocationPolicy"'",
+            "VmScheduler": "'"$VmScheduler"'",
+            "UtilizationModel": "'"$UtilizationModel"'",
+            "vm": '$VM_PER_HOST',
+            "cloudlets": '$CLOUDLET_PER_HOST',
+            "lastCloudlets": '$lastCloudlets',
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": '$CLOUDLET_LENGTH',
+                "CLOUDLET_PES": '$CLOUDLET_PES',
+                "FILE_SIZE": '$FILE_SIZE',
+                "OUTPUT_SIZE": '$OUTPUT_SIZE'
+            },
+            "power_spec": {
+                "STATIC_POWER": '$STATIC_POWER',
+                "MAX_POWER": '$MAX_POWER'
+            }
+        }' >> "$CONFIG_FILE"
+    else
+        # Write to JSON file
+        echo '{
+            "name": "Node'"$i"'",
+            "SCHEDULING_INTERVAL": '$SCHEDULING_INTERVAL',
+            "hosts": '$HOSTS',
+            "host_spec": {
+                "HOST_PES": '$HOST_PES',
+                "HOST_MIPS": '$HOST_MIPS',
+                "HOST_RAM": '$HOST_RAM',
+                "HOST_BW": '$HOST_BW',
+                "HOST_STORAGE": '$HOST_STORAGE',
+                "HOST_START_UP_DELAY": '$HOST_START_UP_DELAY',
+                "HOST_SHUT_DOWN_DELAY": '$HOST_SHUT_DOWN_DELAY',
+                "HOST_START_UP_POWER": '$HOST_START_UP_POWER',
+                "HOST_SHUT_DOWN_POWER": '$HOST_SHUT_DOWN_POWER'
+            },
+            "VmAllocationPolicy": "'"$VmAllocationPolicy"'",
+            "VmScheduler": "'"$VmScheduler"'",
+            "UtilizationModel": "'"$UtilizationModel"'",
+            "vm": '$VM_PER_HOST',
+            "cloudlets": '$CLOUDLET_PER_HOST',
+            "lastCloudlets": '$lastCloudlets',
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": '$CLOUDLET_LENGTH',
+                "CLOUDLET_PES": '$CLOUDLET_PES',
+                "FILE_SIZE": '$FILE_SIZE',
+                "OUTPUT_SIZE": '$OUTPUT_SIZE'
+            },
+            "power_spec_path": "'$POWER_SPEC_PATH'"
+        }' >> "$CONFIG_FILE"
+    fi
+
 
     # Add comma except for last entry
     if [[ $i -lt $NUM_DATACENTERS ]]; then
@@ -149,4 +187,3 @@ do
 done
 
 echo ']}' >> "$CONFIG_FILE"
-

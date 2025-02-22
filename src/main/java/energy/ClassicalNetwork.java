@@ -11,6 +11,8 @@ import org.cloudsimplus.brokers.DatacenterBroker;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
 import org.cloudsimplus.datacenters.Datacenter;
 import org.cloudsimplus.datacenters.DatacenterSimple;
+import org.cloudsimplus.cloudlets.network.CloudletSendTask;
+import org.cloudsimplus.cloudlets.network.NetworkCloudlet;
 import org.cloudsimplus.cloudlets.Cloudlet;
 import org.cloudsimplus.cloudlets.CloudletSimple;
 import org.cloudsimplus.hosts.Host;
@@ -38,7 +40,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Classical {
+public class ClassicalNetwork {
     private static Config config;
     private CloudSimPlus simulation;
     private List<DatacenterBrokerSimple> brokers;
@@ -53,7 +55,7 @@ public class Classical {
             System.exit(1);
         }
         config = new Config(args[0]);
-        new Classical().run();
+        new ClassicalNetwork().run();
     }
 
     public void run() {
@@ -62,8 +64,9 @@ public class Classical {
 
         brokers = new ArrayList<>();
         datacenters = createDatacenters(datacentersConfig);
+        configureNetwork();
 
-        createBrokersVmsAndCloudlets(datacentersConfig);
+        createBrokersVms(datacentersConfig);
 
         simulation.addOnClockTickListener(eventInfo -> {
             generateCloudletsPerSecond(eventInfo);
@@ -80,11 +83,35 @@ public class Classical {
 
         simulation.start();
 
-        brokers.forEach(Classical::createCloudletsResultTable);
+        brokers.forEach(ClassicalNetwork::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
         printDatacenterEnergyConsumptionCSV();
     }
 
+
+    private void configureNetwork() {
+        // Step 1: Load BRITE Network Topology
+        String topologyFile = "src/main/resources/brite/topology.brite";
+        BriteNetworkTopology networkTopology = new BriteNetworkTopology(topologyFile);
+
+        // Step 2: Add Network Topology to CloudSim Simulation
+        simulation.setNetworkTopology(networkTopology);
+
+        // Step 3: Map Datacenters in a Loop
+        for (int i = 0; i < datacenters.size(); i++) {
+            networkTopology.mapNode(datacenters.get(i), i); // Map Datacenter i to Node i
+            System.out.println("✅ Mapped " + datacenters.get(i).getName() + " to BRITE Node " + i);
+        }
+
+        // Step 4: Map Brokers in a Loop
+        for (int i = 0; i < brokers.size(); i++) {
+            int nodeId = datacenters.size() + i; // Broker nodes start after Datacenter nodes
+            networkTopology.mapNode(brokers.get(i), nodeId);
+            System.out.println("✅ Mapped Broker " + (i + 1) + " to BRITE Node " + nodeId);
+        }
+
+        System.out.println("🎯 Network topology successfully applied!");
+    }
 
     private boolean allCloudletsCompleted() {
         for (DatacenterBrokerSimple broker : brokers) {
@@ -230,42 +257,60 @@ public class Classical {
         int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
         long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
         long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
-        // long cloudletCount = dcConfig.get("cloudlets").getAsLong();
-
+    
         List<Cloudlet> cloudletList = new ArrayList<>();
-        UtilizationModel Utilization = getUtilizationModel(dcConfig);
-
+        UtilizationModel utilization = getUtilizationModel(dcConfig);
+    
         for (int i = 0; i < TRANSACTIONS_PER_SECOND; i++) {
-            Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
-                    .setFileSize(fileSize)
-                    .setOutputSize(outputSize)
-                    .setUtilizationModelCpu(Utilization)
-                    .setUtilizationModelRam(Utilization)
-                    .setUtilizationModelBw(Utilization);
-            cloudletList.add(cloudlet);
+            NetworkCloudlet senderCloudlet = new NetworkCloudlet(cloudletPes);
+            NetworkCloudlet receiverCloudlet = new NetworkCloudlet(cloudletPes);
+    
+            senderCloudlet.setFileSize(fileSize)
+                          .setOutputSize(outputSize)
+                          .setLength(cloudletLength)
+                          .setUtilizationModelCpu(utilization)
+                          .setUtilizationModelRam(utilization)
+                          .setUtilizationModelBw(utilization);
+    
+            receiverCloudlet.setFileSize(fileSize)
+                            .setOutputSize(outputSize)
+                            .setLength(cloudletLength)
+                            .setUtilizationModelCpu(utilization)
+                            .setUtilizationModelRam(utilization)
+                            .setUtilizationModelBw(utilization);
+    
+            CloudletSendTask sendTask = new CloudletSendTask(startId + i);
+            senderCloudlet.addTask(sendTask);
+    
+            // Ensure that both sender and receiver cloudlets have assigned VMs before sending packets
+            if (senderCloudlet.isBoundToVm() && receiverCloudlet.isBoundToVm()) {
+                sendTask.addPacket(receiverCloudlet, outputSize);
+            } else {
+                System.err.println("⚠️ Warning: Cloudlets must be assigned to VMs before sending packets.");
+            }
+    
+            cloudletList.add(senderCloudlet);
+            cloudletList.add(receiverCloudlet);
         }
+        
         return cloudletList;
     }
+    
+    
 
-    private void createBrokersVmsAndCloudlets(JsonArray datacentersConfig) {
+    private void createBrokersVms(JsonArray datacentersConfig) {
         int vmGlobalIndex = 0;
-        // int cloudletGlobalIndex = 0;
         for (int index = 0; index < datacenters.size(); index++) {
             Datacenter dc = datacenters.get(index);
             JsonObject dcConfig = datacentersConfig.get(index).getAsJsonObject();
-
             DatacenterBrokerSimple broker = createBroker(dc, dcConfig);
-
             final var vmList = createVms(vmGlobalIndex, dcConfig);
-            // final var cloudletList = createCloudlets(cloudletGlobalIndex, dcConfig);
 
             broker.submitVmList(vmList);
-            broker.setVmDestructionDelay(Double.MAX_VALUE); // Never destroy VMs until simulation ends
-            // broker.submitCloudletList(cloudletList);
+            broker.setVmDestructionDelay(Double.MAX_VALUE);
             brokers.add(broker);
 
             vmGlobalIndex += dcConfig.get("vm").getAsInt();
-            // cloudletGlobalIndex += dcConfig.get("cloudlets").getAsInt();
         }
     }
 
@@ -300,28 +345,29 @@ public class Classical {
         return vmList;
     }
 
-    private List<Cloudlet> createCloudlets(int startId, JsonObject dcConfig) {
-        JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
-        long cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsLong();
-        int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
-        long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
-        long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
-        long cloudletCount = dcConfig.get("cloudlets").getAsLong();
+    // private List<Cloudlet> createCloudlets(int startId, JsonObject dcConfig) {
+    //     JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
+    //     long cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsLong();
+    //     int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
+    //     long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
+    //     long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
+    //     long cloudletCount = dcConfig.get("cloudlets").getAsLong();
 
-        List<Cloudlet> cloudletList = new ArrayList<>();
-        UtilizationModel Utilization = getUtilizationModel(dcConfig);
+    //     List<Cloudlet> cloudletList = new ArrayList<>();
+    //     UtilizationModel Utilization = getUtilizationModel(dcConfig);
 
-        for (int i = 0; i < cloudletCount; i++) {
-            Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
-                    .setFileSize(fileSize)
-                    .setOutputSize(outputSize)
-                    .setUtilizationModelCpu(Utilization)
-                    .setUtilizationModelRam(Utilization)
-                    .setUtilizationModelBw(Utilization);
-            cloudletList.add(cloudlet);
-        }
-        return cloudletList;
-    }
+    //     for (int i = 0; i < cloudletCount; i++) {
+    //         Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
+    //         // Cloudlet cloudlet = new NetworkCloudlet(cloudletPes)
+    //                 .setFileSize(fileSize)
+    //                 .setOutputSize(outputSize)
+    //                 .setUtilizationModelCpu(Utilization)
+    //                 .setUtilizationModelRam(Utilization)
+    //                 .setUtilizationModelBw(Utilization);
+    //         cloudletList.add(cloudlet);
+    //     }
+    //     return cloudletList;
+    // }
 
     public UtilizationModel getUtilizationModel(JsonObject dcConfig) {
         String key = "UtilizationModel";

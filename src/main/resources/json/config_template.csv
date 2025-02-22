@@ -1,0 +1,4 @@
+Datacenter,SCHEDULING_INTERVAL,hosts,HOST_PES,HOST_MIPS,HOST_RAM,HOST_BW,HOST_STORAGE,HOST_START_UP_DELAY,HOST_SHUT_DOWN_DELAY,HOST_START_UP_POWER,HOST_SHUT_DOWN_POWER,VmAllocationPolicy,VmScheduler,UtilizationModel,vm,cloudlets,CLOUDLET_LENGTH,CLOUDLET_PES,FILE_SIZE,OUTPUT_SIZE,power_spec_path,,,,,,Run for
+Node1,1,1,128,2400000,1310720,10000000,1.00E+12,5,0,10,5,BF,TS,D,120,29,10000000,4,1470000,1470000,src/main/resources/power_spec/default_power_spec.txt,,,,,,Classical
+Node2,1,1,128,2400000,1310720,10000000,1.00E+12,5,0,10,5,BF,TS,D,120,29,10000000,4,1470000,1470000,src/main/resources/power_spec/default_power_spec.txt,,,,,,
+Node3,1,9,128,2400000,1310720,10000000,1.00E+12,5,0,10,5,BF,TS,D,120,29,10000000,4,1470000,1470000,src/main/resources/power_spec/default_power_spec.txt,,,,,,
