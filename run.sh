@@ -12,7 +12,7 @@ fi
 
 # Step 3: Run the Java application
 echo "Running the application..."
-java -cp "target/demo-1.0-SNAPSHOT.jar:target/dependency/*" com.example.cloudsim.demo.Main
+java -cp "target/demo-1.0-SNAPSHOT.jar:target/dependency/*" demo.Main
 
 # Step 4: Check if the application ran successfully
 if [ $? -ne 0 ]; then

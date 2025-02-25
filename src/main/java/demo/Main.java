@@ -1,31 +1,6 @@
-/*
- * CloudSim Plus: A modern, highly-extensible and easier-to-use Framework for
- * Modeling and Simulation of Cloud Computing Infrastructures and Services.
- * http://cloudsimplus.org
- *
- *     Copyright (C) 2015-2021 Universidade da Beira Interior (UBI, Portugal) and
- *     the Instituto Federal de Educação Ciência e Tecnologia do Tocantins (IFTO, Brazil).
- *
- *     This file is part of CloudSim Plus.
- *
- *     CloudSim Plus is free software: you can redistribute it and/or modify
- *     it under the terms of the GNU General Public License as published by
- *     the Free Software Foundation, either version 3 of the License, or
- *     (at your option) any later version.
- *
- *     CloudSim Plus is distributed in the hope that it will be useful,
- *     but WITHOUT ANY WARRANTY; without even the implied warranty of
- *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public License
- *     along with CloudSim Plus. If not, see <http://www.gnu.org/licenses/>.
- */
-package com.example.cloudsim.demo;
+package demo;
 
 import ch.qos.logback.classic.Level;
-
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicy;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
 import org.cloudsimplus.brokers.DatacenterBroker;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
@@ -34,24 +9,17 @@ import org.cloudsimplus.cloudlets.Cloudlet;
 import org.cloudsimplus.cloudlets.CloudletSimple;
 import org.cloudsimplus.core.CloudSimPlus;
 import org.cloudsimplus.datacenters.Datacenter;
-import org.cloudsimplus.datacenters.DatacenterCharacteristicsSimple;
 import org.cloudsimplus.datacenters.DatacenterSimple;
 import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
 import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
-import org.cloudsimplus.schedulers.cloudlet.CloudletScheduler;
-import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerSpaceShared;
-import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.util.Log;
-import org.cloudsimplus.utilizationmodels.UtilizationModel;
 import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
-import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
 import org.cloudsimplus.vms.HostResourceStats;
 import org.cloudsimplus.vms.Vm;
-import org.cloudsimplus.vms.VmCost;
 import org.cloudsimplus.vms.VmResourceStats;
 import org.cloudsimplus.vms.VmSimple;
 import static java.util.Comparator.comparingLong;
@@ -92,23 +60,15 @@ import static org.cloudsimplus.util.TimeUtil.secondsToStr;
  * @since ClodSimPlus 7.3.1
  */
 public class Main {
+    private static final double SCHEDULING_INTERVAL = -1;
     private static final int RAM_PER_PE = 2048;
     private static final int HOSTS = 1000;
     private static final int HOST_PES = 16;
     private static final int HOST_MIPS = 38400; // in MIPS
-    private static final int HOST_RAM = HOST_PES * RAM_PER_PE; // in Megabytes
     private static final long HOST_BW = 1024; // in Megabits/s
     private static final long HOST_STORAGE = 1_000_000; // in Megabytes
-
     private static final int VMS = 4000;
-    private static final int VM_PES = 4;
-    private static final int VM_RAM = VM_PES * RAM_PER_PE; // in Megabytes
-    private static final int VM_BW = (int) (HOST_BW / VM_PES); // in Megabits/s
-
-    private static final int CLOUDLETS = VMS;
-    private static final int CLOUDLET_PES = VM_PES;
     private static final int CLOUDLET_LENGTH = 34_500_000;
-
     /** Indicates the time (in seconds) the Host takes to start up. */
     private static final double HOST_START_UP_DELAY = 0;
     /** Indicates the time (in seconds) the Host takes to shut down. */
@@ -119,7 +79,6 @@ public class Main {
 
     /** Indicates Host power consumption (in Watts) during shutdown. */
     private static final double HOST_SHUT_DOWN_POWER = 3;
-
     /**
      * Defines the power a Host uses, even if it's idle (in Watts).
      */
@@ -130,10 +89,12 @@ public class Main {
      */
     private static final int MAX_POWER = 800;
 
-    private static final double COST_PER_SECOND = 0.01;
-    private static final double COST_PER_MEM = 0.005;
-    private static final double COST_PER_STORAGE = 0.001;
-    private static final double COST_PER_BW = 0.002;
+    private static final int HOST_RAM = HOST_PES * RAM_PER_PE; // in Megabytes
+    private static final int VM_PES = HOST_PES / (VMS / HOSTS);
+    private static final int VM_RAM = VM_PES * RAM_PER_PE; // in Megabytes
+    private static final int VM_BW = (int) (HOST_BW / VM_PES); // in Megabits/s
+    private static final int CLOUDLETS = VMS;
+    private static final int CLOUDLET_PES = VM_PES;
 
     /**
      * Defines a time interval to process cloudlets execution
@@ -143,7 +104,6 @@ public class Main {
      *
      * @see Datacenter#setSchedulingInterval(double)
      */
-    private static final double SCHEDULING_INTERVAL = -1;
 
     private final CloudSimPlus simulation;
     private final DatacenterBroker broker0;
@@ -181,8 +141,6 @@ public class Main {
         brokerSubmit();
 
         System.out.println("Starting simulation after " + actualElapsedTime());
-        configureLogs();
-
         simulation.start();
 
         final long submittedCloudlets = broker0.getCloudletSubmittedList().size();
@@ -200,41 +158,6 @@ public class Main {
         new CloudletsTableBuilder(cloudletFinishedList).build();
         printHostsCpuUtilizationAndPowerConsumption();
         printVmsCpuUtilizationAndPowerConsumption();
-        printTotalVmsCost();
-    }
-
-    private void configureLogs() {
-        // Enables just some level of log messages for all entities.
-        Log.setLevel(Level.INFO);
-
-        // Enable different log levels for specific classes of objects
-        Log.setLevel(DatacenterBroker.LOGGER, Level.INFO);
-        Log.setLevel(Datacenter.LOGGER, Level.WARN);
-        Log.setLevel(VmAllocationPolicy.LOGGER, Level.INFO);
-        Log.setLevel(CloudletScheduler.LOGGER, Level.WARN);
-    }
-
-    private void printTotalVmsCost() {
-        System.out.println();
-        double totalCost = 0.0;
-        int totalNonIdleVms = 0;
-        double processingTotalCost = 0, memoryTotaCost = 0, storageTotalCost = 0, bwTotalCost = 0;
-        for (final Vm vm : broker0.getVmCreatedList()) {
-            final var cost = new VmCost(vm);
-            processingTotalCost += cost.getProcessingCost();
-            memoryTotaCost += cost.getMemoryCost();
-            storageTotalCost += cost.getStorageCost();
-            bwTotalCost += cost.getBwCost();
-
-            totalCost += cost.getTotalCost();
-            totalNonIdleVms += vm.getTotalExecutionTime() > 0 ? 1 : 0;
-            System.out.println(cost);
-        }
-
-        System.out.printf(
-                "Total cost ($) for %3d created VMs from %3d in DC %d: %8.2f$ %13.2f$ %17.2f$ %12.2f$ %15.2f$%n",
-                totalNonIdleVms, broker0.getVmsNumber(), datacenter0.getId(),
-                processingTotalCost, memoryTotaCost, storageTotalCost, bwTotalCost, totalCost);
     }
 
     private String simulatedTime() {
@@ -267,7 +190,6 @@ public class Main {
                     .setShutDownPower(HOST_SHUT_DOWN_POWER);
             host.setStartupDelay(HOST_START_UP_DELAY).setShutDownDelay(HOST_SHUT_DOWN_DELAY);
             host.setId(i);
-            host.setVmScheduler(new VmSchedulerSpaceShared());
             host.setPowerModel(powerModel);
             host.enableUtilizationStats();
 
@@ -276,8 +198,6 @@ public class Main {
 
         var dc = new DatacenterSimple(simulation, hostList, new VmAllocationPolicyFirstFit());
         dc.setSchedulingInterval(-1);
-        dc.setCharacteristics(
-                new DatacenterCharacteristicsSimple(COST_PER_SECOND, COST_PER_STORAGE, COST_PER_MEM, COST_PER_BW));
         return dc;
     }
 
@@ -305,7 +225,6 @@ public class Main {
         for (int i = 0; i < VMS; i++) {
             // Uses a CloudletSchedulerTimeShared by default to schedule Cloudlets
             final var vm = new VmSimple(HOST_MIPS, VM_PES);
-            vm.setCloudletScheduler(new CloudletSchedulerSpaceShared());
             vm.setRam(VM_RAM).setBw(VM_BW).setSize(10_000);
             vm.enableUtilizationStats();
             vmList.add(vm);
@@ -324,10 +243,9 @@ public class Main {
         // time
 
         for (int i = 0; i < CLOUDLETS; i++) {
-
             final var cloudlet = new CloudletSimple(CLOUDLET_LENGTH, CLOUDLET_PES,
-                    new UtilizationModelDynamic(1).setUtilizationUpdateFunction(
-                            model -> {
+                    new UtilizationModelDynamic(0.3).setUtilizationUpdateFunction(
+                            time -> {
                                 double mean = 0.5;
                                 double stdDev = 0.1;
                                 double utilization = mean + new Random().nextGaussian() * stdDev;
