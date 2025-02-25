@@ -9,17 +9,30 @@ import org.cloudsimplus.vms.VmSimple;
 public class GpuVm extends VmSimple {
     public static final GpuVm NULL = new GpuVm();
     private List<GpuCloudlet> cloudletList;
+    private int vGpuNumber;
 
-    public GpuVm(final int id, final long mipsCapacity, final int pesNumber) {
+    public GpuVm(final int id, final long mipsCapacity, final int pesNumber, final int vGpuNumber) {
         super(id, mipsCapacity, pesNumber);
+        this.vGpuNumber = vGpuNumber;
+
     }
 
-    public GpuVm(final long mipsCapacity, final int pesNumber) {
-        super(mipsCapacity, pesNumber);
+    public GpuVm(final long mipsCapacity, final int pesNumber, final int vGpuNumber) {
+        this(-1, mipsCapacity, pesNumber, vGpuNumber);
+
+        // super(mipsCapacity, pesNumber);
     }
 
     public GpuVm() {
-        this(-1, 0, 1);
+        this(-1, 0, 1, 0);
+    }
+
+    public int getVGpuNumber() {
+        return vGpuNumber;
+    }
+
+    public List<GpuCloudlet> getCloudletList() {
+        return cloudletList;
     }
 
     @Override

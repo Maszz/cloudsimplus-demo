@@ -9,6 +9,9 @@ import org.cloudsimplus.cloudlets.Cloudlet;
 import org.cloudsimplus.core.CloudSimPlus;
 import org.cloudsimplus.vms.Vm;
 
+/**
+ * Broker not need to do anything.
+ */
 public class GpuDataCenterBroker extends DatacenterBrokerSimple {
     /**
      * Creates a DatacenterBroker object.
@@ -23,14 +26,5 @@ public class GpuDataCenterBroker extends DatacenterBrokerSimple {
          */
         super(simulation);
     }
-
-    /**
-     * Selects the VM with the lowest number of PEs that is able to run a given
-     * Cloudlet.
-     * 
-     * @param cloudlet the Cloudlet to find a VM to run it
-     * @return the VM selected for the Cloudlet or {@link Vm#NULL} if no suitable VM
-     *         was found
-     */
 
 }

@@ -9,7 +9,7 @@ public class Gpu {
     public static final Gpu NULL = new Gpu(); // Singleton Null GPU
 
     private int id;
-    private List<Pe> cores;
+    private List<PeSimple> cores;
     private long memory;
 
     // Constructor for standard GPUs
@@ -29,7 +29,7 @@ public class Gpu {
         this.memory = 0;
     }
 
-    public List<Pe> getCores() {
+    public List<PeSimple> getCores() {
         return cores;
     }
 

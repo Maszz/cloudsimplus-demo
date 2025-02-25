@@ -60,6 +60,14 @@ public class GpuHost extends HostSimple {
         return suitability;
     }
 
+    public int getWorkingGpusNumber() {
+        return (int) gpuList.stream().filter(gpu -> !gpu.isNull()).count();
+    }
+
+    public List<Gpu> getWorkingGpuList() {
+        return gpuList.stream().filter(gpu -> !gpu.isNull()).toList();
+    }
+
     @Override
     public double updateProcessing(final double currentTime) {
         final double nextFinishingCloudletTime = super.updateProcessing(currentTime);

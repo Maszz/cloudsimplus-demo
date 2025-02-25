@@ -14,6 +14,8 @@ import org.cloudsimplus.network.switches.EdgeSwitch;
 import org.cloudsimplus.network.switches.Switch;
 
 public class GpuDataCenter extends DatacenterSimple {
+    // private final List<Switch> switchMap;
+
     public GpuDataCenter(Simulation simulation, List<? extends Host> hostList, VmAllocationPolicy vmAllocationPolicy) {
         super(simulation, hostList, vmAllocationPolicy);
     }
