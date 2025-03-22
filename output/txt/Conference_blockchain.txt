@@ -1,0 +1,1645 @@
+01:56:27,633 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+01:56:27,633 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml]
+01:56:27,633 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+01:56:27,633 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml]
+01:56:27,633 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/dependency/cloudsimplus-8.5.5.jar!/logback.xml]
+01:56:27,636 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@528931cf - URL [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml] is not of type file
+01:56:27,662 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+01:56:27,662 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+01:56:27,665 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+01:56:27,667 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+01:56:27,690 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+01:56:27,692 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
+01:56:27,692 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+01:56:27,692 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [simulation.log]
+01:56:27,693 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+01:56:27,693 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
+01:56:27,693 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
+01:56:27,693 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+01:56:27,693 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@ea1a8d5 - Registering current configuration as safe fallback point
+
+2025-03-23 01:56:27 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+🚀 Initial cloudlets submitted: 16
+2025-03-23 01:56:27 [INFO] CloudSim - 
+================== Starting CloudSim Plus 8.5.1 ==================
+
+2025-03-23 01:56:27 [INFO] Datacenter - 0.00: #Datacenter 1 is starting...
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Broker 2 is starting...
+2025-03-23 01:56:27 [INFO] CloudSim - Entities started.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: List of 1 datacenters(s) received.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 0 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 1 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 2 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 3 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 4 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 5 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 6 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 7 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 8 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 9 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 10 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 11 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 12 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 13 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 14 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 15 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 16 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 17 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 18 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 19 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 20 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 21 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 22 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 23 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 24 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 25 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 26 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 27 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 28 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 29 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 30 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 31 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 32 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 33 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 34 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 35 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 36 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 37 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 38 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 39 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 40 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 41 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 42 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 43 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 44 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 45 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 46 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 47 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 48 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 49 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 50 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 51 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 52 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 53 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 54 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 55 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 56 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 57 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 58 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 59 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 60 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 61 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 62 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 63 inside #Datacenter 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 0 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 0 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 1 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 1 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 2 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 2 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 3 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 3 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 4 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 4 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 5 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 5 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 6 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 6 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 7 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 7 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 8 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 8 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 9 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 9 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 10 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 10 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 11 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 11 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 12 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 12 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 13 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 13 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 14 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 14 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 15 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 15 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 16 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 16 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 17 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 17 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 18 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 18 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 19 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 19 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 20 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 20 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 21 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 21 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 22 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 22 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 23 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 23 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 24 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 24 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 25 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 25 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 26 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 26 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 27 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 27 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 28 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 28 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 29 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 29 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 30 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 30 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 31 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 31 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 32 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 32 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 33 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 33 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 34 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 34 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 35 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 35 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 36 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 36 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 37 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 37 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 38 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 38 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 39 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 39 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 40 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 40 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 41 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 41 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 42 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 42 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 43 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 43 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 44 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 44 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 45 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 45 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 46 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 46 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 47 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 47 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 48 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 48 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 49 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 49 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 50 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 50 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 51 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 51 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 52 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 52 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 53 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 53 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 54 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 54 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 55 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 55 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 56 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 56 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 57 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 57 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 58 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 58 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 59 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 59 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 60 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 60 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 61 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 61 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 62 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 62 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] Host - 0.00: HostSimple: Vm 63 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-23 01:56:27 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 63 has been allocated to Host 0/#DC 1
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 0 to Vm 0 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 1 to Vm 1 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 2 to Vm 2 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 3 to Vm 3 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 4 to Vm 4 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 5 to Vm 5 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 6 to Vm 6 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 7 to Vm 7 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 8 to Vm 8 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 9 to Vm 9 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 10 to Vm 10 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 11 to Vm 11 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 12 to Vm 12 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 13 to Vm 13 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 14 to Vm 14 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 15 to Vm 15 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+⏱️  Submitting 16 cloudlets at time 0.10
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 32
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 16 to Vm 16 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 17 to Vm 17 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 18 to Vm 18 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 19 to Vm 19 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 20 to Vm 20 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 21 to Vm 21 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 22 to Vm 22 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 23 to Vm 23 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 24 to Vm 24 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 25 to Vm 25 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 26 to Vm 26 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 27 to Vm 27 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 28 to Vm 28 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 29 to Vm 29 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 30 to Vm 30 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 31 to Vm 31 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+⏱️  Submitting 16 cloudlets at time 1.10
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 48
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 32 to Vm 32 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 33 to Vm 33 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 34 to Vm 34 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 35 to Vm 35 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 36 to Vm 36 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 37 to Vm 37 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 38 to Vm 38 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 39 to Vm 39 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 40 to Vm 40 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 41 to Vm 41 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 42 to Vm 42 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 43 to Vm 43 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 44 to Vm 44 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 45 to Vm 45 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 46 to Vm 46 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 47 to Vm 47 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+⏱️  Submitting 16 cloudlets at time 2.10
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 64
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 48 to Vm 48 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 49 to Vm 49 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 50 to Vm 50 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 51 to Vm 51 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 52 to Vm 52 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 53 to Vm 53 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 54 to Vm 54 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 55 to Vm 55 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 56 to Vm 56 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 57 to Vm 57 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 58 to Vm 58 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 59 to Vm 59 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 60 to Vm 60 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 61 to Vm 61 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 62 to Vm 62 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 63 to Vm 63 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 0 finished in Vm 0 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 1 finished in Vm 1 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 2 finished in Vm 2 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 3 finished in Vm 3 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 4 finished in Vm 4 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 5 finished in Vm 5 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 6 finished in Vm 6 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 7 finished in Vm 7 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 8 finished in Vm 8 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 9 finished in Vm 9 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 10 finished in Vm 10 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 11 finished in Vm 11 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 12 finished in Vm 12 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 13 finished in Vm 13 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 14 finished in Vm 14 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 15 finished in Vm 15 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 4.52
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 80
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 64 to Vm 0 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 65 to Vm 1 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 66 to Vm 2 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 67 to Vm 3 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 68 to Vm 4 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 69 to Vm 5 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 70 to Vm 6 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 71 to Vm 7 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 72 to Vm 8 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 73 to Vm 9 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 74 to Vm 10 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 75 to Vm 11 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 76 to Vm 12 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 77 to Vm 13 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 78 to Vm 14 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: Sending Cloudlet 79 to Vm 15 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 4.63: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 16 finished in Vm 16 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 17 finished in Vm 17 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 18 finished in Vm 18 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 19 finished in Vm 19 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 20 finished in Vm 20 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 21 finished in Vm 21 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 22 finished in Vm 22 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 23 finished in Vm 23 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 24 finished in Vm 24 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 25 finished in Vm 25 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 26 finished in Vm 26 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 27 finished in Vm 27 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 28 finished in Vm 28 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 29 finished in Vm 29 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 30 finished in Vm 30 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 31 finished in Vm 31 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 5.62
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 96
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 80 to Vm 16 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 81 to Vm 17 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 82 to Vm 18 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 83 to Vm 19 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 84 to Vm 20 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 85 to Vm 21 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 86 to Vm 22 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 87 to Vm 23 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 88 to Vm 24 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 89 to Vm 25 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 90 to Vm 26 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 91 to Vm 27 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 92 to Vm 28 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 93 to Vm 29 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 94 to Vm 30 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: Sending Cloudlet 95 to Vm 31 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 5.63: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 32 finished in Vm 32 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 33 finished in Vm 33 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 34 finished in Vm 34 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 35 finished in Vm 35 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 36 finished in Vm 36 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 37 finished in Vm 37 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 38 finished in Vm 38 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 39 finished in Vm 39 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 40 finished in Vm 40 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 41 finished in Vm 41 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 42 finished in Vm 42 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 43 finished in Vm 43 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 44 finished in Vm 44 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 45 finished in Vm 45 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 46 finished in Vm 46 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 47 finished in Vm 47 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 6.62
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 112
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 96 to Vm 32 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 97 to Vm 33 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 98 to Vm 34 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 99 to Vm 35 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 100 to Vm 36 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 101 to Vm 37 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 102 to Vm 38 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 103 to Vm 39 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 104 to Vm 40 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 105 to Vm 41 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 106 to Vm 42 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 107 to Vm 43 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 108 to Vm 44 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 109 to Vm 45 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 110 to Vm 46 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: Sending Cloudlet 111 to Vm 47 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 6.63: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 48 finished in Vm 48 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 49 finished in Vm 49 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 50 finished in Vm 50 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 51 finished in Vm 51 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 52 finished in Vm 52 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 53 finished in Vm 53 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 54 finished in Vm 54 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 55 finished in Vm 55 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 56 finished in Vm 56 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 57 finished in Vm 57 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 58 finished in Vm 58 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 59 finished in Vm 59 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 60 finished in Vm 60 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 61 finished in Vm 61 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 62 finished in Vm 62 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 63 finished in Vm 63 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 7.62
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 128
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 112 to Vm 48 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 113 to Vm 49 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 114 to Vm 50 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 115 to Vm 51 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 116 to Vm 52 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 117 to Vm 53 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 118 to Vm 54 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 119 to Vm 55 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 120 to Vm 56 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 121 to Vm 57 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 122 to Vm 58 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 123 to Vm 59 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 124 to Vm 60 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 125 to Vm 61 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 126 to Vm 62 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: Sending Cloudlet 127 to Vm 63 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 7.63: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 64 finished in Vm 0 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 65 finished in Vm 1 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 66 finished in Vm 2 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 67 finished in Vm 3 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 68 finished in Vm 4 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 69 finished in Vm 5 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 70 finished in Vm 6 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 71 finished in Vm 7 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 72 finished in Vm 8 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 73 finished in Vm 9 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 74 finished in Vm 10 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 75 finished in Vm 11 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 76 finished in Vm 12 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 77 finished in Vm 13 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 78 finished in Vm 14 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.16: Dell_PowerEdge_XR11: Cloudlet 79 finished in Vm 15 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 9.16
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 144
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 128 to Vm 0 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 129 to Vm 1 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 130 to Vm 2 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 131 to Vm 3 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 132 to Vm 4 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 133 to Vm 5 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 134 to Vm 6 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 135 to Vm 7 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 136 to Vm 8 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 137 to Vm 9 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 138 to Vm 10 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 139 to Vm 11 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 140 to Vm 12 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 141 to Vm 13 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 142 to Vm 14 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: Sending Cloudlet 143 to Vm 15 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 9.27: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 80 finished in Vm 16 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 81 finished in Vm 17 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 82 finished in Vm 18 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 83 finished in Vm 19 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 84 finished in Vm 20 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 85 finished in Vm 21 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 86 finished in Vm 22 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 87 finished in Vm 23 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 88 finished in Vm 24 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 89 finished in Vm 25 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 90 finished in Vm 26 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 91 finished in Vm 27 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 92 finished in Vm 28 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 93 finished in Vm 29 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 94 finished in Vm 30 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.16: Dell_PowerEdge_XR11: Cloudlet 95 finished in Vm 31 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 10.16
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 160
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 144 to Vm 16 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 145 to Vm 17 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 146 to Vm 18 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 147 to Vm 19 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 148 to Vm 20 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 149 to Vm 21 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 150 to Vm 22 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 151 to Vm 23 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 152 to Vm 24 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 153 to Vm 25 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 154 to Vm 26 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 155 to Vm 27 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 156 to Vm 28 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 157 to Vm 29 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 158 to Vm 30 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: Sending Cloudlet 159 to Vm 31 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 10.27: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 96 finished in Vm 32 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 97 finished in Vm 33 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 98 finished in Vm 34 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 99 finished in Vm 35 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 100 finished in Vm 36 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 101 finished in Vm 37 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 102 finished in Vm 38 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 103 finished in Vm 39 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 104 finished in Vm 40 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 105 finished in Vm 41 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 106 finished in Vm 42 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 107 finished in Vm 43 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 108 finished in Vm 44 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 109 finished in Vm 45 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 110 finished in Vm 46 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.16: Dell_PowerEdge_XR11: Cloudlet 111 finished in Vm 47 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 11.16
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 176
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 160 to Vm 32 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 161 to Vm 33 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 162 to Vm 34 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 163 to Vm 35 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 164 to Vm 36 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 165 to Vm 37 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 166 to Vm 38 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 167 to Vm 39 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 168 to Vm 40 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 169 to Vm 41 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 170 to Vm 42 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 171 to Vm 43 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 172 to Vm 44 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 173 to Vm 45 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 174 to Vm 46 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: Sending Cloudlet 175 to Vm 47 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 11.27: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 112 finished in Vm 48 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 113 finished in Vm 49 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 114 finished in Vm 50 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 115 finished in Vm 51 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 116 finished in Vm 52 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 117 finished in Vm 53 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 118 finished in Vm 54 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 119 finished in Vm 55 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 120 finished in Vm 56 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 121 finished in Vm 57 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 122 finished in Vm 58 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 123 finished in Vm 59 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 124 finished in Vm 60 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 125 finished in Vm 61 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 126 finished in Vm 62 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.16: Dell_PowerEdge_XR11: Cloudlet 127 finished in Vm 63 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 12.16
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 192
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 176 to Vm 48 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 177 to Vm 49 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 178 to Vm 50 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 179 to Vm 51 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 180 to Vm 52 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 181 to Vm 53 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 182 to Vm 54 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 183 to Vm 55 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 184 to Vm 56 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 185 to Vm 57 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 186 to Vm 58 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 187 to Vm 59 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 188 to Vm 60 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 189 to Vm 61 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 190 to Vm 62 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: Sending Cloudlet 191 to Vm 63 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 12.27: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 128 finished in Vm 0 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 129 finished in Vm 1 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 130 finished in Vm 2 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 131 finished in Vm 3 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 132 finished in Vm 4 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 133 finished in Vm 5 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 134 finished in Vm 6 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 135 finished in Vm 7 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 136 finished in Vm 8 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 137 finished in Vm 9 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 138 finished in Vm 10 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 139 finished in Vm 11 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 140 finished in Vm 12 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 141 finished in Vm 13 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 142 finished in Vm 14 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.79: Dell_PowerEdge_XR11: Cloudlet 143 finished in Vm 15 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 13.79
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 208
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 192 to Vm 0 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 193 to Vm 1 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 194 to Vm 2 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 195 to Vm 3 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 196 to Vm 4 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 197 to Vm 5 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 198 to Vm 6 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 199 to Vm 7 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 200 to Vm 8 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 201 to Vm 9 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 202 to Vm 10 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 203 to Vm 11 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 204 to Vm 12 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 205 to Vm 13 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 206 to Vm 14 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: Sending Cloudlet 207 to Vm 15 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 13.90: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 144 finished in Vm 16 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 145 finished in Vm 17 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 146 finished in Vm 18 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 147 finished in Vm 19 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 148 finished in Vm 20 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 149 finished in Vm 21 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 150 finished in Vm 22 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 151 finished in Vm 23 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 152 finished in Vm 24 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 153 finished in Vm 25 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 154 finished in Vm 26 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 155 finished in Vm 27 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 156 finished in Vm 28 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 157 finished in Vm 29 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 158 finished in Vm 30 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.79: Dell_PowerEdge_XR11: Cloudlet 159 finished in Vm 31 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 14.79
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 224
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 208 to Vm 16 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 209 to Vm 17 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 210 to Vm 18 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 211 to Vm 19 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 212 to Vm 20 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 213 to Vm 21 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 214 to Vm 22 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 215 to Vm 23 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 216 to Vm 24 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 217 to Vm 25 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 218 to Vm 26 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 219 to Vm 27 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 220 to Vm 28 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 221 to Vm 29 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 222 to Vm 30 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: Sending Cloudlet 223 to Vm 31 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 14.90: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 160 finished in Vm 32 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 161 finished in Vm 33 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 162 finished in Vm 34 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 163 finished in Vm 35 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 164 finished in Vm 36 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 165 finished in Vm 37 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 166 finished in Vm 38 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 167 finished in Vm 39 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 168 finished in Vm 40 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 169 finished in Vm 41 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 170 finished in Vm 42 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 171 finished in Vm 43 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 172 finished in Vm 44 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 173 finished in Vm 45 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 174 finished in Vm 46 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.79: Dell_PowerEdge_XR11: Cloudlet 175 finished in Vm 47 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 15.79
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 240
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 224 to Vm 32 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 225 to Vm 33 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 226 to Vm 34 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 227 to Vm 35 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 228 to Vm 36 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 229 to Vm 37 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 230 to Vm 38 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 231 to Vm 39 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 232 to Vm 40 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 233 to Vm 41 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 234 to Vm 42 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 235 to Vm 43 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 236 to Vm 44 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 237 to Vm 45 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 238 to Vm 46 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: Sending Cloudlet 239 to Vm 47 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 15.90: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 176 finished in Vm 48 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 177 finished in Vm 49 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 178 finished in Vm 50 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 179 finished in Vm 51 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 180 finished in Vm 52 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 181 finished in Vm 53 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 182 finished in Vm 54 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 183 finished in Vm 55 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 184 finished in Vm 56 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 185 finished in Vm 57 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 186 finished in Vm 58 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 187 finished in Vm 59 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 188 finished in Vm 60 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 189 finished in Vm 61 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 190 finished in Vm 62 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.79: Dell_PowerEdge_XR11: Cloudlet 191 finished in Vm 63 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 16.79
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 256
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 240 to Vm 48 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 241 to Vm 49 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 242 to Vm 50 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 243 to Vm 51 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 244 to Vm 52 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 245 to Vm 53 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 246 to Vm 54 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 247 to Vm 55 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 248 to Vm 56 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 249 to Vm 57 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 250 to Vm 58 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 251 to Vm 59 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 252 to Vm 60 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 253 to Vm 61 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 254 to Vm 62 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: Sending Cloudlet 255 to Vm 63 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 16.90: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 192 finished in Vm 0 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 193 finished in Vm 1 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 194 finished in Vm 2 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 195 finished in Vm 3 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 196 finished in Vm 4 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 197 finished in Vm 5 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 198 finished in Vm 6 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 199 finished in Vm 7 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 200 finished in Vm 8 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 201 finished in Vm 9 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 202 finished in Vm 10 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 203 finished in Vm 11 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 204 finished in Vm 12 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 205 finished in Vm 13 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 206 finished in Vm 14 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.43: Dell_PowerEdge_XR11: Cloudlet 207 finished in Vm 15 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 18.43
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 272
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 256 to Vm 0 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 257 to Vm 1 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 258 to Vm 2 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 259 to Vm 3 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 260 to Vm 4 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 261 to Vm 5 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 262 to Vm 6 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 263 to Vm 7 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 264 to Vm 8 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 265 to Vm 9 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 266 to Vm 10 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 267 to Vm 11 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 268 to Vm 12 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 269 to Vm 13 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 270 to Vm 14 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: Sending Cloudlet 271 to Vm 15 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 18.54: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 208 finished in Vm 16 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 209 finished in Vm 17 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 210 finished in Vm 18 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 211 finished in Vm 19 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 212 finished in Vm 20 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 213 finished in Vm 21 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 214 finished in Vm 22 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 215 finished in Vm 23 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 216 finished in Vm 24 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 217 finished in Vm 25 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 218 finished in Vm 26 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 219 finished in Vm 27 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 220 finished in Vm 28 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 221 finished in Vm 29 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 222 finished in Vm 30 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.43: Dell_PowerEdge_XR11: Cloudlet 223 finished in Vm 31 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 19.43
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 288
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 272 to Vm 16 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 273 to Vm 17 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 274 to Vm 18 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 275 to Vm 19 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 276 to Vm 20 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 277 to Vm 21 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 278 to Vm 22 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 279 to Vm 23 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 280 to Vm 24 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 281 to Vm 25 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 282 to Vm 26 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 283 to Vm 27 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 284 to Vm 28 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 285 to Vm 29 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 286 to Vm 30 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: Sending Cloudlet 287 to Vm 31 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 19.54: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 224 finished in Vm 32 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 225 finished in Vm 33 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 226 finished in Vm 34 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 227 finished in Vm 35 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 228 finished in Vm 36 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 229 finished in Vm 37 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 230 finished in Vm 38 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 231 finished in Vm 39 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 232 finished in Vm 40 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 233 finished in Vm 41 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 234 finished in Vm 42 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 235 finished in Vm 43 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 236 finished in Vm 44 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 237 finished in Vm 45 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 238 finished in Vm 46 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.43: Dell_PowerEdge_XR11: Cloudlet 239 finished in Vm 47 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 20.43
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 304
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 288 to Vm 32 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 289 to Vm 33 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 290 to Vm 34 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 291 to Vm 35 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 292 to Vm 36 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 293 to Vm 37 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 294 to Vm 38 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 295 to Vm 39 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 296 to Vm 40 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 297 to Vm 41 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 298 to Vm 42 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 299 to Vm 43 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 300 to Vm 44 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 301 to Vm 45 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 302 to Vm 46 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: Sending Cloudlet 303 to Vm 47 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 20.54: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 240 finished in Vm 48 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 241 finished in Vm 49 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 242 finished in Vm 50 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 243 finished in Vm 51 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 244 finished in Vm 52 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 245 finished in Vm 53 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 246 finished in Vm 54 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 247 finished in Vm 55 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 248 finished in Vm 56 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 249 finished in Vm 57 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 250 finished in Vm 58 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 251 finished in Vm 59 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 252 finished in Vm 60 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 253 finished in Vm 61 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 254 finished in Vm 62 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.43: Dell_PowerEdge_XR11: Cloudlet 255 finished in Vm 63 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 21.43
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 320
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 304 to Vm 48 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 305 to Vm 49 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 306 to Vm 50 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 307 to Vm 51 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 308 to Vm 52 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 309 to Vm 53 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 310 to Vm 54 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 311 to Vm 55 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 312 to Vm 56 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 313 to Vm 57 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 314 to Vm 58 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 315 to Vm 59 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 316 to Vm 60 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 317 to Vm 61 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 318 to Vm 62 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: Sending Cloudlet 319 to Vm 63 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 21.54: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 256 finished in Vm 0 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 257 finished in Vm 1 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 258 finished in Vm 2 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 259 finished in Vm 3 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 260 finished in Vm 4 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 261 finished in Vm 5 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 262 finished in Vm 6 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 263 finished in Vm 7 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 264 finished in Vm 8 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 265 finished in Vm 9 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 266 finished in Vm 10 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 267 finished in Vm 11 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 268 finished in Vm 12 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 269 finished in Vm 13 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 270 finished in Vm 14 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.06: Dell_PowerEdge_XR11: Cloudlet 271 finished in Vm 15 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 23.06
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 336
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 320 to Vm 0 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 321 to Vm 1 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 322 to Vm 2 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 323 to Vm 3 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 324 to Vm 4 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 325 to Vm 5 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 326 to Vm 6 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 327 to Vm 7 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 328 to Vm 8 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 329 to Vm 9 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 330 to Vm 10 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 331 to Vm 11 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 332 to Vm 12 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 333 to Vm 13 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 334 to Vm 14 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: Sending Cloudlet 335 to Vm 15 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.17: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 272 finished in Vm 16 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 273 finished in Vm 17 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 274 finished in Vm 18 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 275 finished in Vm 19 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 276 finished in Vm 20 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 277 finished in Vm 21 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 278 finished in Vm 22 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 279 finished in Vm 23 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 280 finished in Vm 24 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 281 finished in Vm 25 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 282 finished in Vm 26 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 283 finished in Vm 27 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 284 finished in Vm 28 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 285 finished in Vm 29 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 286 finished in Vm 30 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 23.95: Dell_PowerEdge_XR11: Cloudlet 287 finished in Vm 31 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 23.95
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 352
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 336 to Vm 16 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 337 to Vm 17 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 338 to Vm 18 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 339 to Vm 19 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 340 to Vm 20 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 341 to Vm 21 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 342 to Vm 22 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 343 to Vm 23 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 344 to Vm 24 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 345 to Vm 25 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 346 to Vm 26 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 347 to Vm 27 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 348 to Vm 28 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 349 to Vm 29 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 350 to Vm 30 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: Sending Cloudlet 351 to Vm 31 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 24.06: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 288 finished in Vm 32 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 289 finished in Vm 33 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 290 finished in Vm 34 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 291 finished in Vm 35 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 292 finished in Vm 36 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 293 finished in Vm 37 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 294 finished in Vm 38 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 295 finished in Vm 39 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 296 finished in Vm 40 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 297 finished in Vm 41 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 298 finished in Vm 42 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 299 finished in Vm 43 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 300 finished in Vm 44 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 301 finished in Vm 45 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 302 finished in Vm 46 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.00: Dell_PowerEdge_XR11: Cloudlet 303 finished in Vm 47 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 25.00
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 368
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 352 to Vm 32 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 353 to Vm 33 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 354 to Vm 34 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 355 to Vm 35 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 356 to Vm 36 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 357 to Vm 37 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 358 to Vm 38 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 359 to Vm 39 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 360 to Vm 40 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 361 to Vm 41 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 362 to Vm 42 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 363 to Vm 43 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 364 to Vm 44 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 365 to Vm 45 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 366 to Vm 46 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: Sending Cloudlet 367 to Vm 47 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.06: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 304 finished in Vm 48 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 305 finished in Vm 49 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 306 finished in Vm 50 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 307 finished in Vm 51 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 308 finished in Vm 52 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 309 finished in Vm 53 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 310 finished in Vm 54 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 311 finished in Vm 55 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 312 finished in Vm 56 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 313 finished in Vm 57 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 314 finished in Vm 58 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 315 finished in Vm 59 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 316 finished in Vm 60 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 317 finished in Vm 61 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 318 finished in Vm 62 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 25.95: Dell_PowerEdge_XR11: Cloudlet 319 finished in Vm 63 and returned to broker.
+⏱️  Submitting 16 cloudlets at time 25.95
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
+✅ Total cloudlets submitted so far: 384
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 368 to Vm 48 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 369 to Vm 49 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 370 to Vm 50 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 371 to Vm 51 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 372 to Vm 52 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 373 to Vm 53 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 374 to Vm 54 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 375 to Vm 55 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 376 to Vm 56 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 377 to Vm 57 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 378 to Vm 58 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 379 to Vm 59 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 380 to Vm 60 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 381 to Vm 61 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 382 to Vm 62 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: Sending Cloudlet 383 to Vm 63 inside Host 0/#DC 1.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 26.06: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 320 finished in Vm 0 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 321 finished in Vm 1 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 322 finished in Vm 2 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 323 finished in Vm 3 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 324 finished in Vm 4 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 325 finished in Vm 5 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 326 finished in Vm 6 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 327 finished in Vm 7 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 328 finished in Vm 8 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 329 finished in Vm 9 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 330 finished in Vm 10 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 331 finished in Vm 11 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 332 finished in Vm 12 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 333 finished in Vm 13 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 334 finished in Vm 14 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 27.63: Dell_PowerEdge_XR11: Cloudlet 335 finished in Vm 15 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 336 finished in Vm 16 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 337 finished in Vm 17 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 338 finished in Vm 18 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 339 finished in Vm 19 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 340 finished in Vm 20 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 341 finished in Vm 21 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 342 finished in Vm 22 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 343 finished in Vm 23 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 344 finished in Vm 24 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 345 finished in Vm 25 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 346 finished in Vm 26 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 347 finished in Vm 27 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 348 finished in Vm 28 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 349 finished in Vm 29 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 350 finished in Vm 30 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 28.47: Dell_PowerEdge_XR11: Cloudlet 351 finished in Vm 31 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 352 finished in Vm 32 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 353 finished in Vm 33 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 354 finished in Vm 34 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 355 finished in Vm 35 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 356 finished in Vm 36 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 357 finished in Vm 37 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 358 finished in Vm 38 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 359 finished in Vm 39 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 360 finished in Vm 40 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 361 finished in Vm 41 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 362 finished in Vm 42 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 363 finished in Vm 43 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 364 finished in Vm 44 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 365 finished in Vm 45 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 366 finished in Vm 46 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 29.47: Dell_PowerEdge_XR11: Cloudlet 367 finished in Vm 47 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 368 finished in Vm 48 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 369 finished in Vm 49 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 370 finished in Vm 50 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 371 finished in Vm 51 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 372 finished in Vm 52 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 373 finished in Vm 53 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 374 finished in Vm 54 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 375 finished in Vm 55 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 376 finished in Vm 56 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 377 finished in Vm 57 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 378 finished in Vm 58 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 379 finished in Vm 59 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 380 finished in Vm 60 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 381 finished in Vm 61 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 382 finished in Vm 62 and returned to broker.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.47: Dell_PowerEdge_XR11: Cloudlet 383 finished in Vm 63 and returned to broker.
+2025-03-23 01:56:27 [INFO] CloudSim - 30.58: Processing last events before simulation shutdown.
+2025-03-23 01:56:27 [INFO] DatacenterBroker - 30.58: Dell_PowerEdge_XR11 is shutting down...
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 63 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 62 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 61 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 60 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 59 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 58 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 57 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 56 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 55 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 54 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 53 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 52 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 51 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 50 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 49 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 48 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 47 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 46 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 45 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 44 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 43 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 42 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 41 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 40 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 39 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 38 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 37 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 36 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 35 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 34 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 33 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 32 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 31 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 30 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 29 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 28 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 27 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 26 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 25 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 24 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 23 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 22 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 21 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 20 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 19 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 18 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 17 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 16 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 15 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 14 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 13 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 12 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 11 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 10 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 9 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 8 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 7 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 6 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 5 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 4 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 3 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 2 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 1 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Vm - 30.58: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 63 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 62 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 61 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 60 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 59 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 58 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 57 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 56 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 55 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 54 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 53 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 52 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 51 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 50 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 49 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 48 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 47 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 46 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 45 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 44 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 43 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 42 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 41 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 40 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 39 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 38 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 37 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 36 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 35 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 34 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 33 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 32 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 31 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 30 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 29 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 28 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 27 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 26 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 25 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 24 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 23 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 22 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 21 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 20 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 19 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 18 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 17 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 16 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 15 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 14 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 13 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 12 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 11 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 10 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 9 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 8 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 7 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 6 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 5 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 4 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 3 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 2 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 1 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] Datacenter - 30.58: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. 
+2025-03-23 01:56:27 [INFO] CloudSim - Simulation: No more future events
+
+2025-03-23 01:56:27 [INFO] CloudInformationService - CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+
+2025-03-23 01:56:27 [INFO] CloudSim - 
+================== Simulation finished at time 30.58 ==================
+
+✅ Energy log written to output/csv/blockchain.csv
+
+
+                                         SIMULATION RESULTS
+
+|Cloudlet| Status|DC|Host|Host PEs |VM|   VM PEs|CloudletLen|FinishedLen|CloudletPEs|StartTime|FinishTime|ExecTime
+|--------|-------|--|----|---------|--|---------|-----------|-----------|-----------|---------|----------|--------
+|      ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|         MI|  CPU cores|  Seconds|   Seconds| Seconds
+|       0|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       1|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       2|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       3|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       4|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       5|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       6|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       7|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       8|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|       9|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      10|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      11|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      12|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      13|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      14|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      15|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
+|      16|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      17|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      18|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      19|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      20|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      21|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      22|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      23|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      24|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      25|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      26|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      27|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      28|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      29|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      30|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      31|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
+|      32|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      33|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      34|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      35|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      36|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      37|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      38|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      39|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      40|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      41|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      42|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      43|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      44|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      45|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      46|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      47|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
+|      48|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      49|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      50|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      51|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      52|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      53|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      54|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      55|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      56|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      57|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      58|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      59|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      60|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      61|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      62|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      63|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|      64|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      65|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      66|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      67|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      68|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      69|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      70|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      71|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      72|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      73|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      74|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      75|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      76|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      77|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      78|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      79|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|      4.6|       9.2|     4.5
+|      80|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      81|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      82|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      83|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      84|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      85|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      86|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      87|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      88|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      89|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      90|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      91|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      92|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      93|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      94|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      95|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|      5.6|      10.2|     4.5
+|      96|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|      97|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|      98|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|      99|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     100|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     101|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     102|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     103|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     104|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     105|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     106|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     107|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     108|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     109|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     110|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     111|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|      6.6|      11.2|     4.5
+|     112|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     113|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     114|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     115|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     116|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     117|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     118|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     119|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     120|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     121|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     122|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     123|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     124|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     125|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     126|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     127|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|      7.6|      12.2|     4.5
+|     128|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     129|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     130|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     131|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     132|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     133|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     134|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     135|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     136|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     137|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     138|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     139|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     140|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     141|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     142|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     143|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|      9.3|      13.8|     4.5
+|     144|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     145|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     146|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     147|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     148|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     149|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     150|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     151|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     152|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     153|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     154|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     155|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     156|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     157|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     158|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     159|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|     10.3|      14.8|     4.5
+|     160|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     161|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     162|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     163|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     164|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     165|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     166|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     167|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     168|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     169|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     170|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     171|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     172|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     173|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     174|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     175|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|     11.3|      15.8|     4.5
+|     176|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     177|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     178|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     179|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     180|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     181|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     182|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     183|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     184|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     185|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     186|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     187|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     188|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     189|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     190|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     191|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|     12.3|      16.8|     4.5
+|     192|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     193|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     194|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     195|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     196|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     197|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     198|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     199|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     200|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     201|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     202|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     203|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     204|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     205|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     206|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     207|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|     13.9|      18.4|     4.5
+|     208|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     209|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     210|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     211|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     212|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     213|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     214|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     215|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     216|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     217|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     218|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     219|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     220|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     221|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     222|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     223|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|     14.9|      19.4|     4.5
+|     224|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     225|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     226|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     227|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     228|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     229|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     230|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     231|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     232|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     233|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     234|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     235|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     236|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     237|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     238|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     239|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|     15.9|      20.4|     4.5
+|     240|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     241|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     242|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     243|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     244|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     245|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     246|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     247|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     248|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     249|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     250|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     251|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     252|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     253|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     254|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     255|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|     16.9|      21.4|     4.5
+|     256|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     257|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     258|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     259|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     260|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     261|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     262|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     263|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     264|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     265|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     266|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     267|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     268|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     269|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     270|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     271|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|     18.5|      23.1|     4.5
+|     272|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     273|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     274|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     275|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     276|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     277|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     278|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     279|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     280|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     281|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     282|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     283|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     284|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     285|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     286|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     287|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|     19.5|      24.0|     4.4
+|     288|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     289|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     290|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     291|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     292|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     293|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     294|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     295|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     296|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     297|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     298|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     299|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     300|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     301|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     302|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     303|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|     20.5|      25.0|     4.5
+|     304|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     305|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     306|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     307|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     308|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     309|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     310|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     311|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     312|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     313|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     314|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     315|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     316|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     317|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     318|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     319|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|     21.5|      26.0|     4.4
+|     320|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     321|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     322|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     323|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     324|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     325|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     326|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     327|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     328|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     329|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     330|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     331|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     332|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     333|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     334|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     335|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|     23.2|      27.6|     4.5
+|     336|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     337|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     338|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     339|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     340|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     341|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     342|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     343|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     344|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     345|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     346|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     347|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     348|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     349|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     350|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     351|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|     24.1|      28.5|     4.4
+|     352|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     353|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     354|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     355|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     356|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     357|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     358|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     359|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     360|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     361|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     362|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     363|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     364|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     365|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     366|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     367|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|     25.1|      29.5|     4.4
+|     368|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     369|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     370|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     371|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     372|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     373|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     374|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     375|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     376|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     377|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     378|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     379|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     380|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     381|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     382|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+|     383|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|     26.1|      30.5|     4.4
+
+
+---------------- Detailed Datacenter Report ----------------
+
+Datacenter Name      : Dell_PowerEdge_XR11
+Total Hosts          : 1
+Total VMs            : 64
+Total Cloudlets      : 384
+Average CPU Utilization: 0.097656%
+Total Energy Used    : 0.001000 kWh
+------------------------------

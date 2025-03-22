@@ -1,0 +1,68 @@
+19:21:26,838 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+19:21:26,838 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.MainSimulation-1.0-SNAPSHOT.jar!/logback.xml]
+19:21:26,838 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+19:21:26,838 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.MainSimulation-1.0-SNAPSHOT.jar!/logback.xml]
+19:21:26,839 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/dependency/cloudsimplus-8.5.5.jar!/logback.xml]
+19:21:26,843 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@544fe44c - URL [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.MainSimulation-1.0-SNAPSHOT.jar!/logback.xml] is not of type file
+19:21:26,875 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+19:21:26,875 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+19:21:26,878 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+19:21:26,881 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+19:21:26,905 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+19:21:26,906 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
+19:21:26,907 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+19:21:26,907 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [simulation.log]
+19:21:26,907 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+19:21:26,907 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
+19:21:26,908 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
+19:21:26,908 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+19:21:26,908 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@31610302 - Registering current configuration as safe fallback point
+
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 
+[Stage 1] Initializing Datacenters and Hosts
+2025-03-05 19:21:26 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 0: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 1: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 2: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 3: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 4: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 5: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 6: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 7: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 8: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:26 [INFO] e.MainSimulation - 🆕 Creating VM 9: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - ✅ Datacenter 'Node sender' created with 1 hosts.
+2025-03-05 19:21:31 [INFO] e.MainSimulation - Host 0 - RAM: 1572864 MB | PEs: 320 | Available PEs: 320
+2025-03-05 19:21:31 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 0: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 1: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 2: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 3: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 4: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 5: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 6: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 7: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 8: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:31 [INFO] e.MainSimulation - 🆕 Creating VM 9: PEs: 32, RAM: 157286 MB, BW: 1000 Mbps, Storage: 1.0E-4GB
+2025-03-05 19:21:36 [INFO] e.MainSimulation - ✅ Datacenter 'Node reciever' created with 1 hosts.
+2025-03-05 19:21:36 [INFO] e.MainSimulation - Host 0 - RAM: 1572864 MB | PEs: 320 | Available PEs: 320
+2025-03-05 19:21:36 [INFO] e.MainSimulation - 
+[Stage 2] Creating Brokers and VMs
+2025-03-05 19:21:36 [INFO] e.MainSimulation - 
+[Stage 3] Loading Network Topology
+2025-03-05 19:21:37 [INFO] BriteNetworkTopology - Topology file: src/main/resources/brite/topology.brite
+2025-03-05 19:21:37 [INFO] e.MainSimulation - 
+[Stage 4] Starting Cloudlet Generation
+2025-03-05 19:21:37 [INFO] CloudSim - 
+================== Starting CloudSim Plus 8.5.1 ==================
+
+2025-03-05 19:21:37 [INFO] Datacenter - 0.00: #Datacenter 1 is starting...
+2025-03-05 19:21:37 [INFO] Host - 0.00: Host 0/#DC 1 is being powered on (expected time: 5.0 seconds).
+2025-03-05 19:21:37 [INFO] Datacenter - 0.00: #Datacenter 2 is starting...
+2025-03-05 19:21:37 [INFO] Host - 0.00: Host 0/#DC 2 is being powered on (expected time: 5.0 seconds).
+2025-03-05 19:21:37 [INFO] DatacenterBroker - Broker 3 is starting...
+2025-03-05 19:21:37 [INFO] DatacenterBroker - Broker 4 is starting...
+2025-03-05 19:21:37 [INFO] CloudSim - Entities started.
+2025-03-05 19:21:37 [INFO] DatacenterBroker - 0.00: Node sender: List of 2 datacenters(s) received.
+2025-03-05 19:21:37 [INFO] DatacenterBroker - 0.00: Node reciever: List of 2 datacenters(s) received.
+2025-03-05 19:21:37 [ERROR] e.MainSimulation - No VM createdddde

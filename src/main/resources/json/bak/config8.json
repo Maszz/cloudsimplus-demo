@@ -1,0 +1,77 @@
+{
+    "DATACENTERS": [
+        {
+            "name": "Node sender",
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
+            "host_spec": {
+                "HOST_PES": 320,
+                "HOST_MIPS": 4233600,
+                "HOST_RAM": 1572864,
+                "HOST_BW": 10000,
+                "HOST_STORAGE": 1000000,
+                "HOST_START_UP_DELAY": 0,
+                "HOST_SHUT_DOWN_DELAY": 0,
+                "HOST_START_UP_POWER": 0,
+                "HOST_SHUT_DOWN_POWER": 0
+            },
+            "VmAllocationPolicy": "FF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "D",
+            "vm": 10,
+            "vm_spec": {
+                "VM_PES": 32,
+                "VM_MIPS": 423360,
+                "VM_RAM": 157286,
+                "VM_BW": 1000,
+                "VM_STORAGE": 100000
+            },
+            "cloudlets": 29,
+            "lastCloudlets": 290,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 10000000,
+                "CLOUDLET_PES": 4,
+                "FILE_SIZE": 1470000,
+                "OUTPUT_SIZE": 1470000
+            },
+            "power_spec_path": "src/main/resources/power_spec/default_power_spec.txt"
+        },
+        {
+            "name": "Node reciever",
+            "SCHEDULING_INTERVAL": 1,
+            "hosts": 1,
+            "host_spec": {
+                "HOST_PES": 320,
+                "HOST_MIPS": 4233600,
+                "HOST_RAM": 1572864,
+                "HOST_BW": 10000,
+                "HOST_STORAGE": 1000000,
+                "HOST_START_UP_DELAY": 5,
+                "HOST_SHUT_DOWN_DELAY": 0,
+                "HOST_START_UP_POWER": 10,
+                "HOST_SHUT_DOWN_POWER": 5
+            },
+            "VmAllocationPolicy": "FF",
+            "VmScheduler": "TS",
+            "UtilizationModel": "D",
+            "vm": 10,
+            "vm_spec": {
+                "VM_PES": 32,
+                "VM_MIPS": 423360,
+                "VM_RAM": 157286,
+                "VM_BW": 1000,
+                "VM_STORAGE": 100000
+            },
+            "cloudlets": 29,
+            "lastCloudlets": 290,
+            "cloudlet_spec": {
+                "CLOUDLET_LENGTH": 10000000,
+                "CLOUDLET_PES": 4,
+                "FILE_SIZE": 1470000,
+                "OUTPUT_SIZE": 1470000
+            },
+            "power_spec_path": "src/main/resources/power_spec/default_power_spec.txt"
+        }
+    ],
+    "network_spec_path": "src/main/resources/brite/topology.brite"
+}

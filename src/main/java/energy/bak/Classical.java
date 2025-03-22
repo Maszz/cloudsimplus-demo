@@ -1,8 +1,10 @@
-package energy;
+package energy.bak;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
+import energy.Config;
 
 import org.cloudsimplus.vms.VmResourceStats;
 import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
@@ -82,7 +84,7 @@ public class Classical {
 
         brokers.forEach(Classical::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
-        printDatacenterEnergyConsumptionCSV();
+        // printDatacenterEnergyConsumptionCSV();
     }
 
 
@@ -300,28 +302,28 @@ public class Classical {
         return vmList;
     }
 
-    private List<Cloudlet> createCloudlets(int startId, JsonObject dcConfig) {
-        JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
-        long cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsLong();
-        int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
-        long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
-        long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
-        long cloudletCount = dcConfig.get("cloudlets").getAsLong();
+    // private List<Cloudlet> createCloudlets(int startId, JsonObject dcConfig) {
+    //     JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
+    //     long cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsLong();
+    //     int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
+    //     long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
+    //     long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
+    //     long cloudletCount = dcConfig.get("cloudlets").getAsLong();
 
-        List<Cloudlet> cloudletList = new ArrayList<>();
-        UtilizationModel Utilization = getUtilizationModel(dcConfig);
+    //     List<Cloudlet> cloudletList = new ArrayList<>();
+    //     UtilizationModel Utilization = getUtilizationModel(dcConfig);
 
-        for (int i = 0; i < cloudletCount; i++) {
-            Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
-                    .setFileSize(fileSize)
-                    .setOutputSize(outputSize)
-                    .setUtilizationModelCpu(Utilization)
-                    .setUtilizationModelRam(Utilization)
-                    .setUtilizationModelBw(Utilization);
-            cloudletList.add(cloudlet);
-        }
-        return cloudletList;
-    }
+    //     for (int i = 0; i < cloudletCount; i++) {
+    //         Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
+    //                 .setFileSize(fileSize)
+    //                 .setOutputSize(outputSize)
+    //                 .setUtilizationModelCpu(Utilization)
+    //                 .setUtilizationModelRam(Utilization)
+    //                 .setUtilizationModelBw(Utilization);
+    //         cloudletList.add(cloudlet);
+    //     }
+    //     return cloudletList;
+    // }
 
     public UtilizationModel getUtilizationModel(JsonObject dcConfig) {
         String key = "UtilizationModel";
@@ -363,34 +365,35 @@ public class Classical {
             // Display Host Specifications and Utilization
             boolean flag = true;
             for (Host host : dc.getHostList()) {
-                // Mean CPU utilization and power consumption
-                final HostResourceStats cpuStats = host.getCpuUtilizationStats();
-                final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
-                final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power
-                                                                                                // consumption
-                // Calculate host alive time (in seconds)
-                final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
-                // Calculate total power consumption in watt-seconds (Joules)
-                final double hostPowerConsumptionWatts = wattsMean * hostAliveTime;
-                // Convert total power consumption to kilowatt-hours (kWh)
-                final double hostPowerConsumptionKWh = hostPowerConsumptionWatts / (1000 * 3600);
-                totalEnergy += hostPowerConsumptionKWh;
-                totalUtilization += utilizationPercentMean;
-                utilizedHosts++;
-                if (flag) {
-                    // Host Specifications
-                    System.out.printf("  Host ID                : %d%n", host.getId());
-                    System.out.printf("  RAM                    : %d MB%n", host.getRam().getCapacity());
-                    System.out.printf("  Bandwidth              : %d MBps%n", host.getBw().getCapacity());
-                    System.out.printf("  Storage                : %d MB%n", host.getStorage().getCapacity());
-                    System.out.printf("  Number of PEs          : %d%n", host.getPeList().size());
-                    System.out.printf("  CPU Usage mean         : %6.1f%%\n", utilizationPercentMean * 100);
-                    System.out.printf("  Power Consumption mean : %8.0f W\n", wattsMean);
-                    System.out.printf("  Host Power Consumption : %.1f W-s (%.6f kWh)\n", hostPowerConsumptionWatts,
-                            hostPowerConsumptionKWh);
-                    System.out.printf("  Host Alive Time        : %.1f s%n", hostAliveTime);
-                    flag = false;
-                }
+                printHostCpuUtilizationAndPowerConsumption(host);
+                // // Mean CPU utilization and power consumption
+                // final HostResourceStats cpuStats = host.getCpuUtilizationStats();
+                // final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
+                // final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power
+                //                                                                                 // consumption
+                // // Calculate host alive time (in seconds)
+                // final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
+                // // Calculate total power consumption in watt-seconds (Joules)
+                // final double hostPowerConsumptionWatts = wattsMean * hostAliveTime;
+                // // Convert total power consumption to kilowatt-hours (kWh)
+                // final double hostPowerConsumptionKWh = hostPowerConsumptionWatts / (1000 * 3600);
+                // totalEnergy += hostPowerConsumptionKWh;
+                // totalUtilization += utilizationPercentMean;
+                // utilizedHosts++;
+                // if (flag) {
+                //     // Host Specifications
+                //     System.out.printf("  Host ID                : %d%n", host.getId());
+                //     System.out.printf("  RAM                    : %d MB%n", host.getRam().getCapacity());
+                //     System.out.printf("  Bandwidth              : %d MBps%n", host.getBw().getCapacity());
+                //     System.out.printf("  Storage                : %d MB%n", host.getStorage().getCapacity());
+                //     System.out.printf("  Number of PEs          : %d%n", host.getPeList().size());
+                //     System.out.printf("  CPU Usage mean         : %6.1f%%\n", utilizationPercentMean * 100);
+                //     System.out.printf("  Power Consumption mean : %8.0f W\n", wattsMean);
+                //     System.out.printf("  Host Power Consumption : %.1f W-s (%.6f kWh)\n", hostPowerConsumptionWatts,
+                //             hostPowerConsumptionKWh);
+                //     System.out.printf("  Host Alive Time        : %.1f s%n", hostAliveTime);
+                //     flag = false;
+                // }
             }
 
             // If no cloudlets, use only static power instead of NaN
@@ -482,6 +485,29 @@ public class Classical {
         } catch (IOException e) {
             System.err.println("Error writing to CSV file: " + e.getMessage());
         }
+    }
+
+    private void printHostCpuUtilizationAndPowerConsumption(final Host host) {
+        // Mean CPU utilization and power consumption
+        final HostResourceStats cpuStats = host.getCpuUtilizationStats();
+        final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
+        final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power consumption
+
+        // Calculate host alive time (in seconds)
+        final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
+
+        // Calculate total power consumption in watt-seconds (Joules)
+        final double totalPowerConsumptionWatts = wattsMean * hostAliveTime;
+
+        // Convert total power consumption to kilowatt-hours (kWh)
+        final double totalPowerConsumptionKWh = totalPowerConsumptionWatts / (1000 * 3600);
+
+        // Print results
+        System.out.printf(
+                "Host %2d CPU Usage mean: %6.1f%% | Power Consumption mean: %8.0f W | Total Power Consumption: %.1f W-s (%.6f kWh) | Host Alive Time: %.1f s%n",
+                host.getId(), utilizationPercentMean * 100, wattsMean, totalPowerConsumptionWatts,
+                totalPowerConsumptionKWh, hostAliveTime);
+
     }
 
 }

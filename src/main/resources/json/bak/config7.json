@@ -18,8 +18,9 @@
             "VmAllocationPolicy": "BF",
             "VmScheduler": "TS",
             "UtilizationModel": "D",
-            "vm": 120,
+            "vm": 64,
             "cloudlets": 29,
+            "lastCloudlets": 290,
             "cloudlet_spec": {
                 "CLOUDLET_LENGTH": 10000000,
                 "CLOUDLET_PES": 4,

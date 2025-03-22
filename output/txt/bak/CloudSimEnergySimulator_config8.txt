@@ -1,0 +1,75 @@
+17:34:51,314 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+17:34:51,314 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.CloudSimEnergySimulator-1.0-SNAPSHOT.jar!/logback.xml]
+17:34:51,314 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+17:34:51,314 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.CloudSimEnergySimulator-1.0-SNAPSHOT.jar!/logback.xml]
+17:34:51,314 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/dependency/cloudsimplus-8.5.5.jar!/logback.xml]
+17:34:51,318 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@71318ec4 - URL [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.CloudSimEnergySimulator-1.0-SNAPSHOT.jar!/logback.xml] is not of type file
+17:34:51,349 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+17:34:51,350 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+17:34:51,352 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+17:34:51,354 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+17:34:51,379 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+17:34:51,380 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
+17:34:51,380 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+17:34:51,380 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [simulation.log]
+17:34:51,381 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+17:34:51,381 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
+17:34:51,381 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
+17:34:51,381 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+17:34:51,381 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@21213b92 - Registering current configuration as safe fallback point
+
+2025-03-03 17:34:51 [INFO] CloudSim - 
+================== Starting CloudSim Plus 8.5.1 ==================
+
+2025-03-03 17:34:51 [INFO] Datacenter - 0.00: #Datacenter 1 is starting...
+2025-03-03 17:34:51 [INFO] Datacenter - 0.00: #Datacenter 2 is starting...
+2025-03-03 17:34:51 [INFO] DatacenterBroker - Broker 3 is starting...
+2025-03-03 17:34:51 [INFO] CloudSim - Entities started.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.00: DatacenterBrokerSimple3: List of 2 datacenters(s) received.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.00: DatacenterBrokerSimple3: Trying to create Vm 0 inside #Datacenter 1
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.00: DatacenterBrokerSimple3: Trying to create Vm 1 inside #Datacenter 1
+2025-03-03 17:34:51 [INFO] Host - 0.00: HostSimple: Vm 0 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-03 17:34:51 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicySimple: Vm 0 has been allocated to Host 0/#DC 1
+2025-03-03 17:34:51 [INFO] Host - 0.00: HostSimple: Vm 1 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-03 17:34:51 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicySimple: Vm 1 has been allocated to Host 0/#DC 1
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.10: DatacenterBrokerSimple3: Sending Cloudlet 0 to Vm 0 inside Host 0/#DC 1.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.10: DatacenterBrokerSimple3: Sending Cloudlet 1 to Vm 1 inside Host 0/#DC 1.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.10: DatacenterBrokerSimple3: Sending Cloudlet 2 to Vm 0 inside Host 0/#DC 1.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.10: DatacenterBrokerSimple3: Sending Cloudlet 3 to Vm 1 inside Host 0/#DC 1.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.10: DatacenterBrokerSimple3: Sending Cloudlet 4 to Vm 0 inside Host 0/#DC 1.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 0.10: DatacenterBrokerSimple3: All 5 waiting Cloudlets submitted to some VM.
+2025-03-03 17:34:51 [WARN] CloudletScheduler - 20.10: CloudletSchedulerTimeShared: Cloudlet 4 requested 2048 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-03 17:34:51 [WARN] CloudletScheduler - 20.10: CloudletSchedulerTimeShared: Cloudlet 4 requested 500 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 40.11: DatacenterBrokerSimple3: Cloudlet 1 finished in Vm 1 and returned to broker.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 40.11: DatacenterBrokerSimple3: Cloudlet 3 finished in Vm 1 and returned to broker.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 60.41: DatacenterBrokerSimple3: Cloudlet 0 finished in Vm 0 and returned to broker.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 60.41: DatacenterBrokerSimple3: Cloudlet 2 finished in Vm 0 and returned to broker.
+2025-03-03 17:34:51 [INFO] CloudSim - 60.52: Processing last events before simulation shutdown.
+2025-03-03 17:34:51 [INFO] DatacenterBroker - 60.52: DatacenterBrokerSimple3 is shutting down...
+2025-03-03 17:34:51 [INFO] Vm - 60.52: VmSimple: Requesting Vm 1 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-03 17:34:51 [INFO] Vm - 60.52: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-03 17:34:51 [INFO] Datacenter - 60.52: #Datacenter 1: Vm 1 destroyed on Host 0/#DC 1. 
+2025-03-03 17:34:51 [WARN] Datacenter - 60.52: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. It had a total of 1 cloudlets (running + waiting). Some events may have been missed. You can try:
+(a) decreasing CloudSim's minTimeBetweenEvents and/or Datacenter's schedulingInterval attribute;
+(b) increasing broker's Vm destruction delay for idle VMs if you set it to zero;
+(c) defining Cloudlets with smaller length (your Datacenter's scheduling interval may be smaller than the time to finish some Cloudlets).
+
+2025-03-03 17:34:51 [INFO] CloudSim - Simulation: No more future events
+
+2025-03-03 17:34:51 [INFO] CloudInformationService - CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+
+2025-03-03 17:34:51 [INFO] Datacenter - 60.52: #Datacenter 2 is shutting down...
+2025-03-03 17:34:51 [INFO] CloudSim - 
+================== Simulation finished at time 60.52 ==================
+
+
+RESULTS
+========================
+
+Datacenter 1 Host Energy Consumption:
+Host 0 CPU Utilization: 0.00%, Energy: 10.00W
+Total Energy Consumption in Datacenter 1: 10.00W
+
+Datacenter 2 Host Energy Consumption:
+Host 0 CPU Utilization: 0.00%, Energy: 10.00W
+Total Energy Consumption in Datacenter 2: 10.00W

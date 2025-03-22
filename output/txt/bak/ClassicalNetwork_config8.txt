@@ -1,0 +1,107 @@
+16:27:42,389 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+16:27:42,390 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.ClassicalNetwork-1.0-SNAPSHOT.jar!/logback.xml]
+16:27:42,390 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+16:27:42,390 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.ClassicalNetwork-1.0-SNAPSHOT.jar!/logback.xml]
+16:27:42,390 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/dependency/cloudsimplus-8.5.5.jar!/logback.xml]
+16:27:42,394 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@544fe44c - URL [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.ClassicalNetwork-1.0-SNAPSHOT.jar!/logback.xml] is not of type file
+16:27:42,426 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+16:27:42,426 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+16:27:42,428 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+16:27:42,431 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+16:27:42,455 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+16:27:42,456 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
+16:27:42,457 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+16:27:42,457 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [simulation.log]
+16:27:42,457 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+16:27:42,457 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
+16:27:42,457 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
+16:27:42,457 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+16:27:42,458 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@31610302 - Registering current configuration as safe fallback point
+
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - 
+===== Stage 0: Initialization =====
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - 
+===== Stage 1: Datacenter and Host Setup =====
+2025-03-04 16:27:42 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Host 0 created with resources:
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - CPU PEs : 128
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - CPU MIPS per PE: 2400000
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - RAM : 1310720 MB
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Bandwidth : 10000000 Mbps
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Storage : 1000.0 GB
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - VM Scheduler : VmSchedulerTimeShared
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Power Model : PowerModelHostSpec
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Startup Delay : 5.0 sec | Shutdown Delay: 0.0 sec
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Power: Startup 10.0 W | Shutdown 5.0 W
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Datacenter 'Node sender' created with 1 hosts.
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - Host 0 - RAM: 1310720 MB | PEs: 128 | Available PEs: 128
+2025-03-04 16:27:42 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Host 0 created with resources:
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - CPU PEs : 128
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - CPU MIPS per PE: 2400000
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - RAM : 1310720 MB
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Bandwidth : 10000000 Mbps
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Storage : 1000.0 GB
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - VM Scheduler : VmSchedulerTimeShared
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Power Model : PowerModelHostSpec
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Startup Delay : 5.0 sec | Shutdown Delay: 0.0 sec
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork -  - Power: Startup 10.0 W | Shutdown 5.0 W
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Datacenter 'Node reciever' created with 1 hosts.
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - Host 0 - RAM: 1310720 MB | PEs: 128 | Available PEs: 128
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - 
+===== Stage 2: Broker and VM Creation =====
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - Broker Node sender created.
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - 🆕 Creating VM 0: PEs: 120, RAM: 1190720 MB, BW: 9000000 Mbps, Storage: 1000.0GB
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ 1 VMs submitted to broker 'Node sender'
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ VM 0 assigned to Host -1 in Datacenter ''
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - 
+===== Stage 3: Simulation Execution =====
+2025-03-04 16:27:42 [INFO] CloudSim - 
+================== Starting CloudSim Plus 8.5.1 ==================
+
+2025-03-04 16:27:42 [INFO] Datacenter - 0.00: #Datacenter 1 is starting...
+2025-03-04 16:27:42 [INFO] Host - 0.00: Host 0/#DC 1 is being powered on (expected time: 5.0 seconds).
+2025-03-04 16:27:42 [INFO] Datacenter - 0.00: #Datacenter 2 is starting...
+2025-03-04 16:27:42 [INFO] Host - 0.00: Host 0/#DC 2 is being powered on (expected time: 5.0 seconds).
+2025-03-04 16:27:42 [INFO] DatacenterBroker - Broker 3 is starting...
+2025-03-04 16:27:42 [INFO] CloudSim - Entities started.
+2025-03-04 16:27:42 [INFO] DatacenterBroker - 0.00: Node sender: List of 2 datacenters(s) received.
+2025-03-04 16:27:42 [INFO] DatacenterBroker - 0.00: Node sender: Trying to create Vm 0 inside #Datacenter 1
+2025-03-04 16:27:42 [WARN] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: No suitable host found for Vm 0 in #Datacenter 1
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Simulation started! Ensuring all VMs are created before cloudlets.
+2025-03-04 16:27:42 [ERROR] e.ClassicalNetwork - 🚨 * No VMs created for broker 'Node sender'. Cloudlets may fail.
+2025-03-04 16:27:42 [INFO] DatacenterBroker - 0.10: Node sender: Trying to create Vm 0 inside #Datacenter 2
+2025-03-04 16:27:42 [WARN] VmAllocationPolicy - 0.10: VmAllocationPolicyBestFit: No suitable host found for Vm 0 in #Datacenter 2
+2025-03-04 16:27:42 [ERROR] e.ClassicalNetwork - ❌ No available VMs in sender or receiver datacenter!
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Submitting 29 cloudlets to broker 'Node sender'
+2025-03-04 16:27:42 [INFO] DatacenterBroker - 0.20: Node sender: Trying to create Vm 0 inside #Datacenter 1
+2025-03-04 16:27:42 [WARN] VmAllocationPolicy - 0.20: VmAllocationPolicyBestFit: No suitable host found for Vm 0 in #Datacenter 1
+2025-03-04 16:27:42 [ERROR] e.ClassicalNetwork - ❌ No available VMs in sender or receiver datacenter!
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Submitting 29 cloudlets to broker 'Node sender'
+2025-03-04 16:27:42 [ERROR] DatacenterBroker - 0.30: Node sender: 1 of the requested 1 VMs couldn't be created because suitable Hosts weren't found in any available Datacenter.
+2025-03-04 16:27:42 [ERROR] e.ClassicalNetwork - ❌ No available VMs in sender or receiver datacenter!
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Submitting 29 cloudlets to broker 'Node sender'
+2025-03-04 16:27:42 [INFO] Host - 5.00: Host 0/#DC 1 is powered on.
+2025-03-04 16:27:42 [INFO] Host - 5.00: Host 0/#DC 2 is powered on.
+2025-03-04 16:27:42 [ERROR] e.ClassicalNetwork - ❌ No available VMs in sender or receiver datacenter!
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Submitting 29 cloudlets to broker 'Node sender'
+2025-03-04 16:27:42 [INFO] DatacenterBroker - 5.30: Node sender: Trying to create Vm 0 inside #Datacenter 1
+2025-03-04 16:27:42 [INFO] Host - 5.30: HostSimple: Vm 0 is booting up in Host 0/#DC 1 and it's expected to be ready in 5.0 seconds.
+2025-03-04 16:27:42 [INFO] VmAllocationPolicy - 5.30: VmAllocationPolicyBestFit: Vm 0 has been allocated to Host 0/#DC 1
+2025-03-04 16:27:42 [ERROR] e.ClassicalNetwork - ❌ No available VMs in sender or receiver datacenter!
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - ✅ Submitting 29 cloudlets to broker 'Node sender'
+2025-03-04 16:27:42 [INFO] CloudSim - 5.40: Processing last events before simulation shutdown.
+2025-03-04 16:27:42 [INFO] DatacenterBroker - 5.40: Node sender is shutting down...
+2025-03-04 16:27:42 [INFO] Vm - 5.40: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-04 16:27:42 [INFO] Datacenter - 5.40: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. 
+2025-03-04 16:27:42 [INFO] CloudSim - Simulation: No more future events
+
+2025-03-04 16:27:42 [INFO] CloudInformationService - CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+
+2025-03-04 16:27:42 [INFO] Datacenter - 5.40: #Datacenter 2 is shutting down...
+2025-03-04 16:27:42 [INFO] CloudSim - 
+================== Simulation finished at time 5.40 ==================
+
+2025-03-04 16:27:42 [INFO] e.ClassicalNetwork - 
+===== Stage 4: Results and Energy Consumption Calculation =====
+2025-03-04 16:27:42 [WARN] e.ClassicalNetwork - ⚠ No cloudlets finished for broker 'Node sender'

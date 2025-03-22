@@ -4,35 +4,28 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import org.cloudsimplus.vms.VmResourceStats;
 import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.core.CloudSimPlus;
 import org.cloudsimplus.brokers.DatacenterBroker;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
 import org.cloudsimplus.datacenters.Datacenter;
 import org.cloudsimplus.datacenters.DatacenterSimple;
-import org.cloudsimplus.cloudlets.network.CloudletSendTask;
-import org.cloudsimplus.cloudlets.network.NetworkCloudlet;
 import org.cloudsimplus.cloudlets.Cloudlet;
 import org.cloudsimplus.cloudlets.CloudletSimple;
 import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
 import org.cloudsimplus.listeners.EventInfo;
-import org.cloudsimplus.network.topologies.BriteNetworkTopology;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
 import org.cloudsimplus.vms.HostResourceStats;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.power.models.PowerModelHostSpec;
-import org.cloudsimplus.power.models.PowerModelDatacenterSimple;
 import org.cloudsimplus.power.models.PowerModelHost;
 import org.cloudsimplus.allocationpolicies.*;
 import org.cloudsimplus.vms.VmSimple;
 import org.cloudsimplus.schedulers.vm.*;
 import org.cloudsimplus.utilizationmodels.*;
-
-import static org.cloudsimplus.util.TimeUtil.currentTimeSecs;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,14 +33,21 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassicalNetwork {
+public class Conference {
     private static Config config;
     private CloudSimPlus simulation;
     private List<DatacenterBrokerSimple> brokers;
     private List<Datacenter> datacenters;
     int totalCloudletsGenerated = 0;
-    
-    // private static final int SIMULATION_DURATION = 10; // Total simulation time in seconds
+    int expectedCloudlets;
+
+    private final List<Double> powerPerSecond = new ArrayList<>();
+    private final List<Double> energyPerSecond = new ArrayList<>();
+    private final List<Integer> successPerSecond = new ArrayList<>();
+    private final List<Integer> pendingPerSecond = new ArrayList<>();
+    private final List<Double> cumulativeEnergykWsList = new ArrayList<>();
+    private double cumulativeEnergykWs = 0.0;
+    private double lastCloudletSubmitTime = 0.0;
 
     public static void main(String[] args) {
         if (args.length < 1) {
@@ -55,71 +55,122 @@ public class ClassicalNetwork {
             System.exit(1);
         }
         config = new Config(args[0]);
-        new ClassicalNetwork().run();
+        new Conference().run();
     }
 
     public void run() {
         JsonArray datacentersConfig = config.getArray("DATACENTERS");
         simulation = new CloudSimPlus();
-
         brokers = new ArrayList<>();
         datacenters = createDatacenters(datacentersConfig);
-        configureNetwork();
+        expectedCloudlets = getExpectedCloudlets();
 
-        createBrokersVms(datacentersConfig);
+        createBrokersVmsAndCloudlets(datacentersConfig);
+
+        // Submit first batch of cloudlets immediately at time = 0
+        for (int i = 0; i < brokers.size(); i++) {
+            JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
+            int tps = dcConfig.get("cloudlets").getAsInt();
+            List<Cloudlet> initialCloudlets = createDynamicCloudlets(totalCloudletsGenerated, tps, dcConfig);
+            brokers.get(i).submitCloudletList(initialCloudlets);
+            totalCloudletsGenerated += tps;
+            System.out.printf("🚀 Initial cloudlets submitted: %d\n", totalCloudletsGenerated);
+        }
 
         simulation.addOnClockTickListener(eventInfo -> {
-            generateCloudletsPerSecond(eventInfo);
-        });
+            int maxQueueSize = 64;  // match HOST_PES or VM count
 
-        // Ensure simulation waits until all Cloudlets are finished before stopping
-        simulation.addOnSimulationPauseListener(eventInfo -> {
-            if (allCloudletsCompleted()) {
-                System.out.println(
-                        "All cloudlets completed. Stopping simulation at " + eventInfo.getTime() + " seconds.");
+            int runningCloudlets = brokers.get(0).getCloudletSubmittedList().size()
+                                    - brokers.get(0).getCloudletFinishedList().size();
+            // Submit new cloudlets until limit
+            if (totalCloudletsGenerated < expectedCloudlets) {
+                if (runningCloudlets < maxQueueSize) {
+                    generateCloudletsPerSecond(eventInfo);
+                    lastCloudletSubmitTime = simulation.clock();
+                }
+            }
+            // Only check for SUCCESS after all have been submitted
+            if (totalCloudletsGenerated >= expectedCloudlets
+                && allCloudletsCompleted()) {
+                System.out.printf("✅ All %d cloudlets completed successfully at %.1f seconds.%n",
+                expectedCloudlets, eventInfo.getTime());
                 simulation.terminate();
             }
         });
+        
 
+        setupEnergyTracking();
         simulation.start();
+        writeEnergyCsv();
 
-        brokers.forEach(ClassicalNetwork::createCloudletsResultTable);
+        brokers.forEach(Conference::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
-        printDatacenterEnergyConsumptionCSV();
+        // printDatacenterEnergyConsumptionCSV();
     }
 
-
-    private void configureNetwork() {
-        // Step 1: Load BRITE Network Topology
-        String topologyFile = "src/main/resources/brite/topology.brite";
-        BriteNetworkTopology networkTopology = new BriteNetworkTopology(topologyFile);
-
-        // Step 2: Add Network Topology to CloudSim Simulation
-        simulation.setNetworkTopology(networkTopology);
-
-        // Step 3: Map Datacenters in a Loop
-        for (int i = 0; i < datacenters.size(); i++) {
-            networkTopology.mapNode(datacenters.get(i), i); // Map Datacenter i to Node i
-            System.out.println("✅ Mapped " + datacenters.get(i).getName() + " to BRITE Node " + i);
-        }
-
-        // Step 4: Map Brokers in a Loop
-        for (int i = 0; i < brokers.size(); i++) {
-            int nodeId = datacenters.size() + i; // Broker nodes start after Datacenter nodes
-            networkTopology.mapNode(brokers.get(i), nodeId);
-            System.out.println("✅ Mapped Broker " + (i + 1) + " to BRITE Node " + nodeId);
-        }
-
-        System.out.println("🎯 Network topology successfully applied!");
-    }
-
-    private boolean allCloudletsCompleted() {
-        for (DatacenterBrokerSimple broker : brokers) {
-            if (!broker.getCloudletFinishedList().containsAll(broker.getCloudletSubmittedList())) {
-                return false; // Some Cloudlets are still running
+    private void setupEnergyTracking() {
+        simulation.addOnClockTickListener(eventInfo -> {
+            double time = eventInfo.getTime();
+    
+            int success = 0;
+            int pending = 0;
+            for (DatacenterBrokerSimple broker : brokers) {
+                success += broker.getCloudletFinishedList().size();
+                pending += broker.getCloudletSubmittedList().size() - success;
             }
+    
+            double totalPowerkW = 0.0;
+            for (Datacenter dc : datacenters) {
+                for (Host host : dc.getHostList()) {
+                    double utilization = host.getCpuUtilizationStats().getMean();
+                    double power = host.getPowerModel().getPower(utilization); // in watts
+                    totalPowerkW += power/1000;
+                }
+            }
+    
+            cumulativeEnergykWs += totalPowerkW; // accumulate every second
+            powerPerSecond.add(totalPowerkW);
+            energyPerSecond.add(cumulativeEnergykWs);
+            successPerSecond.add(success);
+            pendingPerSecond.add(pending);
+        });
+    }
+    
+    
+    private void writeEnergyCsv() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("output/csv/" + config.get_filename() + ".csv"))) {
+            writer.println("time,success_cloudlets,pending_cloudlets,power_kW,c_power");
+    
+            for (int i = 0; i < powerPerSecond.size(); i++) {
+                writer.printf("%d,%d,%d,%.2f,%.2f%n",
+                    i + 1,
+                    successPerSecond.get(i),
+                    pendingPerSecond.get(i),
+                    powerPerSecond.get(i),
+                    cumulativeEnergykWs
+                );
+            }
+    
+            System.out.println("✅ Energy log written to output/csv/" + config.get_filename() + ".csv");
+        } catch (IOException e) {
+            System.err.println("❌ Error writing CSV: " + e.getMessage());
         }
-        return true; // All Cloudlets are completed
+    }
+
+    private int getExpectedCloudlets() {
+        return config.getArray("DATACENTERS")
+            .get(0).getAsJsonObject()
+            .get("lastCloudlets").getAsInt();
+    }
+    
+    private boolean allCloudletsCompleted() {
+        DatacenterBrokerSimple broker = brokers.get(0);
+    
+        long successCount = broker.getCloudletFinishedList().stream()
+            .filter(c -> c.getStatus() == Cloudlet.Status.SUCCESS)
+            .count();
+    
+        return successCount == expectedCloudlets;
     }
 
     private List<Datacenter> createDatacenters(JsonArray datacentersConfig) {
@@ -175,10 +226,6 @@ public class ClassicalNetwork {
         int hostRam = hostSpec.get("HOST_RAM").getAsInt();
         int hostBw = hostSpec.get("HOST_BW").getAsInt();
         long hostStorage = hostSpec.get("HOST_STORAGE").getAsLong();
-        double HOST_START_UP_DELAY = hostSpec.get("HOST_START_UP_DELAY").getAsDouble();
-        double HOST_SHUT_DOWN_DELAY = hostSpec.get("HOST_SHUT_DOWN_DELAY").getAsDouble();
-        double HOST_START_UP_POWER = hostSpec.get("HOST_START_UP_POWER").getAsDouble();
-        double HOST_SHUT_DOWN_POWER = hostSpec.get("HOST_SHUT_DOWN_POWER").getAsDouble();
         VmScheduler vmScheduler = getVmScheduler(dcConfig);
 
         List<Pe> peList = new ArrayList<>();
@@ -187,14 +234,7 @@ public class ClassicalNetwork {
         }
 
         final var host = new HostSimple(hostRam, hostBw, hostStorage, peList);
-        host.setStartupDelay(HOST_START_UP_DELAY)
-                .setShutDownDelay(HOST_SHUT_DOWN_DELAY);
-
         final var powerModel = getPowerModel(dcConfig);
-        powerModel
-                .setStartupPower(HOST_START_UP_POWER)
-                .setShutDownPower(HOST_SHUT_DOWN_POWER);
-
         host.setId(id)
                 .setVmScheduler(vmScheduler)
                 .setPowerModel(powerModel);
@@ -238,16 +278,14 @@ public class ClassicalNetwork {
         int index = 0;
         for (DatacenterBrokerSimple broker : brokers) {
             JsonObject dcConfig = datacentersConfig.get(index).getAsJsonObject();
-            int lastCloudlets = dcConfig.get("lastCloudlets").getAsInt();
-            if (totalCloudletsGenerated > lastCloudlets -1) {
-                System.out.println("Stopping cloudlet generation at " + eventInfo.getTime() + " seconds.");
-                simulation.removeOnClockTickListener(this::generateCloudletsPerSecond);
-                return; // Prevent further execution
-            }
             int tps = dcConfig.get("cloudlets").getAsInt();
+            // int tps = 16;
             List<Cloudlet> cloudlets = createDynamicCloudlets(totalCloudletsGenerated, tps, dcConfig);
+            System.out.printf("⏱️  Submitting %d cloudlets at time %.2f\n", tps, eventInfo.getTime());
             broker.submitCloudletList(cloudlets);
             totalCloudletsGenerated += tps;
+            System.out.printf("✅ Total cloudlets submitted so far: %d\n", totalCloudletsGenerated);
+
         }
     }
 
@@ -255,64 +293,69 @@ public class ClassicalNetwork {
         JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
         long cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsLong();
         int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
-        long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
-        long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
-    
+        // long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
+        // long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
+        // long cloudletCount = dcConfig.get("cloudlets").getAsLong();
+
         List<Cloudlet> cloudletList = new ArrayList<>();
-        UtilizationModel utilization = getUtilizationModel(dcConfig);
-    
+        UtilizationModel Utilization = getUtilizationModel(dcConfig);
+
+        // .setFileSize(fileSize)
+        // .setOutputSize(outputSize)
         for (int i = 0; i < TRANSACTIONS_PER_SECOND; i++) {
-            NetworkCloudlet senderCloudlet = new NetworkCloudlet(cloudletPes);
-            NetworkCloudlet receiverCloudlet = new NetworkCloudlet(cloudletPes);
-    
-            senderCloudlet.setFileSize(fileSize)
-                          .setOutputSize(outputSize)
-                          .setLength(cloudletLength)
-                          .setUtilizationModelCpu(utilization)
-                          .setUtilizationModelRam(utilization)
-                          .setUtilizationModelBw(utilization);
-    
-            receiverCloudlet.setFileSize(fileSize)
-                            .setOutputSize(outputSize)
-                            .setLength(cloudletLength)
-                            .setUtilizationModelCpu(utilization)
-                            .setUtilizationModelRam(utilization)
-                            .setUtilizationModelBw(utilization);
-    
-            CloudletSendTask sendTask = new CloudletSendTask(startId + i);
-            senderCloudlet.addTask(sendTask);
-    
-            // Ensure that both sender and receiver cloudlets have assigned VMs before sending packets
-            if (senderCloudlet.isBoundToVm() && receiverCloudlet.isBoundToVm()) {
-                sendTask.addPacket(receiverCloudlet, outputSize);
-            } else {
-                System.err.println("⚠️ Warning: Cloudlets must be assigned to VMs before sending packets.");
-            }
-    
-            cloudletList.add(senderCloudlet);
-            cloudletList.add(receiverCloudlet);
+            Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
+                    .setUtilizationModelCpu(Utilization)
+                    .setUtilizationModelRam(Utilization)
+                    .setUtilizationModelBw(Utilization);
+            cloudletList.add(cloudlet);
         }
-        
         return cloudletList;
     }
-    
-    
 
-    private void createBrokersVms(JsonArray datacentersConfig) {
+    private void createBrokersVmsAndCloudlets(JsonArray datacentersConfig) {
         int vmGlobalIndex = 0;
+        // int cloudletGlobalIndex = 0;
         for (int index = 0; index < datacenters.size(); index++) {
             Datacenter dc = datacenters.get(index);
             JsonObject dcConfig = datacentersConfig.get(index).getAsJsonObject();
+
             DatacenterBrokerSimple broker = createBroker(dc, dcConfig);
+
             final var vmList = createVms(vmGlobalIndex, dcConfig);
+            // final var cloudletList = createCloudlets(cloudletGlobalIndex, dcConfig);
 
             broker.submitVmList(vmList);
-            broker.setVmDestructionDelay(Double.MAX_VALUE);
+            broker.setVmDestructionDelay(Double.MAX_VALUE); // Never destroy VMs until simulation ends
+            // broker.submitCloudletList(cloudletList);
             brokers.add(broker);
 
             vmGlobalIndex += dcConfig.get("vm").getAsInt();
+            // cloudletGlobalIndex += dcConfig.get("cloudlets").getAsInt();
         }
     }
+
+    // private List<Cloudlet> createCloudlets(int startId, JsonObject dcConfig) {
+    //     JsonObject cloudletSpec = dcConfig.getAsJsonObject("cloudlet_spec");
+    //     long cloudletLength = cloudletSpec.get("CLOUDLET_LENGTH").getAsLong();
+    //     int cloudletPes = cloudletSpec.get("CLOUDLET_PES").getAsInt();
+    //     // long fileSize = cloudletSpec.get("FILE_SIZE").getAsLong();
+    //     // long outputSize = cloudletSpec.get("OUTPUT_SIZE").getAsLong();
+    //     long cloudletCount = expectedCloudlets;
+
+    //     List<Cloudlet> cloudletList = new ArrayList<>();
+    //     UtilizationModel Utilization = getUtilizationModel(dcConfig);
+
+    //     // .setFileSize(fileSize)
+    //     // .setOutputSize(outputSize)
+    //     for (int i = 0; i < cloudletCount; i++) {
+    //         Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
+    //                 .setUtilizationModelCpu(Utilization)
+    //                 .setUtilizationModelRam(Utilization)
+    //                 .setUtilizationModelBw(Utilization);
+    //         cloudletList.add(cloudlet);
+    //     }
+    //     return cloudletList;
+    // }
 
     private DatacenterBrokerSimple createBroker(final Datacenter dc, JsonObject dcConfig) {
         DatacenterBrokerSimple broker = new DatacenterBrokerSimple(simulation);
@@ -358,7 +401,6 @@ public class ClassicalNetwork {
 
     //     for (int i = 0; i < cloudletCount; i++) {
     //         Cloudlet cloudlet = new CloudletSimple(startId + i, cloudletLength, cloudletPes)
-    //         // Cloudlet cloudlet = new NetworkCloudlet(cloudletPes)
     //                 .setFileSize(fileSize)
     //                 .setOutputSize(outputSize)
     //                 .setUtilizationModelCpu(Utilization)
@@ -385,9 +427,7 @@ public class ClassicalNetwork {
     }
 
     private static void createCloudletsResultTable(final DatacenterBroker broker) {
-        new CloudletsTableBuilder(broker.getCloudletFinishedList())
-                .setTitle(broker.getName())
-                .build();
+        new CloudletsTableBuilder(broker.getCloudletSubmittedList()).build();
     }
 
     private void printDatacenterEnergyConsumption() {
@@ -397,24 +437,20 @@ public class ClassicalNetwork {
             Datacenter dc = datacenters.get(i);
             DatacenterBrokerSimple broker = brokers.get(i);
             int totalCloudlets = broker.getCloudletSubmittedList().size();
-
             double totalEnergy = 0.0;
             double totalUtilization = 0.0;
             int utilizedHosts = 0;
             int totalHosts = dc.getHostList().size();
-
             System.out.printf("\nDatacenter Name      : %s%n", dc.getName());
             System.out.printf("Total Hosts          : %d%n", totalHosts);
-
-            // Display Host Specifications and Utilization
-            boolean flag = true;
             for (Host host : dc.getHostList()) {
+                // printHostCpuUtilizationAndPowerConsumption(host);
                 // Mean CPU utilization and power consumption
                 final HostResourceStats cpuStats = host.getCpuUtilizationStats();
                 final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
                 final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power
-                                                                                                // consumption
-                // Calculate host alive time (in seconds)
+                //                                                                                 // consumption
+                // // Calculate host alive time (in seconds)
                 final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
                 // Calculate total power consumption in watt-seconds (Joules)
                 final double hostPowerConsumptionWatts = wattsMean * hostAliveTime;
@@ -423,20 +459,6 @@ public class ClassicalNetwork {
                 totalEnergy += hostPowerConsumptionKWh;
                 totalUtilization += utilizationPercentMean;
                 utilizedHosts++;
-                if (flag) {
-                    // Host Specifications
-                    System.out.printf("  Host ID                : %d%n", host.getId());
-                    System.out.printf("  RAM                    : %d MB%n", host.getRam().getCapacity());
-                    System.out.printf("  Bandwidth              : %d MBps%n", host.getBw().getCapacity());
-                    System.out.printf("  Storage                : %d MB%n", host.getStorage().getCapacity());
-                    System.out.printf("  Number of PEs          : %d%n", host.getPeList().size());
-                    System.out.printf("  CPU Usage mean         : %6.1f%%\n", utilizationPercentMean * 100);
-                    System.out.printf("  Power Consumption mean : %8.0f W\n", wattsMean);
-                    System.out.printf("  Host Power Consumption : %.1f W-s (%.6f kWh)\n", hostPowerConsumptionWatts,
-                            hostPowerConsumptionKWh);
-                    System.out.printf("  Host Alive Time        : %.1f s%n", hostAliveTime);
-                    flag = false;
-                }
             }
 
             // If no cloudlets, use only static power instead of NaN
@@ -452,82 +474,9 @@ public class ClassicalNetwork {
 
             System.out.printf("Total VMs            : %d%n", broker.getVmCreatedList().size());
             System.out.printf("Total Cloudlets      : %d%n", broker.getCloudletSubmittedList().size());
-            System.out.printf("Average CPU Utilization: %.2f%%%n", avgUtilization * 100);
+            System.out.printf("Average CPU Utilization: %.6f%%%n", avgUtilization * 100);
             System.out.printf("Total Energy Used    : %.6f kWh%n", totalEnergy);
             System.out.println("------------------------------");
         }
     }
-
-    private void printDatacenterEnergyConsumptionCSV() {
-        String fileName = "output/csv/" + config.get_filename() + ".csv";
-        try (PrintWriter writer = new PrintWriter(new FileWriter(fileName))) {
-            // Write CSV header
-            writer.println("Datacenter Name,Total Energy Used (kWh), cloudlets");
-
-            for (int i = 0; i < datacenters.size(); i++) {
-                Datacenter dc = datacenters.get(i);
-                DatacenterBrokerSimple broker = brokers.get(i);
-                int totalCloudlets = broker.getCloudletSubmittedList().size();
-
-                double totalEnergy = 0.0;
-                // double totalUtilization = 0.0;
-                // int utilizedHosts = 0;
-                // int totalHosts = dc.getHostList().size();
-
-                for (Host host : dc.getHostList()) {
-                    // Mean CPU utilization and power consumption
-                    final HostResourceStats cpuStats = host.getCpuUtilizationStats();
-                    final double utilizationPercentMean = cpuStats.getMean(); // Mean CPU utilization
-                    final double wattsMean = host.getPowerModel().getPower(utilizationPercentMean); // Mean power
-                                                                                                    // consumption
-                    // Calculate host alive time (in seconds)
-                    final double hostAliveTime = host.getSimulation().clock() - host.getFirstStartTime();
-                    // Calculate total power consumption in watt-seconds (Joules)
-                    final double hostPowerConsumptionWatts = wattsMean * hostAliveTime;
-                    // Convert total power consumption to kilowatt-hours (kWh)
-                    final double hostPowerConsumptionKWh = hostPowerConsumptionWatts / (1000 * 3600);
-                    totalEnergy += hostPowerConsumptionKWh;
-                    // totalUtilization += utilizationPercentMean;
-                    // utilizedHosts++;
-
-                    // // Write host details to CSV
-                    // writer.printf("%s,%d,%d,%d,%d,%d,%d,%.1f,%.0f,%.1f,%.6f,%.1f%n",
-                    // dc.getName(),
-                    // totalHosts,
-                    // host.getId(),
-                    // host.getRam().getCapacity(),
-                    // host.getBw().getCapacity(),
-                    // host.getStorage().getCapacity(),
-                    // host.getPeList().size(),
-                    // utilizationPercentMean * 100,
-                    // wattsMean,
-                    // hostPowerConsumptionWatts,
-                    // hostPowerConsumptionKWh,
-                    // hostAliveTime);
-                }
-
-                // If no cloudlets, use only static power instead of NaN
-                if (totalCloudlets == 0) {
-                    System.out.println(
-                            "Warning: No cloudlets found in " + dc.getName() + ". Using static power consumption.");
-                    totalEnergy = dc.getHostList().stream()
-                            .mapToDouble(h -> h.getPowerModel().getPower(0))
-                            .sum() * dc.getSimulation().clock() / (1000 * 3600); // Convert to kWh
-                }
-
-                // double avgUtilization = utilizedHosts > 0 ? totalUtilization / utilizedHosts
-                // : -1;
-
-                // Write summary details to CSV
-                writer.printf("%s,%.6f,%d%n",
-                        dc.getName(),
-                        totalEnergy,
-                        totalCloudlets);
-            }
-            System.out.println("Datacenter energy consumption report has been written to " + fileName);
-        } catch (IOException e) {
-            System.err.println("Error writing to CSV file: " + e.getMessage());
-        }
-    }
-
 }
