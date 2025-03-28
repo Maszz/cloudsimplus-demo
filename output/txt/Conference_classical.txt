@@ -1,506 +1,146 @@
-01:57:03,242 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
-01:57:03,243 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml]
-01:57:03,243 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
-01:57:03,243 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml]
-01:57:03,243 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/dependency/cloudsimplus-8.5.5.jar!/logback.xml]
-01:57:03,246 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@528931cf - URL [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml] is not of type file
-01:57:03,272 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
-01:57:03,272 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-01:57:03,275 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
-01:57:03,277 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-01:57:03,301 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
-01:57:03,303 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
-01:57:03,303 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-01:57:03,303 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [simulation.log]
-01:57:03,304 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
-01:57:03,304 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
-01:57:03,304 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
-01:57:03,304 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
-01:57:03,304 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@ea1a8d5 - Registering current configuration as safe fallback point
+21:20:50,229 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+21:20:50,229 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml]
+21:20:50,230 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+21:20:50,230 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml]
+21:20:50,230 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/dependency/cloudsimplus-8.5.5.jar!/logback.xml]
+21:20:50,233 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@528931cf - URL [jar:file:/Users/kitt/Documents/4-2/research/Project%20II/CloudSim/cloudsimplus/target/energy.Conference-1.0-SNAPSHOT.jar!/logback.xml] is not of type file
+21:20:50,264 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+21:20:50,264 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+21:20:50,267 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+21:20:50,270 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+21:20:50,294 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.FileAppender]
+21:20:50,296 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [FILE]
+21:20:50,297 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+21:20:50,297 |-INFO in ch.qos.logback.core.FileAppender[FILE] - File property is set to [simulation.log]
+21:20:50,298 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+21:20:50,298 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
+21:20:50,298 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [FILE] to Logger[ROOT]
+21:20:50,298 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+21:20:50,298 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@ea1a8d5 - Registering current configuration as safe fallback point
 
-2025-03-23 01:57:03 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
-🚀 Initial cloudlets submitted: 16
-2025-03-23 01:57:03 [INFO] CloudSim - 
+2025-03-28 21:20:50 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-28 21:20:50 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 1 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-28 21:20:50 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 2 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+2025-03-28 21:20:50 [INFO] Host - Automatically enabling computation of utilization statistics for VMs on Host 3 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+🚀 Initial cloudlets submitted: 29
+2025-03-28 21:20:50 [INFO] CloudSim - 
 ================== Starting CloudSim Plus 8.5.1 ==================
 
-2025-03-23 01:57:03 [INFO] Datacenter - 0.00: #Datacenter 1 is starting...
-2025-03-23 01:57:03 [INFO] DatacenterBroker - Broker 2 is starting...
-2025-03-23 01:57:03 [INFO] CloudSim - Entities started.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: List of 1 datacenters(s) received.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 0 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 1 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 2 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 3 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 4 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 5 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 6 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 7 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 8 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 9 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 10 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 11 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 12 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 13 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 14 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 15 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 16 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 17 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 18 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 19 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 20 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 21 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 22 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 23 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 24 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 25 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 26 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 27 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 28 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 29 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 30 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 31 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 32 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 33 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 34 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 35 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 36 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 37 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 38 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 39 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 40 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 41 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 42 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 43 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 44 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 45 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 46 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 47 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 48 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 49 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 50 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 51 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 52 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 53 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 54 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 55 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 56 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 57 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 58 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 59 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 60 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 61 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 62 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 63 inside #Datacenter 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 0 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 0 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 1 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 1 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 2 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 2 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 3 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 3 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 4 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 4 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 5 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 5 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 6 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 6 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 7 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 7 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 8 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 8 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 9 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 9 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 10 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 10 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 11 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 11 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 12 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 12 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 13 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 13 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 14 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 14 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 15 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 15 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 16 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 16 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 17 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 17 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 18 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 18 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 19 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 19 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 20 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 20 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 21 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 21 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 22 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 22 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 23 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 23 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 24 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 24 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 25 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 25 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 26 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 26 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 27 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 27 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 28 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 28 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 29 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 29 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 30 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 30 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 31 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 31 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 32 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 32 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 33 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 33 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 34 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 34 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 35 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 35 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 36 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 36 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 37 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 37 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 38 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 38 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 39 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 39 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 40 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 40 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 41 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 41 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 42 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 42 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 43 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 43 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 44 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 44 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 45 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 45 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 46 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 46 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 47 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 47 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 48 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 48 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 49 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 49 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 50 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 50 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 51 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 51 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 52 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 52 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 53 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 53 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 54 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 54 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 55 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 55 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 56 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 56 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 57 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 57 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 58 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 58 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 59 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 59 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 60 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 60 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 61 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 61 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 62 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 62 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] Host - 0.00: HostSimple: Vm 63 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
-2025-03-23 01:57:03 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 63 has been allocated to Host 0/#DC 1
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 0 to Vm 0 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 1 to Vm 1 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 2 to Vm 2 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 3 to Vm 3 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 4 to Vm 4 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 5 to Vm 5 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 6 to Vm 6 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 7 to Vm 7 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 8 to Vm 8 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 9 to Vm 9 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 10 to Vm 10 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 11 to Vm 11 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 12 to Vm 12 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 13 to Vm 13 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 14 to Vm 14 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 15 to Vm 15 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
-⏱️  Submitting 16 cloudlets at time 0.10
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
-✅ Total cloudlets submitted so far: 32
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 16 to Vm 16 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 17 to Vm 17 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 18 to Vm 18 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 19 to Vm 19 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 20 to Vm 20 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 21 to Vm 21 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 22 to Vm 22 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 23 to Vm 23 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 24 to Vm 24 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 25 to Vm 25 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 26 to Vm 26 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 27 to Vm 27 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 28 to Vm 28 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 29 to Vm 29 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 30 to Vm 30 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: Sending Cloudlet 31 to Vm 31 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 1.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
-⏱️  Submitting 16 cloudlets at time 1.10
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
-✅ Total cloudlets submitted so far: 48
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 32 to Vm 32 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 33 to Vm 33 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 34 to Vm 34 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 35 to Vm 35 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 36 to Vm 36 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 37 to Vm 37 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 38 to Vm 38 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 39 to Vm 39 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 40 to Vm 40 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 41 to Vm 41 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 42 to Vm 42 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 43 to Vm 43 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 44 to Vm 44 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 45 to Vm 45 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 46 to Vm 46 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: Sending Cloudlet 47 to Vm 47 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 2.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
-⏱️  Submitting 16 cloudlets at time 2.10
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: List of 16 Cloudlets submitted to the broker during simulation execution.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - Cloudlets creation request sent to Datacenter.
-✅ Total cloudlets submitted so far: 64
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 48 to Vm 48 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 49 to Vm 49 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 50 to Vm 50 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 51 to Vm 51 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 52 to Vm 52 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 53 to Vm 53 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 54 to Vm 54 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 55 to Vm 55 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 56 to Vm 56 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 57 to Vm 57 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 58 to Vm 58 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 59 to Vm 59 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 60 to Vm 60 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 61 to Vm 61 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 62 to Vm 62 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: Sending Cloudlet 63 to Vm 63 inside Host 0/#DC 1.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 3.10: Dell_PowerEdge_XR11: All 16 waiting Cloudlets submitted to some VM.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 0 finished in Vm 0 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 1 finished in Vm 1 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 2 finished in Vm 2 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 3 finished in Vm 3 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 4 finished in Vm 4 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 5 finished in Vm 5 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 6 finished in Vm 6 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 7 finished in Vm 7 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 8 finished in Vm 8 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 9 finished in Vm 9 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 10 finished in Vm 10 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 11 finished in Vm 11 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 12 finished in Vm 12 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 13 finished in Vm 13 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 14 finished in Vm 14 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 4.52: Dell_PowerEdge_XR11: Cloudlet 15 finished in Vm 15 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 16 finished in Vm 16 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 17 finished in Vm 17 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 18 finished in Vm 18 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 19 finished in Vm 19 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 20 finished in Vm 20 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 21 finished in Vm 21 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 22 finished in Vm 22 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 23 finished in Vm 23 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 24 finished in Vm 24 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 25 finished in Vm 25 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 26 finished in Vm 26 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 27 finished in Vm 27 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 28 finished in Vm 28 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 29 finished in Vm 29 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 30 finished in Vm 30 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 5.62: Dell_PowerEdge_XR11: Cloudlet 31 finished in Vm 31 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 32 finished in Vm 32 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 33 finished in Vm 33 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 34 finished in Vm 34 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 35 finished in Vm 35 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 36 finished in Vm 36 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 37 finished in Vm 37 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 38 finished in Vm 38 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 39 finished in Vm 39 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 40 finished in Vm 40 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 41 finished in Vm 41 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 42 finished in Vm 42 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 43 finished in Vm 43 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 44 finished in Vm 44 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 45 finished in Vm 45 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 46 finished in Vm 46 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 6.62: Dell_PowerEdge_XR11: Cloudlet 47 finished in Vm 47 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 48 finished in Vm 48 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 49 finished in Vm 49 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 50 finished in Vm 50 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 51 finished in Vm 51 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 52 finished in Vm 52 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 53 finished in Vm 53 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 54 finished in Vm 54 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 55 finished in Vm 55 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 56 finished in Vm 56 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 57 finished in Vm 57 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 58 finished in Vm 58 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 59 finished in Vm 59 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 60 finished in Vm 60 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 61 finished in Vm 61 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 62 finished in Vm 62 and returned to broker.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.62: Dell_PowerEdge_XR11: Cloudlet 63 finished in Vm 63 and returned to broker.
-2025-03-23 01:57:03 [INFO] CloudSim - 7.73: Processing last events before simulation shutdown.
-2025-03-23 01:57:03 [INFO] DatacenterBroker - 7.73: Dell_PowerEdge_XR11 is shutting down...
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 63 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 62 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 61 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 60 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 59 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 58 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 57 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 56 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 55 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 54 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 53 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 52 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 51 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 50 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 49 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 48 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 47 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 46 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 45 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 44 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 43 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 42 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 41 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 40 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 39 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 38 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 37 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 36 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 35 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 34 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 33 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 32 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 31 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 30 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 29 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 28 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 27 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 26 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 25 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 24 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 23 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 22 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 21 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 20 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 19 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 18 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 17 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 16 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 15 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 14 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 13 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 12 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 11 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 10 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 9 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 8 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 7 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 6 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 5 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 4 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 3 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 2 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 1 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Vm - 7.73: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 63 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 62 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 61 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 60 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 59 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 58 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 57 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 56 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 55 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 54 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 53 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 52 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 51 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 50 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 49 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 48 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 47 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 46 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 45 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 44 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 43 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 42 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 41 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 40 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 39 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 38 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 37 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 36 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 35 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 34 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 33 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 32 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 31 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 30 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 29 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 28 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 27 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 26 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 25 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 24 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 23 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 22 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 21 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 20 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 19 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 18 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 17 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 16 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 15 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 14 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 13 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 12 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 11 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 10 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 9 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 8 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 7 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 6 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 5 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 4 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 3 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 2 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 1 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] Datacenter - 7.73: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. 
-2025-03-23 01:57:03 [INFO] CloudSim - Simulation: No more future events
+2025-03-28 21:20:50 [INFO] Datacenter - 0.00: #Datacenter 1 is starting...
+2025-03-28 21:20:50 [INFO] DatacenterBroker - Broker 2 is starting...
+2025-03-28 21:20:50 [INFO] CloudSim - Entities started.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: List of 1 datacenters(s) received.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.00: Dell_PowerEdge_XR11: Trying to create Vm 0 inside #Datacenter 1
+2025-03-28 21:20:50 [INFO] Host - 0.00: HostSimple: Vm 0 is booting up right away in Host 0/#DC 1, since no startup delay (boot time) was set.
+2025-03-28 21:20:50 [INFO] VmAllocationPolicy - 0.00: VmAllocationPolicyBestFit: Vm 0 has been allocated to Host 0/#DC 1
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 0 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 1 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 2 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 3 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 4 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 5 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 6 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 7 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 8 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 9 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 10 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 11 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 12 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 13 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 14 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 15 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 16 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 17 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 18 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 19 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 20 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 21 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 22 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 23 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 24 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 25 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 26 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 27 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: Sending Cloudlet 28 to Vm 0 inside Host 0/#DC 1.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 0.10: Dell_PowerEdge_XR11: All 29 waiting Cloudlets submitted to some VM.
+🛑 VMs full at 1.1 sec — waiting to submit more
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 1 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 1 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 2 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 2 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 3 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 3 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 4 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 4 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 5 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 5 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 6 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 6 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 7 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 7 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 8 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 8 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 9 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 9 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 10 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 10 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 11 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 11 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 12 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 12 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 13 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 13 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 14 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 14 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 15 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 15 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 16 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 16 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 17 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 17 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 18 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 18 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 19 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 19 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 20 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 20 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 21 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 21 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 22 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 22 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 23 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 23 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 24 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 24 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 25 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 25 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 26 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 26 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 27 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 27 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 28 requested 131072 MB of VmRam but no amount is available., which delays Cloudlet processing.
+2025-03-28 21:20:50 [WARN] CloudletScheduler - 1.10: CloudletSchedulerTimeShared: Cloudlet 28 requested 10000 Mbps of Bandwidth but no amount is available., which delays Cloudlet processing.
+🛑 VMs full at 2.0 sec — waiting to submit more
+🛑 VMs full at 2.1 sec — waiting to submit more
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 2.11: Dell_PowerEdge_XR11: Cloudlet 0 finished in Vm 0 and returned to broker.
+🛑 VMs full at 2.2 sec — waiting to submit more
+2025-03-28 21:20:50 [INFO] CloudSim - 2.22: Processing last events before simulation shutdown.
+2025-03-28 21:20:50 [INFO] DatacenterBroker - 2.22: Dell_PowerEdge_XR11 is shutting down...
+2025-03-28 21:20:50 [INFO] Vm - 2.22: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+2025-03-28 21:20:50 [WARN] Datacenter - 2.22: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. It had a total of 28 cloudlets (running + waiting). Some events may have been missed. You can try:
+(a) decreasing CloudSim's minTimeBetweenEvents and/or Datacenter's schedulingInterval attribute;
+(b) increasing broker's Vm destruction delay for idle VMs if you set it to zero;
+(c) defining Cloudlets with smaller length (your Datacenter's scheduling interval may be smaller than the time to finish some Cloudlets).
 
-2025-03-23 01:57:03 [INFO] CloudInformationService - CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+2025-03-28 21:20:50 [INFO] CloudSim - Simulation: No more future events
 
-2025-03-23 01:57:03 [INFO] CloudSim - 
-================== Simulation finished at time 7.73 ==================
+2025-03-28 21:20:50 [INFO] CloudInformationService - CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+
+2025-03-28 21:20:50 [INFO] CloudSim - 
+================== Simulation finished at time 2.22 ==================
 
 ✅ Energy log written to output/csv/classical.csv
+📊 Summary: Total Energy = 0.0005 kWh, Avg Energy/Tx = 0.5067 Wh
 
 
                                          SIMULATION RESULTS
@@ -508,78 +148,44 @@
 |Cloudlet| Status|DC|Host|Host PEs |VM|   VM PEs|CloudletLen|FinishedLen|CloudletPEs|StartTime|FinishTime|ExecTime
 |--------|-------|--|----|---------|--|---------|-----------|-----------|-----------|---------|----------|--------
 |      ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|         MI|  CPU cores|  Seconds|   Seconds| Seconds
-|       0|SUCCESS| 1|   0|       64| 0|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       1|SUCCESS| 1|   0|       64| 1|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       2|SUCCESS| 1|   0|       64| 2|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       3|SUCCESS| 1|   0|       64| 3|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       4|SUCCESS| 1|   0|       64| 4|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       5|SUCCESS| 1|   0|       64| 5|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       6|SUCCESS| 1|   0|       64| 6|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       7|SUCCESS| 1|   0|       64| 7|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       8|SUCCESS| 1|   0|       64| 8|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|       9|SUCCESS| 1|   0|       64| 9|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      10|SUCCESS| 1|   0|       64|10|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      11|SUCCESS| 1|   0|       64|11|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      12|SUCCESS| 1|   0|       64|12|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      13|SUCCESS| 1|   0|       64|13|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      14|SUCCESS| 1|   0|       64|14|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      15|SUCCESS| 1|   0|       64|15|        1|     116525|     116525|          1|      0.1|       4.5|     4.4
-|      16|SUCCESS| 1|   0|       64|16|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      17|SUCCESS| 1|   0|       64|17|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      18|SUCCESS| 1|   0|       64|18|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      19|SUCCESS| 1|   0|       64|19|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      20|SUCCESS| 1|   0|       64|20|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      21|SUCCESS| 1|   0|       64|21|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      22|SUCCESS| 1|   0|       64|22|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      23|SUCCESS| 1|   0|       64|23|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      24|SUCCESS| 1|   0|       64|24|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      25|SUCCESS| 1|   0|       64|25|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      26|SUCCESS| 1|   0|       64|26|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      27|SUCCESS| 1|   0|       64|27|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      28|SUCCESS| 1|   0|       64|28|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      29|SUCCESS| 1|   0|       64|29|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      30|SUCCESS| 1|   0|       64|30|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      31|SUCCESS| 1|   0|       64|31|        1|     116525|     116525|          1|      1.1|       5.6|     4.5
-|      32|SUCCESS| 1|   0|       64|32|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      33|SUCCESS| 1|   0|       64|33|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      34|SUCCESS| 1|   0|       64|34|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      35|SUCCESS| 1|   0|       64|35|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      36|SUCCESS| 1|   0|       64|36|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      37|SUCCESS| 1|   0|       64|37|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      38|SUCCESS| 1|   0|       64|38|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      39|SUCCESS| 1|   0|       64|39|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      40|SUCCESS| 1|   0|       64|40|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      41|SUCCESS| 1|   0|       64|41|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      42|SUCCESS| 1|   0|       64|42|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      43|SUCCESS| 1|   0|       64|43|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      44|SUCCESS| 1|   0|       64|44|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      45|SUCCESS| 1|   0|       64|45|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      46|SUCCESS| 1|   0|       64|46|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      47|SUCCESS| 1|   0|       64|47|        1|     116525|     116525|          1|      2.1|       6.6|     4.5
-|      48|SUCCESS| 1|   0|       64|48|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      49|SUCCESS| 1|   0|       64|49|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      50|SUCCESS| 1|   0|       64|50|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      51|SUCCESS| 1|   0|       64|51|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      52|SUCCESS| 1|   0|       64|52|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      53|SUCCESS| 1|   0|       64|53|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      54|SUCCESS| 1|   0|       64|54|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      55|SUCCESS| 1|   0|       64|55|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      56|SUCCESS| 1|   0|       64|56|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      57|SUCCESS| 1|   0|       64|57|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      58|SUCCESS| 1|   0|       64|58|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      59|SUCCESS| 1|   0|       64|59|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      60|SUCCESS| 1|   0|       64|60|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      61|SUCCESS| 1|   0|       64|61|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      62|SUCCESS| 1|   0|       64|62|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
-|      63|SUCCESS| 1|   0|       64|63|        1|     116525|     116525|          1|      3.1|       7.6|     4.5
+|       0|SUCCESS| 1|   0|       64| 0|       64|      70400|      70400|          1|      0.1|       2.1|     2.0
+|       1| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       2| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       3| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       4| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       5| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       6| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       7| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       8| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|       9| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      10| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      11| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      12| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      13| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      14| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      15| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      16| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      17| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      18| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      19| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      20| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      21| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      22| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      23| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      24| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      25| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      26| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      27| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
+|      28| INEXEC| 1|   0|       64| 0|       64|      70400|      35200|          1|      0.1|      -1.0|     2.1
 
 
 ---------------- Detailed Datacenter Report ----------------
 
 Datacenter Name      : Dell_PowerEdge_XR11
-Total Hosts          : 1
-Total VMs            : 64
-Total Cloudlets      : 64
-Average CPU Utilization: 0.097656%
-Total Energy Used    : 0.000277 kWh
+Total Hosts          : 4
+Total VMs            : 1
+Total Cloudlets      : 29
+Average CPU Utilization: 0.177002%
+CPU Utilization (MI/time): 40.82%
+Total Energy Used    : 0.000408 kWh
 ------------------------------
