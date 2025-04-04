@@ -13,7 +13,7 @@
   "UtilizationModel": "F",
   "vm": 1,
   "cloudlet_spec": {
-    "CLOUDLET_LENGTH": 70400,
+    "CLOUDLET_LENGTH": 35200,
     "CLOUDLET_PES": 1
   },
   "power_spec_path": "src/main/resources/power_spec/G6338N.txt",

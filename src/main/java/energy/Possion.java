@@ -11,16 +11,27 @@ import org.cloudsimplus.datacenters.Datacenter;
 import org.cloudsimplus.datacenters.DatacenterSimple;
 import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
+import org.cloudsimplus.power.models.PowerModelHost;
+import org.cloudsimplus.power.models.PowerModelHostSimple;
 import org.cloudsimplus.power.models.PowerModelHostSpec;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
+import org.cloudsimplus.schedulers.cloudlet.CloudletScheduler;
+import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerSpaceShared;
+import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerTimeShared;
+import org.cloudsimplus.schedulers.vm.VmScheduler;
+import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.utilizationmodels.UtilizationModel;
 import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.vms.VmSimple;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicy;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
-
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRandom;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRoundRobin;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicySimple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,9 +59,10 @@ public class Possion {
     private double cumulativeEnergykWs = 0.0;
 
     private String monthLabel = "Month";
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
 
     public static void main(String[] args) {
+        System.out.println("Starting simulation...");
         if (args.length < 1) {
             logger.error("Usage: java Conference <config.json>");
             System.exit(1);
@@ -62,8 +74,11 @@ public class Possion {
             JsonObject month = months.get(i).getAsJsonObject();
             JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
             String label = "Month" + month.get("MONTH").getAsInt();
+            System.out.println("Starting " + label);
             new Possion().run(datacenters, label);
-            if (DEBUG) break;
+            if (DEBUG)
+                break;
+            // break;
         }
     }
 
@@ -81,15 +96,106 @@ public class Possion {
         createBrokersVms(datacentersConfig);
 
         simulation.addOnClockTickListener(eventInfo -> {
-            if (DEBUG) logger.debug("Tick: {}", simulation.clock());
+            for (DatacenterBrokerSimple broker : brokers) {
+                for (Vm vm : broker.getVmCreatedList()) {
+                    int exec = vm.getCloudletScheduler().getCloudletExecList().size();
+                    logger.debug("Tick %.2f: VM #%d running %d cloudlets\n", simulation.clock(), vm.getId(), exec);
+                    System.out.printf("Tick %.2f: VM #%d running %d cloudlets\n", simulation.clock(), vm.getId(), exec);
+                }
+            }
             submitPoissonCloudlets(datacentersConfig, lambda);
         });
 
         setupEnergyTracking();
+        simulation.terminateAt(2592000); // Ensures clock ticks at least up to x seconds
+
         simulation.start();
 
         brokers.forEach(Possion::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
+    }
+
+    public VmScheduler getVMScheduler() {
+        String key = "VmScheduler";
+        String type = control.has(key) ? control.get(key).getAsString() : "";
+
+        switch (type) {
+            case "TS":
+                return new VmSchedulerTimeShared();
+            case "SS":
+                return new VmSchedulerSpaceShared();
+            default:
+                System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
+                return new VmSchedulerSpaceShared(); // Default policy
+        }
+    }
+
+    public CloudletScheduler getCloudletScheduler() {
+        String key = "cloudletScheduler";
+        String type = control.has(key) ? control.get(key).getAsString() : "";
+
+        switch (type) {
+            case "TS":
+                return new CloudletSchedulerTimeShared();
+            case "SS":
+                return new CloudletSchedulerSpaceShared();
+            default:
+                System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
+                return new CloudletSchedulerTimeShared(); // Default policy
+        }
+    }
+
+    public VmAllocationPolicy getVmAllocationPolicy() {
+        String key = "VmAllocationPolicy";
+        String type = control.has(key) ? control.get(key).getAsString() : "";
+
+        switch (type) {
+            case "SP":
+                return new VmAllocationPolicySimple();
+            case "FF":
+                return new VmAllocationPolicyFirstFit();
+            case "BF":
+                return new VmAllocationPolicyBestFit();
+            case "RR":
+                return new VmAllocationPolicyRoundRobin();
+            case "RD":
+                return new VmAllocationPolicyRandom(null);
+            default:
+                System.err.println("Warning: Unknown VM Allocation Policy '" + type + "', using default (SP)");
+                return new VmAllocationPolicySimple(); // Default policy
+        }
+    }
+
+    public PowerModelHost getPowerModel() {
+        String key = "power_spec_path";
+        String type = control.has(key) ? control.get(key).getAsString() : "Manual";
+
+        if (type == "Manual") {
+            JsonObject powerSpec = control.getAsJsonObject("power_spec");
+            double MAX_POWER = powerSpec.get("MAX_POWER").getAsDouble();
+            double STATIC_POWER = powerSpec.get("STATIC_POWER").getAsDouble();
+            return new PowerModelHostSimple(MAX_POWER, STATIC_POWER);
+        } else {
+            PowerModelHostSpec DEF_POWER_MODEL = PowerModelHostSpec.getInstance(type);
+            return new PowerModelHostSpec(DEF_POWER_MODEL.getPowerSpecs());
+        }
+    }
+
+    private List<Cloudlet> createDynamicCloudlets(int startId, int count) {
+        List<Cloudlet> cloudletList = new ArrayList<>();
+        JsonObject spec = control.getAsJsonObject("cloudlet_spec");
+        long length = spec.get("CLOUDLET_LENGTH").getAsLong();
+        int pes = spec.get("CLOUDLET_PES").getAsInt();
+        UtilizationModel utilization = new UtilizationModelFull();
+
+        for (int i = 0; i < count; i++) {
+            Cloudlet c = new CloudletSimple(startId + i, length, pes)
+                    .setUtilizationModelCpu(utilization)
+                    .setUtilizationModelRam(utilization)
+                    .setUtilizationModelBw(utilization);
+            cloudletList.add(c);
+        }
+        return cloudletList;
     }
 
     private void submitPoissonCloudlets(JsonArray datacentersConfig, int lambda) {
@@ -99,19 +205,27 @@ public class Possion {
             int lastCloudlets = dcConfig.get("cloudlets").getAsInt();
             int currentCloudlets = totalCloudletsGenerated.get(i);
             int remaining = lastCloudlets - currentCloudlets;
-            if (remaining <= 0) continue;
+            if (remaining <= 0)
+                continue;
 
             PoissonDistribution poisson = new PoissonDistribution(lambda);
             int poissonArrivals = Math.min(poisson.sample(), remaining);
-            if (DEBUG) logger.debug("[Tick {}] {}: +{} cloudlets (total so far: {}/{})", simulation.clock(), broker.getName(), poissonArrivals, currentCloudlets + poissonArrivals, lastCloudlets);
-
-            int unfinished = broker.getCloudletSubmittedList().size() - broker.getCloudletFinishedList().size();
-            if (unfinished > 64) continue;
 
             List<Cloudlet> newCloudlets = createDynamicCloudlets(currentCloudlets, poissonArrivals);
             broker.submitCloudletList(newCloudlets);
             currentCloudlets += poissonArrivals;
             totalCloudletsGenerated.set(i, currentCloudlets);
+            int submitted = broker.getCloudletSubmittedList().size();
+            int done = broker.getCloudletFinishedList().size();
+
+            if (DEBUG) {
+                logger.debug("[Tick {}] {}: +{} cloudlets (done/submitted/total): {}/{}/{}",
+                        simulation.clock(), broker.getName(), poissonArrivals, done, submitted, lastCloudlets);
+
+                System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d%n",
+                        simulation.clock(), broker.getName(), poissonArrivals, done, submitted, lastCloudlets);
+            }
+
         }
 
         boolean allFinished = true;
@@ -125,8 +239,10 @@ public class Possion {
         }
 
         if (allFinished) {
-            if (DEBUG) logger.info("All cloudlets submitted, terminating simulation...");
-            simulation.terminate();
+            if (DEBUG)
+                logger.info("All cloudlets submitted, terminating simulation...");
+            if (DEBUG)
+                System.out.println("All cloudlets submitted, terminating simulation...");
         }
     }
 
@@ -165,6 +281,12 @@ public class Possion {
     }
 
     private Datacenter createDatacenter(String name) {
+        int numHosts = control.get("hosts").getAsInt();
+        List<Host> hostList = new ArrayList<>();
+        for (int i = 0; i < numHosts; i++) {
+            Host host = createHost(i);
+            hostList.add(host);
+        }
         List<Pe> peList = new ArrayList<>();
         JsonObject hostSpec = control.getAsJsonObject("host_spec");
         int pes = hostSpec.get("HOST_PES").getAsInt();
@@ -176,15 +298,39 @@ public class Possion {
                 hostSpec.get("HOST_RAM").getAsInt(),
                 hostSpec.get("HOST_BW").getAsInt(),
                 hostSpec.get("HOST_STORAGE").getAsLong(),
-                peList
-        );
+                peList);
         host.setVmScheduler(new VmSchedulerTimeShared());
         host.setPowerModel(PowerModelHostSpec.getInstance(control.get("power_spec_path").getAsString()));
         host.enableUtilizationStats();
-        Datacenter datacenter = new DatacenterSimple(simulation, List.of(host), new VmAllocationPolicyBestFit());
+        VmAllocationPolicy policy = getVmAllocationPolicy();
+        Datacenter datacenter = new DatacenterSimple(simulation, List.of(host), policy);
         datacenter.setName(name);
         datacenter.setSchedulingInterval(control.get("SCHEDULING_INTERVAL").getAsInt());
         return datacenter;
+    }
+
+    private Host createHost(final int id) {
+        JsonObject hostSpec = control.getAsJsonObject("host_spec");
+        int hostPes = hostSpec.get("HOST_PES").getAsInt();
+        int hostMips = hostSpec.get("HOST_MIPS").getAsInt();
+        int hostRam = hostSpec.get("HOST_RAM").getAsInt();
+        int hostBw = hostSpec.get("HOST_BW").getAsInt();
+        long hostStorage = hostSpec.get("HOST_STORAGE").getAsLong();
+        VmScheduler vmScheduler = getVMScheduler();
+
+        List<Pe> peList = new ArrayList<>();
+        for (int i = 0; i < hostPes; i++) {
+            peList.add(new PeSimple(hostMips));
+        }
+
+        final var host = new HostSimple(hostRam, hostBw, hostStorage, peList);
+        final var powerModel = getPowerModel();
+        host.setId(id)
+                .setVmScheduler(vmScheduler)
+                .setPowerModel(powerModel);
+        host.enableUtilizationStats();
+
+        return host;
     }
 
     private void createBrokersVms(JsonArray datacentersConfig) {
@@ -192,8 +338,7 @@ public class Possion {
         for (int index = 0; index < datacenters.size(); index++) {
             Datacenter dc = datacenters.get(index);
             JsonObject dcConfig = datacentersConfig.get(index).getAsJsonObject();
-            DatacenterBrokerSimple broker = new DatacenterBrokerSimple(simulation);
-            broker.setName(dcConfig.get("name").getAsString());
+            DatacenterBrokerSimple broker = createBroker(dcConfig);
             broker.setLastSelectedDc(dc);
             final var vmList = createVms(vmGlobalIndex);
             broker.submitVmList(vmList);
@@ -201,6 +346,17 @@ public class Possion {
             brokers.add(broker);
             vmGlobalIndex += control.get("vm").getAsInt();
         }
+    }
+
+    private DatacenterBrokerSimple createBroker(JsonObject dcConfig) {
+        DatacenterBrokerSimple broker = new DatacenterBrokerSimple(simulation);
+        String broker_name = dcConfig.get("name").getAsString();
+        broker.setName(broker_name);
+        if (DEBUG)
+            logger.info("Create broker: {}", broker_name);
+        if (DEBUG)
+            System.out.printf("Create broker: %s\n", broker_name);
+        return broker;
     }
 
     private List<Vm> createVms(int startId) {
@@ -218,31 +374,15 @@ public class Possion {
         for (int i = 0; i < vms; i++) {
             Vm vm = new VmSimple(startId + i, vmMips, vmPes);
             vm.setRam(vmRam).setBw(vmBw).setSize(vmStorage);
+            vm.setCloudletScheduler(new CloudletSchedulerTimeShared());
             vm.enableUtilizationStats();
             vmList.add(vm);
         }
+        if (DEBUG)
+            logger.info("Create VM: {} - ", startId, startId + vms--);
+        if (DEBUG)
+            System.out.printf("Create VM: %d-%d\n", startId, startId + vms--);
         return vmList;
-    }
-
-    private List<Cloudlet> createDynamicCloudlets(int startId, int count) {
-        List<Cloudlet> cloudletList = new ArrayList<>();
-        JsonObject spec = control.getAsJsonObject("cloudlet_spec");
-        long length = spec.get("CLOUDLET_LENGTH").getAsLong();
-        int pes = spec.get("CLOUDLET_PES").getAsInt();
-        UtilizationModel utilization = new UtilizationModelFull();
-
-        for (int i = 0; i < count; i++) {
-            Cloudlet c = new CloudletSimple(startId + i, length, pes)
-                    .setUtilizationModelCpu(utilization)
-                    .setUtilizationModelRam(utilization)
-                    .setUtilizationModelBw(utilization);
-            cloudletList.add(c);
-        }
-        return cloudletList;
-    }
-
-    private static void createCloudletsResultTable(final DatacenterBrokerSimple broker) {
-        new CloudletsTableBuilder(broker.getCloudletCreatedList()).build();
     }
 
     private void printDatacenterEnergyConsumption() {
@@ -260,8 +400,14 @@ public class Possion {
                 final double energyKWh = (watts * aliveTime) / (1000 * 3600);
                 totalEnergy += energyKWh;
             }
-            logger.info("Datacenter: {} | Cloudlets: {} | Energy: {:.4f} kWh", dc.getName(), totalCloudlets, totalEnergy);
-            System.out.printf("Datacenter: %s | Cloudlets: %d | Energy: %.4f kWh\n", dc.getName(), totalCloudlets, totalEnergy);
+            logger.info("Datacenter: {} | Cloudlets: {} | Energy: {:.4f} kWh", dc.getName(), totalCloudlets,
+                    totalEnergy);
+            System.out.printf("Datacenter: %s | Cloudlets: %d | Energy: %.4f kWh\n", dc.getName(), totalCloudlets,
+                    totalEnergy);
         }
+    }
+
+    private static void createCloudletsResultTable(final DatacenterBrokerSimple broker) {
+        new CloudletsTableBuilder(broker.getCloudletCreatedList()).build();
     }
 }
