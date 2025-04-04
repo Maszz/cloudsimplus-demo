@@ -1,0 +1,12 @@
+{
+    "DATACENTERS": [
+        {
+            "name": "Node1",
+            "cloudlets": 10
+        },
+        {
+            "name": "Node2",
+            "cloudlets": 20
+        }
+        ]
+}
