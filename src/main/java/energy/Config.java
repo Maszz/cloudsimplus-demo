@@ -48,5 +48,12 @@ public class Config {
     public String get_filename() {
         return fileName;
     }
-    
+
+    public JsonObject getObject(String key) {
+        return jsonObject.has(key) ? jsonObject.getAsJsonObject(key) : new JsonObject();
+    }
+
+    public JsonObject getRoot() {
+        return jsonObject;
+    }
 }
