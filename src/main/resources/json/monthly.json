@@ -1,25 +1,23 @@
 {
-  "CONTROL": {
-    "SCHEDULING_INTERVAL": 1,
-    "hosts": 1,
-    "host_spec": {
-      "HOST_PES": 64,
-      "HOST_RAM": 131072,
-      "HOST_BW": 10000,
-      "HOST_STORAGE": 480000,
-      "HOST_MIPS": 2252800
-    },
-    "VmAllocationPolicy": "BF",
-    "VmScheduler": "TS",
-    "UtilizationModel": "F",
-    "vm": 1,
-    "lastCloudlets": 100,
-        "cloudlet_spec": {
-          "CLOUDLET_LENGTH": 70400,
-          "CLOUDLET_PES": 1
-        },
-        "power_spec_path": "src/main/resources/power_spec/G6338N.txt"
+  "SCHEDULING_INTERVAL": 1,
+  "hosts": 1,
+  "host_spec": {
+    "HOST_PES": 64,
+    "HOST_RAM": 131072,
+    "HOST_BW": 10000,
+    "HOST_STORAGE": 480000,
+    "HOST_MIPS": 2252800
   },
+  "VmAllocationPolicy": "BF",
+  "VmScheduler": "TS",
+  "UtilizationModel": "F",
+  "vm": 1,
+  "cloudlet_spec": {
+    "CLOUDLET_LENGTH": 70400,
+    "CLOUDLET_PES": 1
+  },
+  "power_spec_path": "src/main/resources/power_spec/G6338N.txt",
+  "lambda": 30,
   "MONTHS": [
     {
       "MONTH" : 1,
