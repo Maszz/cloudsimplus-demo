@@ -42,7 +42,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-public class Possion {
+public class Node {
     private static final Logger logger = LoggerFactory.getLogger(Possion.class);
 
     private static JsonObject control;
@@ -53,11 +53,14 @@ public class Possion {
     private List<Integer> totalCloudletsGenerated;
     private double lastSubmissionTime = 0.0;
 
-    private final List<Double> energyPerHour = new ArrayList<>();
+    private final List<Double> powerPerSecond = new ArrayList<>();
+    private final List<Double> energyPerSecond = new ArrayList<>();
+    private final List<Integer> successPerSecond = new ArrayList<>();
+    private final List<Integer> pendingPerSecond = new ArrayList<>();
     private double cumulativeEnergykWs = 0.0;
 
     private String monthLabel = "Month";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     public static void main(String[] args) {
         System.out.println("Starting simulation...");
@@ -73,10 +76,10 @@ public class Possion {
             JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
             String label = "Month" + month.get("MONTH").getAsInt();
             System.out.println("Starting " + label);
-            new Possion().run(datacenters, label);
+            new Node().run(datacenters, label);
             if (DEBUG)
                 break;
-            break;
+            // break;
         }
     }
 
@@ -121,8 +124,8 @@ public class Possion {
         // }
         // }
 
-        writeMonthlyTotalEnergy();
-        brokers.forEach(Possion::createCloudletsResultTable);
+        writeMonthlyCSV();
+        brokers.forEach(Node::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
     }
 
@@ -262,7 +265,7 @@ public class Possion {
 
             Vm vm = broker.getVmCreatedList().get(0);
             // long maxCloudletsPerVm = vm.getPesNumber();
-            int maxCloudletsPerVm = 29;
+            int maxCloudletsPerVm = 32;
             int inflight = vm.getCloudletScheduler().getCloudletExecList().size()
                     + vm.getCloudletScheduler().getCloudletWaitingList().size();
 
@@ -299,39 +302,52 @@ public class Possion {
     }
 
     private void setupEnergyTracking() {
-        int interval = 3600; // 1 hour in seconds
-    
         simulation.addOnClockTickListener(eventInfo -> {
-            double now = simulation.clock();
-    
-            if (((int) now) % interval != 0) return;
-    
+            int success = 0;
+            int pending = 0;
+            for (DatacenterBrokerSimple broker : brokers) {
+                for (Cloudlet cl : broker.getCloudletSubmittedList()) {
+                    if (cl.isFinished()) {
+                        success++;
+                    } else {
+                        pending++;
+                    }
+                }
+            }
+
             double totalPowerkW = 0.0;
             for (Datacenter dc : datacenters) {
                 for (Host host : dc.getHostList()) {
                     double utilization = host.getCpuUtilizationStats().getMean();
                     double power = host.getPowerModel().getPower(utilization);
-                    totalPowerkW += power / 1000.0;
+                    totalPowerkW += power / 1000;
                 }
             }
-    
-            cumulativeEnergykWs += totalPowerkW * interval;
-            energyPerHour.add(cumulativeEnergykWs);
+
+            cumulativeEnergykWs += totalPowerkW;
+            powerPerSecond.add(totalPowerkW);
+            energyPerSecond.add(cumulativeEnergykWs);
+            successPerSecond.add(success);
+            pendingPerSecond.add(pending);
         });
     }
-    
-    private void writeMonthlyTotalEnergy() {
-        String filename = "output/csv/month/" + monthLabel + "_total.csv";
-        double totalKWh = cumulativeEnergykWs / 3600.0;
-    
+
+    private void writeMonthlyCSV() {
+        String filename = "output/csv/month/" + monthLabel + ".csv";
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            writer.println("Month,Energy(kWh)");
-            writer.printf("%s,%.6f%n", monthLabel, totalKWh);
-            System.out.printf("✅ Saved total energy summary to %s: %.2f kWh\n", filename, totalKWh);
+            writer.println("Tick,Success,Queue,EnergyAtTick(kW)");
+            for (int i = 0; i < powerPerSecond.size(); i++) {
+                writer.printf("%d,%d,%d,%.6f%n",
+                        i + 1,
+                        successPerSecond.get(i),
+                        pendingPerSecond.get(i),
+                        powerPerSecond.get(i));
+            }
+            System.out.printf("Written energy data to %s\n", filename);
         } catch (IOException e) {
-            System.err.printf("❌ Error writing total CSV: %s\n", e.getMessage());
+            System.err.printf("Error writing %s: %s\n", filename, e.getMessage());
         }
-    }    
+    }
 
     private List<Datacenter> createDatacenters(JsonArray datacentersConfig) {
         List<Datacenter> datacenters = new ArrayList<>();
