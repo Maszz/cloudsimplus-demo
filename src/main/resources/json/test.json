@@ -1,5 +1,5 @@
 {
-  "SCHEDULING_INTERVAL": 86400,
+  "SCHEDULING_INTERVAL": 3600,
   "hosts": 1,
   "host_spec": {
     "HOST_PES": 64,
@@ -18,24 +18,24 @@
     "CLOUDLET_PES": 1
   },
   "power_spec_path": "src/main/resources/power_spec/G6338N.txt",
-  "lambda": 30,
+  "lambda": 29,
   "MONTHS": [
     {
       "MONTH" : 1,
       "DATACENTERS": [
-      { "name": "Node1", "cloudlets": 1226},
-      { "name": "Node2", "cloudlets": 704},
-      { "name": "Node3", "cloudlets": 536},
-      { "name": "Node4", "cloudlets": 961},
-      { "name": "Node5", "cloudlets": 896},
-      { "name": "Node6", "cloudlets": 1625},
-      { "name": "Node7", "cloudlets": 993},
-      { "name": "Node8", "cloudlets": 985},
-      { "name": "Node9", "cloudlets": 1460},
-      { "name": "Node10", "cloudlets": 826},
-      { "name": "Node11", "cloudlets": 616},
-      { "name": "Node12", "cloudlets": 933},
-      { "name": "Node13", "cloudlets": 247}
+      { "name": "Node1", "cloudlets": 122},
+      { "name": "Node2", "cloudlets": 70},
+      { "name": "Node3", "cloudlets": 53},
+      { "name": "Node4", "cloudlets": 96},
+      { "name": "Node5", "cloudlets": 89},
+      { "name": "Node6", "cloudlets": 162},
+      { "name": "Node7", "cloudlets": 99},
+      { "name": "Node8", "cloudlets": 98},
+      { "name": "Node9", "cloudlets": 146},
+      { "name": "Node10", "cloudlets": 82},
+      { "name": "Node11", "cloudlets": 61},
+      { "name": "Node12", "cloudlets": 93},
+      { "name": "Node13", "cloudlets": 24}
       ]
     },
     {
