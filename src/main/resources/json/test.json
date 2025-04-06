@@ -23,19 +23,19 @@
     {
       "MONTH" : 1,
       "DATACENTERS": [
-      { "name": "Node1", "cloudlets": 122605045},
-      { "name": "Node2", "cloudlets": 70497087},
-      { "name": "Node3", "cloudlets": 53690433},
-      { "name": "Node4", "cloudlets": 96155840},
-      { "name": "Node5", "cloudlets": 89665375},
-      { "name": "Node6", "cloudlets": 162536741},
-      { "name": "Node7", "cloudlets": 99353498},
-      { "name": "Node8", "cloudlets": 98542243},
-      { "name": "Node9", "cloudlets": 146019657},
-      { "name": "Node10", "cloudlets": 82648430},
-      { "name": "Node11", "cloudlets": 61612476},
-      { "name": "Node12", "cloudlets": 93379827},
-      { "name": "Node13", "cloudlets": 24754594}
+      { "name": "Node1", "cloudlets": 1226},
+      { "name": "Node2", "cloudlets": 704},
+      { "name": "Node3", "cloudlets": 536},
+      { "name": "Node4", "cloudlets": 961},
+      { "name": "Node5", "cloudlets": 896},
+      { "name": "Node6", "cloudlets": 1625},
+      { "name": "Node7", "cloudlets": 993},
+      { "name": "Node8", "cloudlets": 985},
+      { "name": "Node9", "cloudlets": 1460},
+      { "name": "Node10", "cloudlets": 826},
+      { "name": "Node11", "cloudlets": 616},
+      { "name": "Node12", "cloudlets": 933},
+      { "name": "Node13", "cloudlets": 247}
       ]
     },
     {
