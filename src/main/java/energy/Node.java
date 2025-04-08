@@ -37,17 +37,12 @@ import org.slf4j.LoggerFactory;
 
 import org.cloudsimplus.util.Log;
 
-<<<<<<< HEAD
-import static org.cloudsimplus.util.TimeUtil.daysToSeconds;
-
-=======
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-public class Possion {
+public class Node {
     private static final Logger logger = LoggerFactory.getLogger(Possion.class);
 
     private static JsonObject control;
@@ -56,139 +51,23 @@ public class Possion {
     private List<DatacenterBrokerSimple> brokers;
     private List<Datacenter> datacenters;
     private List<Integer> totalCloudletsGenerated;
-<<<<<<< HEAD
-    private Set<Integer> finishedDatacenterIndexes = new HashSet<>();
-
-    private final List<Double> energyPerHour = new ArrayList<>();
-    private final List<List<Double>> energyPerTickPerNode = new ArrayList<>();
-    private double cumulativeEnergykWs = 0.0;
-
-    private static double interval;
-    private int month_num;
-    private static final boolean DEBUG = true;
-    private double lastTick = -1;
-    private static final int scaleFactor = 1000;
-
-    public static void main(String[] args) {
-        Log.setLevel(ch.qos.logback.classic.Level.ERROR);
-
-=======
     private double lastSubmissionTime = 0.0;
 
-    private final List<Double> energyPerHour = new ArrayList<>();
+    private final List<Double> powerPerSecond = new ArrayList<>();
+    private final List<Double> energyPerSecond = new ArrayList<>();
+    private final List<Integer> successPerSecond = new ArrayList<>();
+    private final List<Integer> pendingPerSecond = new ArrayList<>();
     private double cumulativeEnergykWs = 0.0;
 
     private String monthLabel = "Month";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     public static void main(String[] args) {
         System.out.println("Starting simulation...");
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
         if (args.length < 1) {
             logger.error("Usage: java Conference <config.json>");
             System.exit(1);
         }
-<<<<<<< HEAD
-
-        control = new Config(args[0]).getRoot();
-        months = control.getAsJsonArray("MONTHS");
-        interval = control.get("SCHEDULING_INTERVAL").getAsInt();
-        for (int i = 0; i < months.size(); i++) {
-            JsonObject month = months.get(i).getAsJsonObject();
-            JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
-            int month_num = month.get("MONTH").getAsInt();
-            if (DEBUG) System.out.println("Starting Month" + month_num);
-            
-            // for (int j = 0; j < datacenters.size(); j++) {
-            //     JsonArray singleDatacenterArray = new JsonArray();
-            //     singleDatacenterArray.add(datacenters.get(j));
-            //     String dcName = datacenters.get(j).getAsJsonObject().get("name").getAsString();
-            //     System.out.printf("▶️ Starting simulation for Month %d - Datacenter %s\n", month_num, dcName);
-                Possion instance = new Possion();
-                instance.run(new CloudSimPlus(), datacenters, month_num);
-            // }
-            if (DEBUG)
-                break;
-        }
-    }
-
-    public void run(CloudSimPlus simulation, JsonArray datacentersConfig, int month_num) {
-        this.simulation = simulation;
-        this.month_num = month_num;
-        int lambda = control.has("lambda") ? control.get("lambda").getAsInt() : 30;
-
-        
-        brokers = new ArrayList<>();
-        totalCloudletsGenerated = new ArrayList<>();
-        datacenters = createDatacenters(datacentersConfig);
-        createBrokersVms(datacentersConfig);
-        for (int i = 0; i < datacenters.size(); i++) {
-            totalCloudletsGenerated.add(0);
-        }
-
-        // On tick
-        simulation.addOnClockTickListener(eventInfo -> {
-            double now = simulation.clock();
-            if (now - lastTick < 1.0 || now < 1.0)
-                return;
-            lastTick = now;
-            submitPoissonCloudlets(datacentersConfig, lambda);
-            energyTracking();
-            terminator(datacentersConfig);
-        });
-
-        simulation.terminateAt(daysToSeconds(1));
-
-        // Start simulation
-        simulation.start();
-        if (DEBUG)
-            brokers.forEach(Possion::createCloudletsResultTable);
-
-        // Print Energy
-        printDatacenterEnergyConsumption();
-
-        // Write CSV
-        writeTickEnergy();
-    }
-
-    private int getDaysInMonth(int monthNumber) {
-        return switch (monthNumber) {
-            case 2 -> 28;
-            case 4, 6, 9, 11 -> 30;
-            default -> 31;
-        };
-    }
-
-    private void terminator(JsonArray datacentersConfig) {
-        boolean allDone = true;
-
-        for (int i = 0; i < datacenters.size(); i++) {
-            if (finishedDatacenterIndexes.contains(i))
-                continue;
-
-            JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
-            int expected = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
-            DatacenterBrokerSimple broker = brokers.get(i);
-
-            int submitted = broker.getCloudletSubmittedList().size();
-            int finished = broker.getCloudletFinishedList().size();
-            boolean allCloudletsFinished = broker.getCloudletCreatedList().stream().allMatch(Cloudlet::isFinished);
-
-            if (submitted >= expected && finished >= expected && allCloudletsFinished) {
-                // ✅ All cloudlets done for this datacenter
-                System.out.printf("✅ [%.2f] %s finished all %d cloudlets.\n",
-                        simulation.clock(), broker.getName(), expected);
-                finishedDatacenterIndexes.add(i);
-            } else {
-                allDone = false;
-            }
-        }
-
-        if (allDone) {
-            System.out.printf("✅✅ [%.2f] All datacenters finished. Terminating simulation.\n", simulation.clock());
-            simulation.terminate();
-        }
-=======
         control = new Config(args[0]).getRoot();
         months = control.getAsJsonArray("MONTHS");
         Log.setLevel(ch.qos.logback.classic.Level.ERROR);
@@ -197,10 +76,10 @@ public class Possion {
             JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
             String label = "Month" + month.get("MONTH").getAsInt();
             System.out.println("Starting " + label);
-            new Possion().run(datacenters, label);
+            new Node().run(datacenters, label);
             if (DEBUG)
                 break;
-            break;
+            // break;
         }
     }
 
@@ -245,8 +124,8 @@ public class Possion {
         // }
         // }
 
-        writeMonthlyTotalEnergy();
-        brokers.forEach(Possion::createCloudletsResultTable);
+        writeMonthlyCSV();
+        brokers.forEach(Node::createCloudletsResultTable);
         printDatacenterEnergyConsumption();
     }
 
@@ -279,7 +158,6 @@ public class Possion {
             simulation.terminate();
         }
 
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
     }
 
     public VmScheduler getVMScheduler() {
@@ -351,11 +229,7 @@ public class Possion {
     private List<Cloudlet> createDynamicCloudlets(int currentCloudlets, int allowedArrivals) {
         List<Cloudlet> cloudletList = new ArrayList<>();
         JsonObject spec = control.getAsJsonObject("cloudlet_spec");
-<<<<<<< HEAD
-        int length = spec.get("CLOUDLET_LENGTH").getAsInt();
-=======
         long length = spec.get("CLOUDLET_LENGTH").getAsLong();
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
         int pes = spec.get("CLOUDLET_PES").getAsInt();
         UtilizationModel utilization = new UtilizationModelFull();
 
@@ -370,12 +244,6 @@ public class Possion {
     }
 
     private void submitPoissonCloudlets(JsonArray datacentersConfig, int lambda) {
-<<<<<<< HEAD
-        for (int i = 0; i < datacenters.size(); i++) {
-            JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
-            DatacenterBrokerSimple broker = brokers.get(i);
-            int lastCloudlets = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
-=======
         // 🔒 Ensure all VMs are ready before submitting cloudlets
         boolean allVMsReady = brokers.stream().allMatch(b -> !b.getVmCreatedList().isEmpty());
         if (!allVMsReady)
@@ -384,7 +252,6 @@ public class Possion {
             JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
             DatacenterBrokerSimple broker = brokers.get(i);
             int lastCloudlets = dcConfig.get("cloudlets").getAsInt();
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
             int currentCloudlets = totalCloudletsGenerated.get(i);
             int remaining = lastCloudlets - currentCloudlets;
             if (remaining <= 0)
@@ -397,55 +264,19 @@ public class Possion {
             }
 
             Vm vm = broker.getVmCreatedList().get(0);
-<<<<<<< HEAD
-            if (vm.isIdle() == false && vm.getCloudletScheduler().getCloudletExecList().isEmpty()) {
-                // VM not yet allocated or active, skip
-                continue;
-            }
-            int vmPes = (int) vm.getPesNumber();
-            int running = vm.getCloudletScheduler().getCloudletExecList().size();
-            int waiting = vm.getCloudletScheduler().getCloudletWaitingList().size();
-            int inflight = running + waiting;
-
-            int queueCapacity = vmPes - 1; // limit inflight to number of PEs
-            int availableSlots = queueCapacity - inflight;
-
-            if (availableSlots <= 0) {
-                if (DEBUG)
-                    System.out.printf("[Tick %.2f] %s: Queue full → inflight=%d, skipping submission\n",
-=======
             // long maxCloudletsPerVm = vm.getPesNumber();
-            int maxCloudletsPerVm = 29;
+            int maxCloudletsPerVm = 32;
             int inflight = vm.getCloudletScheduler().getCloudletExecList().size()
                     + vm.getCloudletScheduler().getCloudletWaitingList().size();
 
             if (inflight >= maxCloudletsPerVm) {
                 if (DEBUG)
                     System.out.printf("[Tick %.2f] %s: Skipping submission, inflight = %d\n",
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
                             simulation.clock(), broker.getName(), inflight);
                 continue;
             }
 
             PoissonDistribution poisson = new PoissonDistribution(lambda);
-<<<<<<< HEAD
-            double poissonArrivals = Math.min((poisson.sample()), remaining);
-            // int allowedArrivals = (int) poissonArrivals;
-            int allowedArrivals = (int) Math.min(poissonArrivals,
-                    (vmPes * broker.getVmCreatedList().size()) - inflight);
-            if (allowedArrivals <= 0) {
-                if (DEBUG) {
-                    int submitted = broker.getCloudletSubmittedList().size();
-                    int done = broker.getCloudletFinishedList().size();
-                    System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d%n",
-                            simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets);
-                }
-                continue;
-            }
-
-            List<Cloudlet> newCloudlets = createDynamicCloudlets(currentCloudlets, allowedArrivals);
-            broker.submitCloudletList(newCloudlets);
-=======
             int poissonArrivals = Math.min(poisson.sample(), remaining);
             int allowedArrivals = Math.min(poissonArrivals, maxCloudletsPerVm -
             inflight);
@@ -458,7 +289,6 @@ public class Possion {
                 broker.bindCloudletToVm(cl, vm);
             broker.submitCloudletList(newCloudlets);
             lastSubmissionTime = simulation.clock();
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
             totalCloudletsGenerated.set(i, currentCloudlets + allowedArrivals);
 
             if (DEBUG) {
@@ -471,102 +301,53 @@ public class Possion {
 
     }
 
-<<<<<<< HEAD
-    private void energyTracking() {
-        if (finishedDatacenterIndexes.size() >= datacenters.size()) {
-            if (DEBUG)
-                System.out.println("🔚 All datacenters finished — stop tracking energy.");
-            return;
-        }
-
-        List<Double> currentTickEnergy = new ArrayList<>();
-
-        for (int i = 0; i < datacenters.size(); i++) {
-            if (finishedDatacenterIndexes.contains(i)) {
-                currentTickEnergy.add(0.0);
-                continue;
-            }
-
-            Datacenter dc = datacenters.get(i);
-            double totalPowerkW = 0.0;
-
-            for (Host host : dc.getHostList()) {
-                double utilization = host.getCpuUtilizationStats().getMean();
-                double power = host.getPowerModel().getPower(utilization); // in watts
-                totalPowerkW += power / 1000.0; // convert to kW
-            }
-
-            double tickDuration = interval; // from config
-            double energyKWs = totalPowerkW * tickDuration; // in seconds
-
-            currentTickEnergy.add(energyKWs);
-        }
-
-        energyPerTickPerNode.add(currentTickEnergy);
-    }
-
-    private void writeTickEnergy() {
-        String filename = "output/csv/day/month_" + month_num + "_energy.csv";
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            // Header: Tick,Node1,Node2,...
-            writer.print("Tick");
-            for (int i = 0; i < datacenters.size(); i++) {
-                writer.printf(",Node%d", i + 1);
-            }
-            writer.println();
-
-            for (int tick = 0; tick < energyPerTickPerNode.size(); tick++) {
-                double tickTime = tick * interval;
-                writer.printf("%.0f", tickTime);
-                List<Double> tickEnergies = energyPerTickPerNode.get(tick);
-                for (double energy : tickEnergies) {
-                    writer.printf(",%.6f", energy);
-                }
-                writer.println();
-            }
-
-            if (DEBUG)
-                System.out.printf("✅ Wrote tick energy file: %s\n", filename);
-        } catch (IOException e) {
-            System.err.printf("❌ Error writing tick energy CSV: %s\n", e.getMessage());
-        }
-    }
-=======
     private void setupEnergyTracking() {
-        int interval = 3600; // 1 hour in seconds
-    
         simulation.addOnClockTickListener(eventInfo -> {
-            double now = simulation.clock();
-    
-            if (((int) now) % interval != 0) return;
-    
+            int success = 0;
+            int pending = 0;
+            for (DatacenterBrokerSimple broker : brokers) {
+                for (Cloudlet cl : broker.getCloudletSubmittedList()) {
+                    if (cl.isFinished()) {
+                        success++;
+                    } else {
+                        pending++;
+                    }
+                }
+            }
+
             double totalPowerkW = 0.0;
             for (Datacenter dc : datacenters) {
                 for (Host host : dc.getHostList()) {
                     double utilization = host.getCpuUtilizationStats().getMean();
                     double power = host.getPowerModel().getPower(utilization);
-                    totalPowerkW += power / 1000.0;
+                    totalPowerkW += power / 1000;
                 }
             }
-    
-            cumulativeEnergykWs += totalPowerkW * interval;
-            energyPerHour.add(cumulativeEnergykWs);
+
+            cumulativeEnergykWs += totalPowerkW;
+            powerPerSecond.add(totalPowerkW);
+            energyPerSecond.add(cumulativeEnergykWs);
+            successPerSecond.add(success);
+            pendingPerSecond.add(pending);
         });
     }
-    
-    private void writeMonthlyTotalEnergy() {
-        String filename = "output/csv/month/" + monthLabel + "_total.csv";
-        double totalKWh = cumulativeEnergykWs / 3600.0;
-    
+
+    private void writeMonthlyCSV() {
+        String filename = "output/csv/month/" + monthLabel + ".csv";
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            writer.println("Month,Energy(kWh)");
-            writer.printf("%s,%.6f%n", monthLabel, totalKWh);
-            System.out.printf("✅ Saved total energy summary to %s: %.2f kWh\n", filename, totalKWh);
+            writer.println("Tick,Success,Queue,EnergyAtTick(kW)");
+            for (int i = 0; i < powerPerSecond.size(); i++) {
+                writer.printf("%d,%d,%d,%.6f%n",
+                        i + 1,
+                        successPerSecond.get(i),
+                        pendingPerSecond.get(i),
+                        powerPerSecond.get(i));
+            }
+            System.out.printf("Written energy data to %s\n", filename);
         } catch (IOException e) {
-            System.err.printf("❌ Error writing total CSV: %s\n", e.getMessage());
+            System.err.printf("Error writing %s: %s\n", filename, e.getMessage());
         }
-    }    
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
+    }
 
     private List<Datacenter> createDatacenters(JsonArray datacentersConfig) {
         List<Datacenter> datacenters = new ArrayList<>();
@@ -580,10 +361,7 @@ public class Possion {
 
     private Datacenter createDatacenter(String name) {
         int numHosts = control.get("hosts").getAsInt();
-<<<<<<< HEAD
-=======
         int interval = control.get("SCHEDULING_INTERVAL").getAsInt();
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
         List<Host> hostList = new ArrayList<>();
         for (int i = 0; i < numHosts; i++) {
             Host host = createHost(i);
@@ -630,11 +408,7 @@ public class Possion {
             broker.setLastSelectedDc(dc);
             final var vmList = createVms(vmGlobalIndex);
             broker.submitVmList(vmList);
-<<<<<<< HEAD
-            // broker.setVmDestructionDelay(Double.MAX_VALUE);
-=======
             broker.setVmDestructionDelay(Double.MAX_VALUE);
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
 
             brokers.add(broker);
             vmGlobalIndex += control.get("vm").getAsInt();
@@ -658,11 +432,7 @@ public class Possion {
         int hostPes = spec.get("HOST_PES").getAsInt();
         long hostMips = spec.get("HOST_MIPS").getAsLong();
         int vmPes = hostPes / vms;
-<<<<<<< HEAD
-        long vmMips = hostMips / vms;
-=======
         long vmMips = hostMips / hostPes;
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
         long vmRam = spec.get("HOST_RAM").getAsInt() / vms;
         long vmBw = spec.get("HOST_BW").getAsInt() / vms;
         long vmStorage = spec.get("HOST_STORAGE").getAsLong() / vms;
@@ -675,69 +445,24 @@ public class Possion {
             vm.enableUtilizationStats();
             vmList.add(vm);
         }
-<<<<<<< HEAD
-        // if (DEBUG)
-        //     logger.info("Create VM: {} - ", startId, startId + vms--);
-        // if (DEBUG)
-        //     System.out.printf("Create VM: %d-%d\n", startId, startId + vms--);
-=======
         if (DEBUG)
             logger.info("Create VM: {} - ", startId, startId + vms--);
         if (DEBUG)
             System.out.printf("Create VM: %d-%d\n", startId, startId + vms--);
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
         return vmList;
     }
 
     private void printDatacenterEnergyConsumption() {
-<<<<<<< HEAD
-        logger.info("\n--- Energy Report for month{} ---", month_num);
-        System.out.printf("--- Energy Report for month%s ---\n", month_num);
-        for (int i = 0; i < datacenters.size(); i++) {
-            Datacenter dc = datacenters.get(i);
-            DatacenterBrokerSimple broker = brokers.get(i);
-            JsonObject dcConfig = control.getAsJsonArray("MONTHS")
-                    .get(month_num - 1).getAsJsonObject()
-                    .getAsJsonArray("DATACENTERS")
-                    .get(i).getAsJsonObject();
-            int expectedTotal = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
-            int totalSubmittedCloudlets = broker.getCloudletSubmittedList().size();
-            int totalFinishCloudlets = broker.getCloudletFinishedList().size();
-=======
         logger.info("\n--- Energy Report for {} ---", monthLabel);
         System.out.printf("--- Energy Report for %s ---\n", monthLabel);
         for (int i = 0; i < datacenters.size(); i++) {
             Datacenter dc = datacenters.get(i);
             DatacenterBrokerSimple broker = brokers.get(i);
             int totalCloudlets = broker.getCloudletSubmittedList().size();
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
             double totalEnergy = 0.0;
             for (Host host : dc.getHostList()) {
                 final double utilization = host.getCpuUtilizationStats().getMean();
                 final double watts = host.getPowerModel().getPower(utilization);
-<<<<<<< HEAD
-                double hostFirstStart = host.getFirstStartTime();
-                double hostLastFinish = 0.0;
-
-                for (Vm vm : host.getVmList()) {
-                    for (Cloudlet c : brokers.get(i).getCloudletFinishedList()) {
-                        if (c.getVm() == vm) {
-                            hostLastFinish = Math.max(hostLastFinish, c.getFinishTime());
-                        }
-                    }
-                }
-
-                double activeTime = Math.max(0, hostLastFinish - hostFirstStart);
-                final double energyKWh = (watts * activeTime) / (1000 * 3600);
-                totalEnergy += energyKWh;
-            }
-            logger.info("Datacenter: {:<2} | Cloudlets(P/S/E): {:>4}|{:>4}|{:>4} | Energy: {:.4f} kWh",
-                    dc.getName(), totalSubmittedCloudlets - totalFinishCloudlets, totalSubmittedCloudlets,
-                    expectedTotal, totalEnergy);
-            System.out.printf("Datacenter: %-6s | Cloudlets(P/S/E): %4d|%4d|%4d | Energy: %.4f kWh\n",
-                    dc.getName(), totalSubmittedCloudlets - totalFinishCloudlets, totalSubmittedCloudlets,
-                    expectedTotal, totalEnergy);
-=======
                 final double aliveTime = simulation.clock() - host.getFirstStartTime();
                 final double energyKWh = (watts * aliveTime) / (1000 * 3600);
                 totalEnergy += energyKWh;
@@ -746,7 +471,6 @@ public class Possion {
                     totalEnergy);
             System.out.printf("Datacenter: %s | Cloudlets: %d | Energy: %.4f kWh\n", dc.getName(), totalCloudlets,
                     totalEnergy);
->>>>>>> 5a99282aa7b54931d38e3b06b55e726239f55b7e
         }
     }
 
