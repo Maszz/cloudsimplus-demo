@@ -24,6 +24,7 @@ import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.utilizationmodels.UtilizationModel;
 import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
+import org.cloudsimplus.utilizationmodels.UtilizationModelStochastic;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.vms.VmSimple;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicy;
@@ -47,6 +48,7 @@ import java.util.*;
 public class Possion {
     private static final Logger logger = LoggerFactory.getLogger(Possion.class);
 
+    private static String config_filename;
     private static JsonObject control;
     private static JsonArray months;
     private CloudSimPlus simulation;
@@ -55,9 +57,7 @@ public class Possion {
     private List<Integer> totalCloudletsGenerated;
     private Set<Integer> finishedDatacenterIndexes = new HashSet<>();
 
-    private final List<Double> energyPerHour = new ArrayList<>();
     private final List<List<Double>> energyPerTickPerNode = new ArrayList<>();
-    private double cumulativeEnergykWs = 0.0;
 
     private static double interval;
     private int month_num;
@@ -73,25 +73,19 @@ public class Possion {
             System.exit(1);
         }
 
-        control = new Config(args[0]).getRoot();
+        Config config = new Config(args[0]);
+        config_filename = config.get_filename();
+        control = config.getRoot();
         months = control.getAsJsonArray("MONTHS");
         interval = control.get("SCHEDULING_INTERVAL").getAsInt();
         for (int i = 0; i < months.size(); i++) {
             JsonObject month = months.get(i).getAsJsonObject();
             JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
             int month_num = month.get("MONTH").getAsInt();
+            Possion instance = new Possion();
             if (DEBUG) System.out.println("Starting Month" + month_num);
-            
-            // for (int j = 0; j < datacenters.size(); j++) {
-            //     JsonArray singleDatacenterArray = new JsonArray();
-            //     singleDatacenterArray.add(datacenters.get(j));
-            //     String dcName = datacenters.get(j).getAsJsonObject().get("name").getAsString();
-            //     System.out.printf("▶️ Starting simulation for Month %d - Datacenter %s\n", month_num, dcName);
-                Possion instance = new Possion();
-                instance.run(new CloudSimPlus(), datacenters, month_num);
-            // }
-            if (DEBUG)
-                break;
+            instance.run(new CloudSimPlus(), datacenters, month_num);
+            if (DEBUG) break;
         }
     }
 
@@ -120,7 +114,7 @@ public class Possion {
             terminator(datacentersConfig);
         });
 
-        simulation.terminateAt(daysToSeconds(1));
+        simulation.terminateAt(daysToSeconds(2));
 
         // Start simulation
         simulation.start();
@@ -245,6 +239,7 @@ public class Possion {
         int length = spec.get("CLOUDLET_LENGTH").getAsInt();
         int pes = spec.get("CLOUDLET_PES").getAsInt();
         UtilizationModel utilization = new UtilizationModelFull();
+        // UtilizationModel utilization = new UtilizationModelStochastic();
 
         for (int i = 0; i < allowedArrivals; i++) {
             Cloudlet c = new CloudletSimple(currentCloudlets + i, length, pes)
@@ -356,7 +351,7 @@ public class Possion {
     }
 
     private void writeTickEnergy() {
-        String filename = "output/csv/day/month_" + month_num + "_energy.csv";
+        String filename = "output/csv/day/"+ config_filename + "_month" + month_num + "_energy.csv";
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             // Header: Tick,Node1,Node2,...
             writer.print("Tick");
