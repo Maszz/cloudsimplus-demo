@@ -82,14 +82,14 @@ public class Possion {
             int month_num = month.get("MONTH").getAsInt();
             if (DEBUG) System.out.println("Starting Month" + month_num);
             
-            for (int j = 0; j < datacenters.size(); j++) {
-                JsonArray singleDatacenterArray = new JsonArray();
-                singleDatacenterArray.add(datacenters.get(j));
-                String dcName = datacenters.get(j).getAsJsonObject().get("name").getAsString();
-                System.out.printf("▶️ Starting simulation for Month %d - Datacenter %s\n", month_num, dcName);
+            // for (int j = 0; j < datacenters.size(); j++) {
+            //     JsonArray singleDatacenterArray = new JsonArray();
+            //     singleDatacenterArray.add(datacenters.get(j));
+            //     String dcName = datacenters.get(j).getAsJsonObject().get("name").getAsString();
+            //     System.out.printf("▶️ Starting simulation for Month %d - Datacenter %s\n", month_num, dcName);
                 Possion instance = new Possion();
-                instance.run(new CloudSimPlus(), singleDatacenterArray, month_num);
-            }
+                instance.run(new CloudSimPlus(), datacenters, month_num);
+            // }
             if (DEBUG)
                 break;
         }
