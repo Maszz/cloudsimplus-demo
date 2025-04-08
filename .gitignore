@@ -58,3 +58,5 @@ Desktop.ini
 # Environment variables or configurations
 .env
 *.properties.local
+
+output

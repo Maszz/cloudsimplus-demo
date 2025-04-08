@@ -1,5 +1,5 @@
 {
-  "SCHEDULING_INTERVAL": 86400,
+  "SCHEDULING_INTERVAL": 1,
   "hosts": 1,
   "host_spec": {
     "HOST_PES": 64,
@@ -14,7 +14,7 @@
   "UtilizationModel": "F",
   "vm": 1,
   "cloudlet_spec": {
-    "CLOUDLET_LENGTH": 70400.0,
+    "CLOUDLET_LENGTH": 35200.0,
     "CLOUDLET_PES": 1
   },
   "power_spec_path": "src/main/resources/power_spec/G6338N.txt",
