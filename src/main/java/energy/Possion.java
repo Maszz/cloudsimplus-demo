@@ -11,28 +11,13 @@ import org.cloudsimplus.datacenters.Datacenter;
 import org.cloudsimplus.datacenters.DatacenterSimple;
 import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
-import org.cloudsimplus.power.models.PowerModelHost;
-import org.cloudsimplus.power.models.PowerModelHostSimple;
-import org.cloudsimplus.power.models.PowerModelHostSpec;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
-import org.cloudsimplus.schedulers.cloudlet.CloudletScheduler;
-import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerSpaceShared;
-import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerTimeShared;
 import org.cloudsimplus.schedulers.vm.VmScheduler;
-import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
-import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
 import org.cloudsimplus.utilizationmodels.UtilizationModel;
-import org.cloudsimplus.utilizationmodels.UtilizationModelFull;
-import org.cloudsimplus.utilizationmodels.UtilizationModelStochastic;
 import org.cloudsimplus.vms.Vm;
 import org.cloudsimplus.vms.VmSimple;
 import org.cloudsimplus.allocationpolicies.VmAllocationPolicy;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRandom;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRoundRobin;
-import org.cloudsimplus.allocationpolicies.VmAllocationPolicySimple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,9 +33,7 @@ import java.util.*;
 public class Possion {
     private static final Logger logger = LoggerFactory.getLogger(Possion.class);
 
-    private static String config_filename;
     private static Config config;
-    private static JsonArray months;
     private CloudSimPlus simulation;
     private List<DatacenterBrokerSimple> brokers;
     private List<Datacenter> datacenters;
@@ -59,7 +42,6 @@ public class Possion {
 
     private final List<List<Double>> energyPerTickPerNode = new ArrayList<>();
 
-    private static double interval;
     private int month_num;
     private static final boolean DEBUG = true;
     private double lastTick = -1;
@@ -74,13 +56,9 @@ public class Possion {
         }
 
         config = new Config(args[0]);
-        config_filename = config.get_filename();
-        months = config.getRoot().getAsJsonArray("MONTHS");
-        interval = config.getRoot().get("SCHEDULING_INTERVAL").getAsInt();
-        for (int i = 0; i < months.size(); i++) {
-            JsonObject month = months.get(i).getAsJsonObject();
-            JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
-            int month_num = month.get("MONTH").getAsInt();
+        for (JsonElement month : config.getMonths()) {
+            JsonArray datacenters = month.getAsJsonObject().getAsJsonArray("DATACENTERS");
+            int month_num = month.getAsJsonObject().get("MONTH").getAsInt();
             Possion instance = new Possion();
             if (DEBUG) System.out.println("Starting Month" + month_num);
             instance.run(new CloudSimPlus(), datacenters, month_num);
@@ -110,13 +88,22 @@ public class Possion {
             lastTick = now;
             submitPoissonCloudlets(datacentersConfig, lambda);
             energyTracking();
-            terminator(datacentersConfig);
+            // terminator(datacentersConfig);
         });
 
-        simulation.terminateAt(daysToSeconds(2));
+        // simulation.terminateAt(daysToSeconds(2));
 
-        // Start simulation
-        simulation.start();
+        // // Start simulation
+        // simulation.start();
+
+        simulation.startSync(); 
+        while (simulation.isRunning()) {
+            simulation.runFor(1.0);
+            // submitPoissonCloudlets(datacentersConfig, lambda);
+            // energyTracking();
+            terminator(datacentersConfig);
+        }
+
         if (DEBUG)
             brokers.forEach(Possion::createCloudletsResultTable);
 
@@ -157,6 +144,10 @@ public class Possion {
                 finishedDatacenterIndexes.add(i);
             } else {
                 allDone = false;
+                if (DEBUG) {
+                    System.out.printf("❌ [%.2f] %s: submitted=%d finished=%d\n",
+                            simulation.clock(), broker.getName(), submitted, finished);
+                }
             }
         }
 
@@ -171,8 +162,7 @@ public class Possion {
         JsonObject spec = config.getRoot().getAsJsonObject("cloudlet_spec");
         int length = spec.get("CLOUDLET_LENGTH").getAsInt();
         int pes = spec.get("CLOUDLET_PES").getAsInt();
-        UtilizationModel utilization = new UtilizationModelFull();
-        // UtilizationModel utilization = new UtilizationModelStochastic();
+        UtilizationModel utilization = config.getCloudletCPU();
 
         for (int i = 0; i < allowedArrivals; i++) {
             Cloudlet c = new CloudletSimple(currentCloudlets + i, length, pes)
@@ -201,16 +191,12 @@ public class Possion {
             }
 
             Vm vm = broker.getVmCreatedList().get(0);
-            if (vm.isIdle() == false && vm.getCloudletScheduler().getCloudletExecList().isEmpty()) {
-                // VM not yet allocated or active, skip
-                continue;
-            }
             int vmPes = (int) vm.getPesNumber();
             int running = vm.getCloudletScheduler().getCloudletExecList().size();
             int waiting = vm.getCloudletScheduler().getCloudletWaitingList().size();
             int inflight = running + waiting;
 
-            int queueCapacity = vmPes - 1; // limit inflight to number of PEs
+            int queueCapacity = vmPes -1; // limit inflight to number of PEs
             int availableSlots = queueCapacity - inflight;
 
             if (availableSlots <= 0) {
@@ -229,8 +215,8 @@ public class Possion {
                 if (DEBUG) {
                     int submitted = broker.getCloudletSubmittedList().size();
                     int done = broker.getCloudletFinishedList().size();
-                    System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d%n",
-                            simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets);
+                    System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d ;util: %.4f%% %n",
+                            simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets, vm.getCpuPercentUtilization());
                 }
                 continue;
             }
@@ -242,8 +228,8 @@ public class Possion {
             if (DEBUG) {
                 int submitted = broker.getCloudletSubmittedList().size();
                 int done = broker.getCloudletFinishedList().size();
-                System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d%n",
-                        simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets);
+                System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d ;util: %.4f%%%n",
+                        simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets, vm.getCpuPercentUtilization());
             }
         }
 
@@ -274,7 +260,7 @@ public class Possion {
                 totalPowerkW += power / 1000.0; // convert to kW
             }
 
-            double tickDuration = interval; // from config
+            double tickDuration = config.getInterval(); // from config
             double energyKWs = totalPowerkW * tickDuration; // in seconds
 
             currentTickEnergy.add(energyKWs);
@@ -284,7 +270,7 @@ public class Possion {
     }
 
     private void writeTickEnergy() {
-        String filename = "output/csv/day/"+ config_filename + "_month" + month_num + "_energy.csv";
+        String filename = "output/csv/day/"+ config.get_filename() + "_month" + month_num + "_energy.csv";
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             // Header: Tick,Node1,Node2,...
             writer.print("Tick");
@@ -294,7 +280,7 @@ public class Possion {
             writer.println();
 
             for (int tick = 0; tick < energyPerTickPerNode.size(); tick++) {
-                double tickTime = tick * interval;
+                double tickTime = tick * config.getInterval();
                 writer.printf("%.0f", tickTime);
                 List<Double> tickEnergies = energyPerTickPerNode.get(tick);
                 for (double energy : tickEnergies) {
@@ -331,7 +317,7 @@ public class Possion {
 
         Datacenter datacenter = new DatacenterSimple(simulation, hostList, policy);
         datacenter.setName(name);
-        datacenter.setSchedulingInterval(interval);
+        datacenter.setSchedulingInterval(config.getInterval());
         return datacenter;
     }
 

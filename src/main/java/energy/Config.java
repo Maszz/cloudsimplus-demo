@@ -19,6 +19,9 @@ import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerTimeShared;
 import org.cloudsimplus.schedulers.vm.VmScheduler;
 import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
 import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
+import org.cloudsimplus.utilizationmodels.UtilizationModel;
+import org.cloudsimplus.utilizationmodels.UtilizationModelDynamic;
+import org.cloudsimplus.utilizationmodels.UtilizationModelStochastic;
 
 public class Config {
     private String fileName;
@@ -73,6 +76,14 @@ public class Config {
         return jsonObject;
     }
 
+    public Double getInterval() {
+        return this.getRoot().get("SCHEDULING_INTERVAL").getAsDouble();
+    }
+
+    public JsonArray getMonths() {
+        return this.getRoot().getAsJsonArray("MONTHS");
+    }
+
     public VmScheduler getVMScheduler() {
         String key = "VmScheduler";
         String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "";
@@ -101,6 +112,11 @@ public class Config {
                 System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
                 return new CloudletSchedulerTimeShared(); // Default policy
         }
+    }
+
+    public UtilizationModel getCloudletCPU() {
+        double cpu = this.getRoot().getAsJsonObject("cloudlet_spec").get("CLOUDLET_CPU").getAsDouble();
+        return new UtilizationModelDynamic(cpu);
     }
 
     public VmAllocationPolicy getVmAllocationPolicy() {

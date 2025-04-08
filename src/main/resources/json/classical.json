@@ -14,8 +14,9 @@
   "UtilizationModel": "F",
   "vm": 1,
   "cloudlet_spec": {
-    "CLOUDLET_LENGTH": 70400.0,
-    "CLOUDLET_PES": 1
+    "CLOUDLET_LENGTH": 4505600.0,
+    "CLOUDLET_PES": 1,
+    "CLOUDLET_CPU": 0.8
   },
   "power_spec_path": "src/main/resources/power_spec/G6338N.txt",
   "lambda": 29,
