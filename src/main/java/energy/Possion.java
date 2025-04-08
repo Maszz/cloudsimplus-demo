@@ -13,6 +13,7 @@ import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSimple;
 import org.cloudsimplus.resources.Pe;
 import org.cloudsimplus.resources.PeSimple;
+import org.cloudsimplus.schedulers.MipsShare;
 import org.cloudsimplus.schedulers.vm.VmScheduler;
 import org.cloudsimplus.utilizationmodels.UtilizationModel;
 import org.cloudsimplus.vms.Vm;
@@ -63,6 +64,7 @@ public class Possion {
             if (DEBUG) System.out.println("Starting Month" + month_num);
             instance.run(new CloudSimPlus(), datacenters, month_num);
             if (DEBUG) break;
+            break;
         }
     }
 
@@ -88,7 +90,8 @@ public class Possion {
             lastTick = now;
             submitPoissonCloudlets(datacentersConfig, lambda);
             energyTracking();
-            // terminator(datacentersConfig);
+            simulation.getCis().schedule(1.0, 9999);
+
         });
 
         // simulation.terminateAt(daysToSeconds(2));
@@ -99,8 +102,14 @@ public class Possion {
         simulation.startSync(); 
         while (simulation.isRunning()) {
             simulation.runFor(1.0);
-            // submitPoissonCloudlets(datacentersConfig, lambda);
-            // energyTracking();
+            for (Datacenter dc : datacenters) {
+                for (Host host : dc.getHostList()) {
+                    for (Vm vm : host.getVmList()) {
+                        MipsShare peCapacity = host.getVmScheduler().getAllocatedMips(vm);
+                        vm.updateProcessing(simulation.clock(), peCapacity);
+                    }
+                }
+            }            
             terminator(datacentersConfig);
         }
 
@@ -138,9 +147,10 @@ public class Possion {
             boolean allCloudletsFinished = broker.getCloudletCreatedList().stream().allMatch(Cloudlet::isFinished);
 
             if (submitted >= expected && finished >= expected && allCloudletsFinished) {
-                // ✅ All cloudlets done for this datacenter
-                System.out.printf("✅ [%.2f] %s finished all %d cloudlets.\n",
+                if (DEBUG) {
+                    System.out.printf("✅ [%.2f] %s finished all %d cloudlets.\n",
                         simulation.clock(), broker.getName(), expected);
+                }
                 finishedDatacenterIndexes.add(i);
             } else {
                 allDone = false;
@@ -152,7 +162,7 @@ public class Possion {
         }
 
         if (allDone) {
-            System.out.printf("✅✅ [%.2f] All datacenters finished. Terminating simulation.\n", simulation.clock());
+            if (DEBUG) System.out.printf("✅✅ [%.2f] All datacenters finished. Terminating simulation.\n", simulation.clock());
             simulation.terminate();
         }
     }
@@ -191,6 +201,7 @@ public class Possion {
             }
 
             Vm vm = broker.getVmCreatedList().get(0);
+            // vm.updateProcessing(simulation.clock(), vm.getHost().getVmScheduler().getAllocatedMips(vm));
             int vmPes = (int) vm.getPesNumber();
             int running = vm.getCloudletScheduler().getCloudletExecList().size();
             int waiting = vm.getCloudletScheduler().getCloudletWaitingList().size();
@@ -254,10 +265,13 @@ public class Possion {
             double totalPowerkW = 0.0;
 
             for (Host host : dc.getHostList()) {
-                double utilization = host.getCpuUtilizationStats().getMean();
-                // double utilization = host.getCpuUtilization(CloudSimPlus.clock());
-                double power = host.getPowerModel().getPower(utilization); // in watts
-                totalPowerkW += power / 1000.0; // convert to kW
+                // double utilization = host.getCpuUtilizationStats().getMean();
+                for (Vm vm : host.getVmCreatedList()) {
+                    double utilization = vm.getCpuPercentUtilization();
+                    System.out.printf("Host %s: VM %s, utilization: %.2f%%\n", host.getId(), vm.getId(), utilization);
+                    double power = host.getPowerModel().getPower(utilization); // in watts
+                    totalPowerkW += power / 1000.0; // convert to kW
+                }
             }
 
             double tickDuration = config.getInterval(); // from config
