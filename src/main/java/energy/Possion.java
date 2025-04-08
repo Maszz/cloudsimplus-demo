@@ -49,7 +49,7 @@ public class Possion {
     private static final Logger logger = LoggerFactory.getLogger(Possion.class);
 
     private static String config_filename;
-    private static JsonObject control;
+    private static Config config;
     private static JsonArray months;
     private CloudSimPlus simulation;
     private List<DatacenterBrokerSimple> brokers;
@@ -73,11 +73,10 @@ public class Possion {
             System.exit(1);
         }
 
-        Config config = new Config(args[0]);
+        config = new Config(args[0]);
         config_filename = config.get_filename();
-        control = config.getRoot();
-        months = control.getAsJsonArray("MONTHS");
-        interval = control.get("SCHEDULING_INTERVAL").getAsInt();
+        months = config.getRoot().getAsJsonArray("MONTHS");
+        interval = config.getRoot().get("SCHEDULING_INTERVAL").getAsInt();
         for (int i = 0; i < months.size(); i++) {
             JsonObject month = months.get(i).getAsJsonObject();
             JsonArray datacenters = month.getAsJsonArray("DATACENTERS");
@@ -92,7 +91,7 @@ public class Possion {
     public void run(CloudSimPlus simulation, JsonArray datacentersConfig, int month_num) {
         this.simulation = simulation;
         this.month_num = month_num;
-        int lambda = control.has("lambda") ? control.get("lambda").getAsInt() : 30;
+        int lambda = config.getRoot().has("lambda") ? config.getRoot().get("lambda").getAsInt() : 30;
 
         
         brokers = new ArrayList<>();
@@ -167,75 +166,9 @@ public class Possion {
         }
     }
 
-    public VmScheduler getVMScheduler() {
-        String key = "VmScheduler";
-        String type = control.has(key) ? control.get(key).getAsString() : "";
-
-        switch (type) {
-            case "TS":
-                return new VmSchedulerTimeShared();
-            case "SS":
-                return new VmSchedulerSpaceShared();
-            default:
-                System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
-                return new VmSchedulerSpaceShared(); // Default policy
-        }
-    }
-
-    public CloudletScheduler getCloudletScheduler() {
-        String key = "cloudletScheduler";
-        String type = control.has(key) ? control.get(key).getAsString() : "";
-
-        switch (type) {
-            case "TS":
-                return new CloudletSchedulerTimeShared();
-            case "SS":
-                return new CloudletSchedulerSpaceShared();
-            default:
-                System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
-                return new CloudletSchedulerTimeShared(); // Default policy
-        }
-    }
-
-    public VmAllocationPolicy getVmAllocationPolicy() {
-        String key = "VmAllocationPolicy";
-        String type = control.has(key) ? control.get(key).getAsString() : "";
-
-        switch (type) {
-            case "SP":
-                return new VmAllocationPolicySimple();
-            case "FF":
-                return new VmAllocationPolicyFirstFit();
-            case "BF":
-                return new VmAllocationPolicyBestFit();
-            case "RR":
-                return new VmAllocationPolicyRoundRobin();
-            case "RD":
-                return new VmAllocationPolicyRandom(null);
-            default:
-                System.err.println("Warning: Unknown VM Allocation Policy '" + type + "', using default (SP)");
-                return new VmAllocationPolicySimple(); // Default policy
-        }
-    }
-
-    public PowerModelHost getPowerModel() {
-        String key = "power_spec_path";
-        String type = control.has(key) ? control.get(key).getAsString() : "Manual";
-
-        if (type == "Manual") {
-            JsonObject powerSpec = control.getAsJsonObject("power_spec");
-            double MAX_POWER = powerSpec.get("MAX_POWER").getAsDouble();
-            double STATIC_POWER = powerSpec.get("STATIC_POWER").getAsDouble();
-            return new PowerModelHostSimple(MAX_POWER, STATIC_POWER);
-        } else {
-            PowerModelHostSpec DEF_POWER_MODEL = PowerModelHostSpec.getInstance(type);
-            return new PowerModelHostSpec(DEF_POWER_MODEL.getPowerSpecs());
-        }
-    }
-
     private List<Cloudlet> createDynamicCloudlets(int currentCloudlets, int allowedArrivals) {
         List<Cloudlet> cloudletList = new ArrayList<>();
-        JsonObject spec = control.getAsJsonObject("cloudlet_spec");
+        JsonObject spec = config.getRoot().getAsJsonObject("cloudlet_spec");
         int length = spec.get("CLOUDLET_LENGTH").getAsInt();
         int pes = spec.get("CLOUDLET_PES").getAsInt();
         UtilizationModel utilization = new UtilizationModelFull();
@@ -388,13 +321,13 @@ public class Possion {
     }
 
     private Datacenter createDatacenter(String name) {
-        int numHosts = control.get("hosts").getAsInt();
+        int numHosts = config.getRoot().get("hosts").getAsInt();
         List<Host> hostList = new ArrayList<>();
         for (int i = 0; i < numHosts; i++) {
             Host host = createHost(i);
             hostList.add(host);
         }
-        VmAllocationPolicy policy = getVmAllocationPolicy();
+        VmAllocationPolicy policy = config.getVmAllocationPolicy();
 
         Datacenter datacenter = new DatacenterSimple(simulation, hostList, policy);
         datacenter.setName(name);
@@ -403,13 +336,13 @@ public class Possion {
     }
 
     private Host createHost(final int id) {
-        JsonObject hostSpec = control.getAsJsonObject("host_spec");
+        JsonObject hostSpec = config.getRoot().getAsJsonObject("host_spec");
         int hostPes = hostSpec.get("HOST_PES").getAsInt();
         int hostMips = hostSpec.get("HOST_MIPS").getAsInt();
         int hostRam = hostSpec.get("HOST_RAM").getAsInt();
         int hostBw = hostSpec.get("HOST_BW").getAsInt();
         long hostStorage = hostSpec.get("HOST_STORAGE").getAsLong();
-        VmScheduler vmScheduler = getVMScheduler();
+        VmScheduler vmScheduler = config.getVMScheduler();
 
         List<Pe> peList = new ArrayList<>();
         for (int i = 0; i < hostPes; i++) {
@@ -417,7 +350,7 @@ public class Possion {
         }
 
         final var host = new HostSimple(hostRam, hostBw, hostStorage, peList);
-        final var powerModel = getPowerModel();
+        final var powerModel = config.getPowerModel();
         host.setId(id)
                 .setVmScheduler(vmScheduler)
                 .setPowerModel(powerModel);
@@ -438,7 +371,7 @@ public class Possion {
             // broker.setVmDestructionDelay(Double.MAX_VALUE);
 
             brokers.add(broker);
-            vmGlobalIndex += control.get("vm").getAsInt();
+            vmGlobalIndex += config.getRoot().get("vm").getAsInt();
         }
     }
 
@@ -454,8 +387,8 @@ public class Possion {
     }
 
     private List<Vm> createVms(int startId) {
-        JsonObject spec = control.getAsJsonObject("host_spec");
-        int vms = control.get("vm").getAsInt();
+        JsonObject spec = config.getRoot().getAsJsonObject("host_spec");
+        int vms = config.getRoot().get("vm").getAsInt();
         int hostPes = spec.get("HOST_PES").getAsInt();
         long hostMips = spec.get("HOST_MIPS").getAsLong();
         int vmPes = hostPes / vms;
@@ -468,7 +401,7 @@ public class Possion {
         for (int i = 0; i < vms; i++) {
             Vm vm = new VmSimple(startId + i, vmMips, vmPes);
             vm.setRam(vmRam).setBw(vmBw).setSize(vmStorage);
-            vm.setCloudletScheduler(getCloudletScheduler());
+            vm.setCloudletScheduler(config.getCloudletScheduler());
             vm.enableUtilizationStats();
             vmList.add(vm);
         }
@@ -485,7 +418,7 @@ public class Possion {
         for (int i = 0; i < datacenters.size(); i++) {
             Datacenter dc = datacenters.get(i);
             DatacenterBrokerSimple broker = brokers.get(i);
-            JsonObject dcConfig = control.getAsJsonArray("MONTHS")
+            JsonObject dcConfig = config.getRoot().getAsJsonArray("MONTHS")
                     .get(month_num - 1).getAsJsonObject()
                     .getAsJsonArray("DATACENTERS")
                     .get(i).getAsJsonObject();

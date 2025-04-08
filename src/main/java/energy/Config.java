@@ -4,6 +4,22 @@ import com.google.gson.*;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicy;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyBestFit;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyFirstFit;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRandom;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicyRoundRobin;
+import org.cloudsimplus.allocationpolicies.VmAllocationPolicySimple;
+import org.cloudsimplus.power.models.PowerModelHost;
+import org.cloudsimplus.power.models.PowerModelHostSimple;
+import org.cloudsimplus.power.models.PowerModelHostSpec;
+import org.cloudsimplus.schedulers.cloudlet.CloudletScheduler;
+import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerSpaceShared;
+import org.cloudsimplus.schedulers.cloudlet.CloudletSchedulerTimeShared;
+import org.cloudsimplus.schedulers.vm.VmScheduler;
+import org.cloudsimplus.schedulers.vm.VmSchedulerSpaceShared;
+import org.cloudsimplus.schedulers.vm.VmSchedulerTimeShared;
+
 public class Config {
     private String fileName;
     private JsonObject jsonObject;
@@ -55,5 +71,71 @@ public class Config {
 
     public JsonObject getRoot() {
         return jsonObject;
+    }
+
+    public VmScheduler getVMScheduler() {
+        String key = "VmScheduler";
+        String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "";
+
+        switch (type) {
+            case "TS":
+                return new VmSchedulerTimeShared();
+            case "SS":
+                return new VmSchedulerSpaceShared();
+            default:
+                System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
+                return new VmSchedulerSpaceShared(); // Default policy
+        }
+    }
+
+    public CloudletScheduler getCloudletScheduler() {
+        String key = "cloudletScheduler";
+        String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "";
+
+        switch (type) {
+            case "TS":
+                return new CloudletSchedulerTimeShared();
+            case "SS":
+                return new CloudletSchedulerSpaceShared();
+            default:
+                System.err.println("Warning: Unknown VM Scheduler '" + type + "', using default (SS)");
+                return new CloudletSchedulerTimeShared(); // Default policy
+        }
+    }
+
+    public VmAllocationPolicy getVmAllocationPolicy() {
+        String key = "VmAllocationPolicy";
+        String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "";
+
+        switch (type) {
+            case "SP":
+                return new VmAllocationPolicySimple();
+            case "FF":
+                return new VmAllocationPolicyFirstFit();
+            case "BF":
+                return new VmAllocationPolicyBestFit();
+            case "RR":
+                return new VmAllocationPolicyRoundRobin();
+            case "RD":
+                return new VmAllocationPolicyRandom(null);
+            default:
+                System.err.println("Warning: Unknown VM Allocation Policy '" + type + "', using default (SP)");
+                return new VmAllocationPolicySimple(); // Default policy
+        }
+    }
+
+    public PowerModelHost getPowerModel() {
+        String key = "power_spec_path";
+        String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "Manual";
+
+        if (type == "Manual") {
+            JsonObject powerSpec = this.getRoot().getAsJsonObject("power_spec");
+            double MAX_POWER = powerSpec.get("MAX_POWER").getAsDouble();
+            double STATIC_POWER = powerSpec.get("STATIC_POWER").getAsDouble();
+            return new PowerModelHostSimple(MAX_POWER, STATIC_POWER);
+        } else {
+            PowerModelHostSpec DEF_POWER_MODEL = PowerModelHostSpec.getInstance(type);
+            return new PowerModelHostSpec(DEF_POWER_MODEL.getPowerSpecs());
+        }
     }
 }
