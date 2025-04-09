@@ -1,5 +1,5 @@
 {
-    "SCHEDULING_INTERVAL": 1,
+    "SCHEDULING_INTERVAL": 1.0,
     "hosts": 1,
     "host_spec": {
       "HOST_PES": 64,
@@ -10,7 +10,7 @@
     },
     "VmAllocationPolicy": "BF",
     "VmScheduler": "TS",
-    "cloudletScheduler": "TS",
+    "cloudletScheduler": "SS",
     "UtilizationModel": "F",
     "vm": 1,
     "cloudlet_spec": {

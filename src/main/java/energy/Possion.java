@@ -89,9 +89,7 @@ public class Possion {
                 return;
             lastTick = now;
             submitPoissonCloudlets(datacentersConfig, lambda);
-            energyTracking();
             simulation.getCis().schedule(1.0, 9999);
-
         });
 
         // simulation.terminateAt(daysToSeconds(2));
@@ -101,7 +99,7 @@ public class Possion {
 
         simulation.startSync(); 
         while (simulation.isRunning()) {
-            simulation.runFor(1.0);
+            simulation.runFor(1.0 );
             for (Datacenter dc : datacenters) {
                 for (Host host : dc.getHostList()) {
                     double time = simulation.clock();
@@ -115,7 +113,7 @@ public class Possion {
                     }
                 }
             }
-                  
+            energyTracking();
             terminator(datacentersConfig);
         }
 
@@ -139,11 +137,8 @@ public class Possion {
 
     private void terminator(JsonArray datacentersConfig) {
         boolean allDone = true;
-
         for (int i = 0; i < datacenters.size(); i++) {
-            if (finishedDatacenterIndexes.contains(i))
-                continue;
-
+            if (finishedDatacenterIndexes.contains(i)) continue;
             JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
             int expected = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
             DatacenterBrokerSimple broker = brokers.get(i);
@@ -166,7 +161,6 @@ public class Possion {
                 }
             }
         }
-
         if (allDone) {
             if (DEBUG) System.out.printf("✅✅ [%.2f] All datacenters finished. Terminating simulation.\n", simulation.clock());
             simulation.terminate();
@@ -179,7 +173,6 @@ public class Possion {
         int length = spec.get("CLOUDLET_LENGTH").getAsInt();
         int pes = spec.get("CLOUDLET_PES").getAsInt();
         UtilizationModel utilization = config.getCloudletCPU();
-
         for (int i = 0; i < allowedArrivals; i++) {
             Cloudlet c = new CloudletSimple(currentCloudlets + i, length, pes)
                     .setUtilizationModelCpu(utilization)
@@ -197,25 +190,20 @@ public class Possion {
             int lastCloudlets = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
             int currentCloudlets = totalCloudletsGenerated.get(i);
             int remaining = lastCloudlets - currentCloudlets;
-            if (remaining <= 0)
-                continue;
-
+            if (remaining <= 0) continue;
             if (broker.getVmCreatedList().isEmpty()) {
                 System.err.printf("❌ [Tick %.2f] %s: No VMs available! Skipping cloudlet submission.\n",
                         simulation.clock(), broker.getName());
                 continue;
             }
-
             Vm vm = broker.getVmCreatedList().get(0);
             vm.updateProcessing(simulation.clock(), vm.getHost().getVmScheduler().getAllocatedMips(vm));
             int vmPes = (int) vm.getPesNumber();
             int running = vm.getCloudletScheduler().getCloudletExecList().size();
             int waiting = vm.getCloudletScheduler().getCloudletWaitingList().size();
             int inflight = running + waiting;
-
             int queueCapacity = vmPes -1; // limit inflight to number of PEs
             int availableSlots = queueCapacity - inflight;
-
             if (availableSlots <= 0) {
                 if (DEBUG)
                     System.out.printf("[Tick %.2f] %s: Queue full → inflight=%d, skipping submission\n",
@@ -237,11 +225,9 @@ public class Possion {
                 }
                 continue;
             }
-
             List<Cloudlet> newCloudlets = createDynamicCloudlets(currentCloudlets, allowedArrivals);
             broker.submitCloudletList(newCloudlets);
             totalCloudletsGenerated.set(i, currentCloudlets + allowedArrivals);
-
             if (DEBUG) {
                 int submitted = broker.getCloudletSubmittedList().size();
                 int done = broker.getCloudletFinishedList().size();
@@ -258,32 +244,27 @@ public class Possion {
                 System.out.println("🔚 All datacenters finished — stop tracking energy.");
             return;
         }
-
         List<Double> currentTickEnergy = new ArrayList<>();
-
         for (int i = 0; i < datacenters.size(); i++) {
             if (finishedDatacenterIndexes.contains(i)) {
                 currentTickEnergy.add(0.0);
                 continue;
             }
-
             Datacenter dc = datacenters.get(i);
             double totalPowerkW = 0.0;
-
             for (Host host : dc.getHostList()) {
-                double utilization = host.getCpuUtilizationStats().getMean();
+                host.updateProcessing(simulation.clock());
+                double host_utilization = host.getCpuUtilizationStats().getMean();
+                if (DEBUG) System.out.printf("%s Host %s Util: %.2f%%\n", dc.getName(), host.getId(), host_utilization);
                 for (Vm vm : host.getVmCreatedList()) {
-                    // double utilization = vm.getCpuPercentUtilization();
-                    // double utilization = vm.getCpuPercentUtilization();
-                    if (DEBUG) System.out.printf("Host %s: VM %s, utilization: %.2f%%\n", host.getId(), vm.getId(), utilization);
-                    double power = host.getPowerModel().getPower(utilization); // in watts
-                    totalPowerkW += power / 1000.0; // convert to kW
+                    vm.updateProcessing(simulation.clock(), host.getVmScheduler().getAllocatedMips(vm));
+                    double vm_utilization = vm.getCpuPercentUtilization(simulation.clock());
+                    if (DEBUG) System.out.printf("%s Host %s Util: %.2f%%\n", dc.getName(), host.getId(), vm_utilization);             
                 }
+                double power = host.getPowerModel().getPower(host_utilization); // in watts
+                totalPowerkW += power / 1000.0; // convert to kW
             }
-
-            double tickDuration = config.getInterval(); // from config
-            double energyKWs = totalPowerkW * tickDuration; // in seconds
-
+            double energyKWs = totalPowerkW * config.getInterval(); // in seconds
             currentTickEnergy.add(energyKWs);
         }
 
@@ -293,13 +274,11 @@ public class Possion {
     private void writeTickEnergy() {
         String filename = "output/csv/day/"+ config.get_filename() + "_month" + month_num + "_energy.csv";
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            // Header: Tick,Node1,Node2,...
             writer.print("Tick");
             for (int i = 0; i < datacenters.size(); i++) {
                 writer.printf(",Node%d", i + 1);
             }
             writer.println();
-
             for (int tick = 0; tick < energyPerTickPerNode.size(); tick++) {
                 double tickTime = tick * config.getInterval();
                 writer.printf("%.0f", tickTime);
@@ -309,7 +288,6 @@ public class Possion {
                 }
                 writer.println();
             }
-
             if (DEBUG)
                 System.out.printf("✅ Wrote tick energy file: %s\n", filename);
         } catch (IOException e) {
@@ -335,7 +313,6 @@ public class Possion {
             hostList.add(host);
         }
         VmAllocationPolicy policy = config.getVmAllocationPolicy();
-
         Datacenter datacenter = new DatacenterSimple(simulation, hostList, policy);
         datacenter.setName(name);
         datacenter.setSchedulingInterval(config.getInterval());
@@ -350,19 +327,16 @@ public class Possion {
         int hostBw = hostSpec.get("HOST_BW").getAsInt();
         long hostStorage = hostSpec.get("HOST_STORAGE").getAsLong();
         VmScheduler vmScheduler = config.getVMScheduler();
-
         List<Pe> peList = new ArrayList<>();
         for (int i = 0; i < hostPes; i++) {
             peList.add(new PeSimple(hostMips));
         }
-
         final var host = new HostSimple(hostRam, hostBw, hostStorage, peList);
         final var powerModel = config.getPowerModel();
         host.setId(id)
                 .setVmScheduler(vmScheduler)
                 .setPowerModel(powerModel);
         host.enableUtilizationStats();
-
         return host;
     }
 
@@ -375,8 +349,7 @@ public class Possion {
             broker.setLastSelectedDc(dc);
             final var vmList = createVms(vmGlobalIndex);
             broker.submitVmList(vmList);
-            // broker.setVmDestructionDelay(Double.MAX_VALUE);
-
+            broker.setVmDestructionDelay(Double.MAX_VALUE);
             brokers.add(broker);
             vmGlobalIndex += config.getRoot().get("vm").getAsInt();
         }
@@ -412,10 +385,6 @@ public class Possion {
             vm.enableUtilizationStats();
             vmList.add(vm);
         }
-        // if (DEBUG)
-        //     logger.info("Create VM: {} - ", startId, startId + vms--);
-        // if (DEBUG)
-        //     System.out.printf("Create VM: %d-%d\n", startId, startId + vms--);
         return vmList;
     }
 
@@ -438,7 +407,6 @@ public class Possion {
                 final double watts = host.getPowerModel().getPower(utilization);
                 double hostFirstStart = host.getFirstStartTime();
                 double hostLastFinish = 0.0;
-
                 for (Vm vm : host.getVmList()) {
                     for (Cloudlet c : brokers.get(i).getCloudletFinishedList()) {
                         if (c.getVm() == vm) {
@@ -446,7 +414,6 @@ public class Possion {
                         }
                     }
                 }
-
                 double activeTime = Math.max(0, hostLastFinish - hostFirstStart);
                 final double energyKWh = (watts * activeTime) / (1000 * 3600);
                 totalEnergy += energyKWh;
