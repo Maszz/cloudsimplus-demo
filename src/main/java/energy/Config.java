@@ -119,6 +119,16 @@ public class Config {
         return new UtilizationModelDynamic(cpu);
     }
 
+    public UtilizationModel getCloudletRAM() {
+        double cpu = this.getRoot().getAsJsonObject("cloudlet_spec").get("CLOUDLET_RAM").getAsDouble();
+        return new UtilizationModelDynamic(cpu);
+    }
+
+    public UtilizationModel getCloudletBW() {
+        double cpu = this.getRoot().getAsJsonObject("cloudlet_spec").get("CLOUDLET_BW").getAsDouble();
+        return new UtilizationModelDynamic(cpu);
+    }
+
     public VmAllocationPolicy getVmAllocationPolicy() {
         String key = "VmAllocationPolicy";
         String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "";
