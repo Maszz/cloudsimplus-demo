@@ -5,8 +5,10 @@ import org.apache.commons.math3.distribution.PoissonDistribution;
 import org.cloudsimplus.builders.tables.CloudletsTableBuilder;
 import org.cloudsimplus.brokers.DatacenterBrokerSimple;
 import org.cloudsimplus.cloudlets.Cloudlet;
+import org.cloudsimplus.cloudlets.CloudletExecution;
 import org.cloudsimplus.cloudlets.CloudletSimple;
 import org.cloudsimplus.core.CloudSimPlus;
+import org.cloudsimplus.core.CloudSimTag;
 import org.cloudsimplus.datacenters.Datacenter;
 import org.cloudsimplus.datacenters.DatacenterSimple;
 import org.cloudsimplus.hosts.Host;
@@ -47,7 +49,7 @@ public class Possion {
     private int month_num;
     private static final boolean DEBUG = true;
     private double lastTick = -1;
-    private static final int scaleFactor = 1000;
+    private static final int scaleFactor = 10000;
 
     public static void main(String[] args) {
         Log.setLevel(ch.qos.logback.classic.Level.ERROR);
@@ -74,7 +76,7 @@ public class Possion {
     public void run(CloudSimPlus simulation, JsonArray datacentersConfig, int month_num) {
         this.simulation = simulation;
         this.month_num = month_num;
-        int lambda = config.getRoot().has("lambda") ? config.getRoot().get("lambda").getAsInt() : 30;
+        // int lambda = config.getRoot().has("lambda") ? config.getRoot().get("lambda").getAsInt() : 30;
 
         brokers = new ArrayList<>();
         totalCloudletsGenerated = new ArrayList<>();
@@ -90,14 +92,16 @@ public class Possion {
             if (now - lastTick < 1.0 || now < 1.0)
                 return;
             lastTick = now;
-            submitPoissonCloudlets(datacentersConfig, lambda);
-            simulation.getCis().schedule(1.0, 9999);
+            submitPoissonCloudlets(datacentersConfig);
+            updateProcessing();
+            simulation.getCis().schedule(simulation.getEntityList().get(0), 1.0, 9999);
         });
 
-        // simulation.terminateAt(daysToSeconds(2));
-
-        // // Start simulation
-        // simulation.start();
+        simulation.addOnEventProcessingListener(info -> {
+            if (info.getTag() == 9999) {
+                // Keep-alive event; do nothing
+            }
+        });
 
         simulation.startSync();
         while (simulation.isRunning()) {
@@ -105,6 +109,7 @@ public class Possion {
             updateProcessing();
             energyTracking();
             terminator(datacentersConfig);
+            // simulation.getCis().schedule(simulation.getEntityList().get(0), 1.0, 9999);
         }
 
         if (DEBUG)
@@ -118,6 +123,7 @@ public class Possion {
     }
 
     private void updateProcessing() {
+        // simulation.runFor(config.getInterval());
         for (Datacenter dc : datacenters) {
             for (Host host : dc.getHostList()) {
                 double time = simulation.clock();
@@ -138,11 +144,10 @@ public class Possion {
     }
 
     private void terminator(JsonArray datacentersConfig) {
+        simulation.runFor(config.getInterval());
         boolean allDone = true;
 
         for (int i = 0; i < datacenters.size(); i++) {
-            if (finishedDatacenterIndexes.contains(i))
-                continue;
             JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
             int expected = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
             DatacenterBrokerSimple broker = brokers.get(i);
@@ -157,7 +162,10 @@ public class Possion {
             // progress bar
             printProgressBar(simulation.clock(), broker.getName(), done, submitted, expected);
 
+            if (finishedDatacenterIndexes.contains(i))
+                continue;
             if (noRemaining && allFinished && allSuccess) {
+                System.err.println("✅ " + broker.getName() + " Finish");
                 finishedDatacenterIndexes.add(i);
             } else {
                 allDone = false;
@@ -166,7 +174,7 @@ public class Possion {
 
         if (finishedDatacenterIndexes.size() == datacenters.size() && allDone) {
             if (DEBUG) {
-                System.out.printf("✅✅ [%.2f] All datacenters finished. Terminating simulation.\n", simulation.clock());
+                System.err.printf("✅✅ [%.2f] All datacenters finished. Terminating simulation.\n", simulation.clock());
             }
             simulation.terminate();
         }
@@ -188,7 +196,7 @@ public class Possion {
         return cloudletList;
     }
 
-    private void submitPoissonCloudlets(JsonArray datacentersConfig, int lambda) {
+    private void submitPoissonCloudlets(JsonArray datacentersConfig) {
         for (int i = 0; i < datacenters.size(); i++) {
             JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
             DatacenterBrokerSimple broker = brokers.get(i);
@@ -197,41 +205,38 @@ public class Possion {
                         simulation.clock(), broker.getName());
                 continue;
             }
+
             int lastCloudlets = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
             int currentCloudlets = totalCloudletsGenerated.get(i);
             int remaining = lastCloudlets - currentCloudlets;
+            if (remaining <= 0) continue;
+
             Vm vm = broker.getVmCreatedList().get(0);
-            vm.updateProcessing(simulation.clock(), vm.getHost().getVmScheduler().getAllocatedMips(vm));
-            if (remaining <= 0)
-                continue;
             int vmPes = (int) vm.getPesNumber();
             int running = vm.getCloudletScheduler().getCloudletExecList().size();
             int waiting = vm.getCloudletScheduler().getCloudletWaitingList().size();
+            if (waiting > 0) System.err.println("❌ There are waiting: " + waiting);
             int inflight = running + waiting;
-            int queueCapacity = vmPes; // limit inflight to number of PEs
+            int queueCapacity = vmPes - 1; // limit inflight to number of PEs
             int availableSlots = queueCapacity - inflight;
-            if (availableSlots <= 0) {
-                if (DEBUG)
-                    System.out.printf("[Tick %.2f] %s: Queue full → inflight=%d, skipping submission\n",
-                            simulation.clock(), broker.getName(), inflight);
-                continue;
-            }
+            if (availableSlots <= 0) return;
 
+            int lambda = (int) (dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / daysToSeconds(1));
             PoissonDistribution poisson = new PoissonDistribution(lambda);
             double poissonArrivals = Math.min((poisson.sample()), remaining);
             // int allowedArrivals = (int) poissonArrivals;
-            int allowedArrivals = (int) Math.min(poissonArrivals,
-                    (vmPes * broker.getVmCreatedList().size()) - inflight);
+            int allowedArrivals = (int) Math.min(poissonArrivals, availableSlots);
             if (allowedArrivals <= 0) {
                 if (DEBUG) {
                     int submitted = broker.getCloudletSubmittedList().size();
                     int done = broker.getCloudletFinishedList().size();
-                    System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d ;util: %.4f%% %n",
+                    System.out.printf("[Tick %.2f] %s: %d allowedArrivals (done/submitted/total): %d/%d/%d ;util: %.4f%% %n",
                             simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets,
                             vm.getCpuPercentUtilization(simulation.clock()));
                 }
                 continue;
             }
+
             List<Cloudlet> newCloudlets = createDynamicCloudlets(currentCloudlets, allowedArrivals);
             broker.submitCloudletList(newCloudlets);
             totalCloudletsGenerated.set(i, currentCloudlets + allowedArrivals);
@@ -262,7 +267,7 @@ public class Possion {
         }
         bar.append("|");
 
-        System.err.printf("\r[Tick %.0f] %-10s C(F/S/E): %4d|%4d|%4d %s", tick,
+        System.err.printf("\r[Tick %.0f] %-10s C(F/S/E): %6d|%6d|%6d %s", tick,
                 nodeName, finished, submitted, expected,
                 bar.toString());
         System.err.flush();
@@ -439,6 +444,7 @@ public class Possion {
             double totalEnergy = 0.0;
             for (Host host : dc.getHostList()) {
                 final double utilization = host.getCpuUtilizationStats().getMean();
+                System.err.println(utilization);
                 final double watts = host.getPowerModel().getPower(utilization);
                 double hostFirstStart = host.getFirstStartTime();
                 double hostLastFinish = 0.0;

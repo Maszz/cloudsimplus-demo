@@ -144,7 +144,7 @@ public class Config {
         String key = "power_spec_path";
         String type = this.getRoot().has(key) ? this.getRoot().get(key).getAsString() : "Manual";
 
-        if (type == "Manual") {
+        if (type.equals("Manual")) {
             JsonObject powerSpec = this.getRoot().getAsJsonObject("power_spec");
             double MAX_POWER = powerSpec.get("MAX_POWER").getAsDouble();
             double STATIC_POWER = powerSpec.get("STATIC_POWER").getAsDouble();

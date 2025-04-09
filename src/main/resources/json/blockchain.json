@@ -10,11 +10,10 @@
     },
     "VmAllocationPolicy": "BF",
     "VmScheduler": "TS",
-    "cloudletScheduler": "SS",
-    "UtilizationModel": "F",
+    "cloudletScheduler": "TS",
     "vm": 1,
     "cloudlet_spec": {
-      "CLOUDLET_LENGTH": 11264000.0,
+      "CLOUDLET_LENGTH": 176000.0,
       "CLOUDLET_PES": 1,
       "CLOUDLET_CPU": 1.0
     },
