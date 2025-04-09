@@ -104,12 +104,18 @@ public class Possion {
             simulation.runFor(1.0);
             for (Datacenter dc : datacenters) {
                 for (Host host : dc.getHostList()) {
+                    double time = simulation.clock();
+                    host.updateProcessing(time); // ✅ KEY STEP
+            
                     for (Vm vm : host.getVmList()) {
-                        MipsShare peCapacity = host.getVmScheduler().getAllocatedMips(vm);
-                        vm.updateProcessing(simulation.clock(), peCapacity);
+                        vm.updateProcessing(time, host.getVmScheduler().getAllocatedMips(vm));
+            
+                        double utilization = host.getCpuPercentUtilization(); // ✅ HOST-LEVEL is better
+                        System.out.printf("Host %d: VM %d utilization: %.4f%%%n", host.getId(), vm.getId(), utilization * 100);
                     }
                 }
-            }            
+            }
+                  
             terminator(datacentersConfig);
         }
 
@@ -201,7 +207,7 @@ public class Possion {
             }
 
             Vm vm = broker.getVmCreatedList().get(0);
-            // vm.updateProcessing(simulation.clock(), vm.getHost().getVmScheduler().getAllocatedMips(vm));
+            vm.updateProcessing(simulation.clock(), vm.getHost().getVmScheduler().getAllocatedMips(vm));
             int vmPes = (int) vm.getPesNumber();
             int running = vm.getCloudletScheduler().getCloudletExecList().size();
             int waiting = vm.getCloudletScheduler().getCloudletWaitingList().size();
@@ -227,7 +233,7 @@ public class Possion {
                     int submitted = broker.getCloudletSubmittedList().size();
                     int done = broker.getCloudletFinishedList().size();
                     System.out.printf("[Tick %.2f] %s: +%d cloudlets (done/submitted/total): %d/%d/%d ;util: %.4f%% %n",
-                            simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets, vm.getCpuPercentUtilization());
+                            simulation.clock(), broker.getName(), allowedArrivals, done, submitted, lastCloudlets, vm.getCpuPercentUtilization(simulation.clock()));
                 }
                 continue;
             }
@@ -265,10 +271,11 @@ public class Possion {
             double totalPowerkW = 0.0;
 
             for (Host host : dc.getHostList()) {
-                // double utilization = host.getCpuUtilizationStats().getMean();
+                double utilization = host.getCpuUtilizationStats().getMean();
                 for (Vm vm : host.getVmCreatedList()) {
-                    double utilization = vm.getCpuPercentUtilization();
-                    System.out.printf("Host %s: VM %s, utilization: %.2f%%\n", host.getId(), vm.getId(), utilization);
+                    // double utilization = vm.getCpuPercentUtilization();
+                    // double utilization = vm.getCpuPercentUtilization();
+                    if (DEBUG) System.out.printf("Host %s: VM %s, utilization: %.2f%%\n", host.getId(), vm.getId(), utilization);
                     double power = host.getPowerModel().getPower(utilization); // in watts
                     totalPowerkW += power / 1000.0; // convert to kW
                 }
@@ -443,13 +450,14 @@ public class Possion {
                 double activeTime = Math.max(0, hostLastFinish - hostFirstStart);
                 final double energyKWh = (watts * activeTime) / (1000 * 3600);
                 totalEnergy += energyKWh;
+                
+                logger.info("{:<2}: {:>6.2f} | C(P/S/E): {:>4}|{:>4}|{:>4} | Energy: {:.4f} kWh",
+                        dc.getName(), activeTime, totalSubmittedCloudlets - totalFinishCloudlets, totalSubmittedCloudlets,
+                        expectedTotal, totalEnergy);
+                System.out.printf("%-6s: %6.2f | C(P/S/E): %4d|%4d|%4d | Energy: %.4f kWh\n",
+                        dc.getName(), activeTime, totalSubmittedCloudlets - totalFinishCloudlets, totalSubmittedCloudlets,
+                        expectedTotal, totalEnergy);
             }
-            logger.info("Datacenter: {:<2} | Cloudlets(P/S/E): {:>4}|{:>4}|{:>4} | Energy: {:.4f} kWh",
-                    dc.getName(), totalSubmittedCloudlets - totalFinishCloudlets, totalSubmittedCloudlets,
-                    expectedTotal, totalEnergy);
-            System.out.printf("Datacenter: %-6s | Cloudlets(P/S/E): %4d|%4d|%4d | Energy: %.4f kWh\n",
-                    dc.getName(), totalSubmittedCloudlets - totalFinishCloudlets, totalSubmittedCloudlets,
-                    expectedTotal, totalEnergy);
         }
     }
 
