@@ -16,8 +16,10 @@
       "CLOUDLET_LENGTH": 176000.0,
       "CLOUDLET_PES": 1,
       "CLOUDLET_CPU": 0.9,
-      "CLOUDLET_RAM": 0.1,
-      "CLOUDLET_BW": 0.01
+      "CLOUDLET_RAM": 0.01,
+      "CLOUDLET_BW": 0.01,
+      "CLOUDLET_FILESIZE": 1470000,
+      "CLOUDLET_OUTPUTSIZE": 1470000
     },
     "power_spec_path": "src/main/resources/power_spec/G6338N.txt",
     "MONTHS": [

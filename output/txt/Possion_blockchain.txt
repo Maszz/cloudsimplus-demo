@@ -1,0 +1,288 @@
+--- Energy Report for month1 ---
+Node1 : 1820.10 | C(P/S/E):    0|78421|78421 | Energy: 0.0733 kWh
+Node2 : 1822.10 | C(P/S/E):    0|44023|44023 | Energy: 0.0683 kWh
+Node3 : 1844.10 | C(P/S/E):    0|40774|40774 | Energy: 0.0692 kWh
+Node4 : 1819.10 | C(P/S/E):    0|72991|72991 | Energy: 0.0733 kWh
+Node5 : 1811.10 | C(P/S/E):    0|65037|65037 | Energy: 0.0729 kWh
+Node6 : 1866.10 | C(P/S/E):    0|106111|106111 | Energy: 0.0793 kWh
+Node7 : 1825.10 | C(P/S/E):    0|65601|65601 | Energy: 0.0735 kWh
+Node8 : 1853.10 | C(P/S/E):    0|60868|60868 | Energy: 0.0695 kWh
+Node9 : 1825.10 | C(P/S/E):    0|92427|92427 | Energy: 0.0735 kWh
+Node10: 1855.10 | C(P/S/E):    0|53528|53528 | Energy: 0.0696 kWh
+Node11: 1810.10 | C(P/S/E):    0|54411|54411 | Energy: 0.0679 kWh
+Node12: 1798.10 | C(P/S/E):    0|59713|59713 | Energy: 0.0674 kWh
+Node13: 1860.10 | C(P/S/E):    0|16690|16690 | Energy: 0.0589 kWh
+Node14: 1826.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0685 kWh
+Node15: 1847.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0693 kWh
+Node16: 1837.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0689 kWh
+Node17: 1858.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0697 kWh
+Node18: 1829.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0686 kWh
+Node19: 1831.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0687 kWh
+Node20: 1830.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0686 kWh
+Node21: 1833.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0687 kWh
+Node22: 1831.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0687 kWh
+Node23: 1836.10 | C(P/S/E):    0|62353|62353 | Energy: 0.0689 kWh
+--- Energy Report for month2 ---
+Node1 : 1826.10 | C(P/S/E):    0|87158|87158 | Energy: 0.0736 kWh
+Node2 : 1812.10 | C(P/S/E):    0|48910|48910 | Energy: 0.0680 kWh
+Node3 : 1805.10 | C(P/S/E):    0|45210|45210 | Energy: 0.0677 kWh
+Node4 : 1836.10 | C(P/S/E):    0|80959|80959 | Energy: 0.0740 kWh
+Node5 : 1800.10 | C(P/S/E):    0|72075|72075 | Energy: 0.0725 kWh
+Node6 : 1946.10 | C(P/S/E):    0|118142|118142 | Energy: 0.0827 kWh
+Node7 : 1825.10 | C(P/S/E):    0|72848|72848 | Energy: 0.0735 kWh
+Node8 : 1832.10 | C(P/S/E):    0|67604|67604 | Energy: 0.0738 kWh
+Node9 : 1835.10 | C(P/S/E):    0|102687|102687 | Energy: 0.0739 kWh
+Node10: 1809.10 | C(P/S/E):    0|59526|59526 | Energy: 0.0678 kWh
+Node11: 1833.10 | C(P/S/E):    0|60248|60248 | Energy: 0.0687 kWh
+Node12: 1843.10 | C(P/S/E):    0|66311|66311 | Energy: 0.0691 kWh
+Node13: 1881.10 | C(P/S/E):    0|18711|18711 | Energy: 0.0596 kWh
+Node14: 1818.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0732 kWh
+Node15: 1821.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0733 kWh
+Node16: 1826.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0736 kWh
+Node17: 1840.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0741 kWh
+Node18: 1806.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0727 kWh
+Node19: 1816.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0731 kWh
+Node20: 1810.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0729 kWh
+Node21: 1817.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0732 kWh
+Node22: 1822.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0734 kWh
+Node23: 1813.10 | C(P/S/E):    0|69261|69261 | Energy: 0.0730 kWh
+--- Energy Report for month3 ---
+Node1 : 1837.10 | C(P/S/E):    0|79026|79026 | Energy: 0.0740 kWh
+Node2 : 1865.10 | C(P/S/E):    0|44330|44330 | Energy: 0.0699 kWh
+Node3 : 1879.10 | C(P/S/E):    0|40896|40896 | Energy: 0.0705 kWh
+Node4 : 1820.10 | C(P/S/E):    0|73257|73257 | Energy: 0.0733 kWh
+Node5 : 1821.10 | C(P/S/E):    0|65162|65162 | Energy: 0.0733 kWh
+Node6 : 1877.10 | C(P/S/E):    0|107307|107307 | Energy: 0.0798 kWh
+Node7 : 1840.10 | C(P/S/E):    0|65996|65996 | Energy: 0.0741 kWh
+Node8 : 1795.10 | C(P/S/E):    0|61255|61255 | Energy: 0.0673 kWh
+Node9 : 1840.10 | C(P/S/E):    0|93072|93072 | Energy: 0.0741 kWh
+Node10: 1800.10 | C(P/S/E):    0|54003|54003 | Energy: 0.0675 kWh
+Node11: 1818.10 | C(P/S/E):    0|54424|54424 | Energy: 0.0682 kWh
+Node12: 1827.10 | C(P/S/E):    0|60075|60075 | Energy: 0.0685 kWh
+Node13: 1895.10 | C(P/S/E):    0|17111|17111 | Energy: 0.0600 kWh
+Node14: 1853.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0695 kWh
+Node15: 1858.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0697 kWh
+Node16: 1856.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0696 kWh
+Node17: 1849.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0693 kWh
+Node18: 1843.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0691 kWh
+Node19: 1830.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0686 kWh
+Node20: 1842.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0691 kWh
+Node21: 1850.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0694 kWh
+Node22: 1842.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0691 kWh
+Node23: 1841.10 | C(P/S/E):    0|62762|62762 | Energy: 0.0690 kWh
+--- Energy Report for month4 ---
+Node1 : 1827.10 | C(P/S/E):    0|81972|81972 | Energy: 0.0736 kWh
+Node2 : 1849.10 | C(P/S/E):    0|45967|45967 | Energy: 0.0693 kWh
+Node3 : 1839.10 | C(P/S/E):    0|42322|42322 | Energy: 0.0690 kWh
+Node4 : 1812.10 | C(P/S/E):    0|75836|75836 | Energy: 0.0730 kWh
+Node5 : 1820.10 | C(P/S/E):    0|67399|67399 | Energy: 0.0683 kWh
+Node6 : 1904.10 | C(P/S/E):    0|111502|111502 | Energy: 0.0767 kWh
+Node7 : 1796.10 | C(P/S/E):    0|68400|68400 | Energy: 0.0674 kWh
+Node8 : 1813.10 | C(P/S/E):    0|63497|63497 | Energy: 0.0680 kWh
+Node9 : 1834.10 | C(P/S/E):    0|96508|96508 | Energy: 0.0739 kWh
+Node10: 1809.10 | C(P/S/E):    0|56049|56049 | Energy: 0.0678 kWh
+Node11: 1811.10 | C(P/S/E):    0|56244|56244 | Energy: 0.0679 kWh
+Node12: 1821.10 | C(P/S/E):    0|62264|62264 | Energy: 0.0683 kWh
+Node13: 1976.10 | C(P/S/E):    0|17898|17898 | Energy: 0.0626 kWh
+Node14: 1790.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0671 kWh
+Node15: 1806.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0677 kWh
+Node16: 1803.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0676 kWh
+Node17: 1810.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0679 kWh
+Node18: 1813.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0680 kWh
+Node19: 1809.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0678 kWh
+Node20: 1810.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0679 kWh
+Node21: 1813.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0680 kWh
+Node22: 1800.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0675 kWh
+Node23: 1809.10 | C(P/S/E):    0|65066|65066 | Energy: 0.0678 kWh
+--- Energy Report for month5 ---
+Node1 : 1803.10 | C(P/S/E):    0|79630|79630 | Energy: 0.0726 kWh
+Node2 : 1854.10 | C(P/S/E):    0|44638|44638 | Energy: 0.0695 kWh
+Node3 : 1871.10 | C(P/S/E):    0|41018|41018 | Energy: 0.0702 kWh
+Node4 : 1847.10 | C(P/S/E):    0|73523|73523 | Energy: 0.0744 kWh
+Node5 : 1820.10 | C(P/S/E):    0|65287|65287 | Energy: 0.0683 kWh
+Node6 : 1873.10 | C(P/S/E):    0|108503|108503 | Energy: 0.0754 kWh
+Node7 : 1837.10 | C(P/S/E):    0|66391|66391 | Energy: 0.0689 kWh
+Node8 : 1800.10 | C(P/S/E):    0|61642|61642 | Energy: 0.0675 kWh
+Node9 : 1809.10 | C(P/S/E):    0|93717|93717 | Energy: 0.0729 kWh
+Node10: 1818.10 | C(P/S/E):    0|54478|54478 | Energy: 0.0682 kWh
+Node11: 1816.10 | C(P/S/E):    0|54436|54436 | Energy: 0.0681 kWh
+Node12: 1837.10 | C(P/S/E):    0|60437|60437 | Energy: 0.0689 kWh
+Node13: 1947.10 | C(P/S/E):    0|17531|17531 | Energy: 0.0617 kWh
+Node14: 1808.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0678 kWh
+Node15: 1818.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0682 kWh
+Node16: 1810.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0679 kWh
+Node17: 1793.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0672 kWh
+Node18: 1812.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0680 kWh
+Node19: 1807.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0678 kWh
+Node20: 1808.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0678 kWh
+Node21: 1816.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0681 kWh
+Node22: 1803.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0676 kWh
+Node23: 1804.10 | C(P/S/E):    0|63172|63172 | Energy: 0.0677 kWh
+--- Energy Report for month6 ---
+Node1 : 1835.10 | C(P/S/E):    0|82596|82596 | Energy: 0.0739 kWh
+Node2 : 1864.10 | C(P/S/E):    0|46284|46284 | Energy: 0.0699 kWh
+Node3 : 1850.10 | C(P/S/E):    0|42448|42448 | Energy: 0.0694 kWh
+Node4 : 1816.10 | C(P/S/E):    0|76111|76111 | Energy: 0.0731 kWh
+Node5 : 1832.10 | C(P/S/E):    0|67527|67527 | Energy: 0.0738 kWh
+Node6 : 1905.10 | C(P/S/E):    0|112738|112738 | Energy: 0.0810 kWh
+Node7 : 1821.10 | C(P/S/E):    0|68808|68808 | Energy: 0.0733 kWh
+Node8 : 1833.10 | C(P/S/E):    0|63897|63897 | Energy: 0.0687 kWh
+Node9 : 1837.10 | C(P/S/E):    0|97174|97174 | Energy: 0.0740 kWh
+Node10: 1818.10 | C(P/S/E):    0|56540|56540 | Energy: 0.0682 kWh
+Node11: 1818.10 | C(P/S/E):    0|56257|56257 | Energy: 0.0682 kWh
+Node12: 1836.10 | C(P/S/E):    0|62638|62638 | Energy: 0.0689 kWh
+Node13: 1825.10 | C(P/S/E):    0|18333|18333 | Energy: 0.0578 kWh
+Node14: 1818.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0732 kWh
+Node15: 1812.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0730 kWh
+Node16: 1814.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0731 kWh
+Node17: 1807.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0728 kWh
+Node18: 1818.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0732 kWh
+Node19: 1820.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0733 kWh
+Node20: 1818.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0732 kWh
+Node21: 1824.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0735 kWh
+Node22: 1821.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0733 kWh
+Node23: 1838.10 | C(P/S/E):    0|65489|65489 | Energy: 0.0740 kWh
+--- Energy Report for month7 ---
+Node1 : 1823.10 | C(P/S/E):    0|80234|80234 | Energy: 0.0734 kWh
+Node2 : 1867.10 | C(P/S/E):    0|44945|44945 | Energy: 0.0700 kWh
+Node3 : 1871.10 | C(P/S/E):    0|41139|41139 | Energy: 0.0702 kWh
+Node4 : 1863.10 | C(P/S/E):    0|73789|73789 | Energy: 0.0750 kWh
+Node5 : 1803.10 | C(P/S/E):    0|65411|65411 | Energy: 0.0676 kWh
+Node6 : 1882.10 | C(P/S/E):    0|109699|109699 | Energy: 0.0758 kWh
+Node7 : 1809.10 | C(P/S/E):    0|66786|66786 | Energy: 0.0678 kWh
+Node8 : 1833.10 | C(P/S/E):    0|62029|62029 | Energy: 0.0687 kWh
+Node9 : 1826.10 | C(P/S/E):    0|94362|94362 | Energy: 0.0736 kWh
+Node10: 1844.10 | C(P/S/E):    0|54953|54953 | Energy: 0.0692 kWh
+Node11: 1827.10 | C(P/S/E):    0|54449|54449 | Energy: 0.0685 kWh
+Node12: 1842.10 | C(P/S/E):    0|60799|60799 | Energy: 0.0691 kWh
+Node13: 2027.10 | C(P/S/E):    0|17952|17952 | Energy: 0.0642 kWh
+Node14: 1817.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0681 kWh
+Node15: 1820.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0683 kWh
+Node16: 1806.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0677 kWh
+Node17: 1822.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0683 kWh
+Node18: 1810.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0679 kWh
+Node19: 1815.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0681 kWh
+Node20: 1816.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0681 kWh
+Node21: 1813.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0680 kWh
+Node22: 1824.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0684 kWh
+Node23: 1824.10 | C(P/S/E):    0|63581|63581 | Energy: 0.0684 kWh
+--- Energy Report for month8 ---
+Node1 : 1832.10 | C(P/S/E):    0|80536|80536 | Energy: 0.0738 kWh
+Node2 : 1792.10 | C(P/S/E):    0|45098|45098 | Energy: 0.0672 kWh
+Node3 : 1881.10 | C(P/S/E):    0|41200|41200 | Energy: 0.0705 kWh
+Node4 : 1808.10 | C(P/S/E):    0|73922|73922 | Energy: 0.0728 kWh
+Node5 : 1823.10 | C(P/S/E):    0|65474|65474 | Energy: 0.0734 kWh
+Node6 : 1874.10 | C(P/S/E):    0|110297|110297 | Energy: 0.0796 kWh
+Node7 : 1814.10 | C(P/S/E):    0|66984|66984 | Energy: 0.0731 kWh
+Node8 : 1828.10 | C(P/S/E):    0|62223|62223 | Energy: 0.0686 kWh
+Node9 : 1823.10 | C(P/S/E):    0|94685|94685 | Energy: 0.0734 kWh
+Node10: 1838.10 | C(P/S/E):    0|55191|55191 | Energy: 0.0689 kWh
+Node11: 1822.10 | C(P/S/E):    0|54455|54455 | Energy: 0.0683 kWh
+Node12: 1854.10 | C(P/S/E):    0|60980|60980 | Energy: 0.0695 kWh
+Node13: 1822.10 | C(P/S/E):    0|18162|18162 | Energy: 0.0577 kWh
+Node14: 1824.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0735 kWh
+Node15: 1823.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0734 kWh
+Node16: 1829.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0737 kWh
+Node17: 1828.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0736 kWh
+Node18: 1818.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0732 kWh
+Node19: 1823.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0734 kWh
+Node20: 1815.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0731 kWh
+Node21: 1848.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0744 kWh
+Node22: 1821.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0733 kWh
+Node23: 1820.10 | C(P/S/E):    0|63785|63785 | Energy: 0.0733 kWh
+--- Energy Report for month9 ---
+Node1 : 1830.10 | C(P/S/E):    0|83533|83533 | Energy: 0.0737 kWh
+Node2 : 1877.10 | C(P/S/E):    0|46760|46760 | Energy: 0.0704 kWh
+Node3 : 1862.10 | C(P/S/E):    0|42637|42637 | Energy: 0.0698 kWh
+Node4 : 1834.10 | C(P/S/E):    0|76524|76524 | Energy: 0.0739 kWh
+Node5 : 1835.10 | C(P/S/E):    0|67721|67721 | Energy: 0.0739 kWh
+Node6 : 1908.10 | C(P/S/E):    0|114592|114592 | Energy: 0.0811 kWh
+Node7 : 1830.10 | C(P/S/E):    0|69421|69421 | Energy: 0.0737 kWh
+Node8 : 1839.10 | C(P/S/E):    0|64497|64497 | Energy: 0.0690 kWh
+Node9 : 1829.10 | C(P/S/E):    0|98175|98175 | Energy: 0.0737 kWh
+Node10: 1847.10 | C(P/S/E):    0|57276|57276 | Energy: 0.0693 kWh
+Node11: 1811.10 | C(P/S/E):    0|56277|56277 | Energy: 0.0679 kWh
+Node12: 1811.10 | C(P/S/E):    0|63199|63199 | Energy: 0.0679 kWh
+Node13: 1916.10 | C(P/S/E):    0|18985|18985 | Energy: 0.0607 kWh
+Node14: 1831.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0738 kWh
+Node15: 1834.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0739 kWh
+Node16: 1845.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0743 kWh
+Node17: 1843.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0742 kWh
+Node18: 1834.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0739 kWh
+Node19: 1841.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0742 kWh
+Node20: 1835.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0739 kWh
+Node21: 1846.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0744 kWh
+Node22: 1829.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0737 kWh
+Node23: 1843.10 | C(P/S/E):    0|66123|66123 | Energy: 0.0742 kWh
+--- Energy Report for month10 ---
+Node1 : 1813.10 | C(P/S/E):    0|81140|81140 | Energy: 0.0730 kWh
+Node2 : 1815.10 | C(P/S/E):    0|45406|45406 | Energy: 0.0681 kWh
+Node3 : 1877.10 | C(P/S/E):    0|41322|41322 | Energy: 0.0704 kWh
+Node4 : 1797.10 | C(P/S/E):    0|74188|74188 | Energy: 0.0724 kWh
+Node5 : 1826.10 | C(P/S/E):    0|65598|65598 | Energy: 0.0736 kWh
+Node6 : 1900.10 | C(P/S/E):    0|111493|111493 | Energy: 0.0808 kWh
+Node7 : 1822.10 | C(P/S/E):    0|67379|67379 | Energy: 0.0734 kWh
+Node8 : 1846.10 | C(P/S/E):    0|62610|62610 | Energy: 0.0692 kWh
+Node9 : 1852.10 | C(P/S/E):    0|95330|95330 | Energy: 0.0746 kWh
+Node10: 1870.10 | C(P/S/E):    0|55666|55666 | Energy: 0.0701 kWh
+Node11: 1805.10 | C(P/S/E):    0|54468|54468 | Energy: 0.0677 kWh
+Node12: 1808.10 | C(P/S/E):    0|61342|61342 | Energy: 0.0678 kWh
+Node13: 1872.10 | C(P/S/E):    0|18583|18583 | Energy: 0.0593 kWh
+Node14: 1831.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0687 kWh
+Node15: 1826.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0685 kWh
+Node16: 1842.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0691 kWh
+Node17: 1840.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0690 kWh
+Node18: 1832.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0687 kWh
+Node19: 1831.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0687 kWh
+Node20: 1826.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0685 kWh
+Node21: 1853.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0695 kWh
+Node22: 1835.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0688 kWh
+Node23: 1834.10 | C(P/S/E):    0|64194|64194 | Energy: 0.0688 kWh
+--- Energy Report for month11 ---
+Node1 : 1835.10 | C(P/S/E):    0|84157|84157 | Energy: 0.0739 kWh
+Node2 : 1788.10 | C(P/S/E):    0|47078|47078 | Energy: 0.0671 kWh
+Node3 : 1854.10 | C(P/S/E):    0|42763|42763 | Energy: 0.0695 kWh
+Node4 : 1822.10 | C(P/S/E):    0|76799|76799 | Energy: 0.0734 kWh
+Node5 : 1835.10 | C(P/S/E):    0|67849|67849 | Energy: 0.0739 kWh
+Node6 : 1921.10 | C(P/S/E):    0|115828|115828 | Energy: 0.0816 kWh
+Node7 : 1849.10 | C(P/S/E):    0|69829|69829 | Energy: 0.0745 kWh
+Node8 : 1787.10 | C(P/S/E):    0|64897|64897 | Energy: 0.0670 kWh
+Node9 : 1847.10 | C(P/S/E):    0|98841|98841 | Energy: 0.0744 kWh
+Node10: 1809.10 | C(P/S/E):    0|57767|57767 | Energy: 0.0678 kWh
+Node11: 1818.10 | C(P/S/E):    0|56290|56290 | Energy: 0.0682 kWh
+Node12: 1824.10 | C(P/S/E):    0|63573|63573 | Energy: 0.0684 kWh
+Node13: 1943.10 | C(P/S/E):    0|19420|19420 | Energy: 0.0615 kWh
+Node14: 1861.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0750 kWh
+Node15: 1843.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0742 kWh
+Node16: 1853.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0746 kWh
+Node17: 1844.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0743 kWh
+Node18: 1847.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0744 kWh
+Node19: 1858.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0748 kWh
+Node20: 1845.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0743 kWh
+Node21: 1845.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0743 kWh
+Node22: 1837.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0740 kWh
+Node23: 1844.10 | C(P/S/E):    0|66545|66545 | Energy: 0.0743 kWh
+--- Energy Report for month12 ---
+Node1 : 1822.10 | C(P/S/E):    0|81744|81744 | Energy: 0.0734 kWh
+Node2 : 1833.10 | C(P/S/E):    0|45713|45713 | Energy: 0.0687 kWh
+Node3 : 1816.10 | C(P/S/E):    0|41444|41444 | Energy: 0.0681 kWh
+Node4 : 1812.10 | C(P/S/E):    0|74454|74454 | Energy: 0.0730 kWh
+Node5 : 1834.10 | C(P/S/E):    0|65723|65723 | Energy: 0.0739 kWh
+Node6 : 1894.10 | C(P/S/E):    0|112689|112689 | Energy: 0.0805 kWh
+Node7 : 1834.10 | C(P/S/E):    0|67774|67774 | Energy: 0.0739 kWh
+Node8 : 1855.10 | C(P/S/E):    0|62997|62997 | Energy: 0.0696 kWh
+Node9 : 1827.10 | C(P/S/E):    0|95975|95975 | Energy: 0.0736 kWh
+Node10: 1807.10 | C(P/S/E):    0|56141|56141 | Energy: 0.0678 kWh
+Node11: 1815.10 | C(P/S/E):    0|54480|54480 | Energy: 0.0681 kWh
+Node12: 1814.10 | C(P/S/E):    0|61704|61704 | Energy: 0.0680 kWh
+Node13: 1915.10 | C(P/S/E):    0|19004|19004 | Energy: 0.0606 kWh
+Node14: 1839.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0690 kWh
+Node15: 1852.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0695 kWh
+Node16: 1834.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0688 kWh
+Node17: 1852.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0695 kWh
+Node18: 1855.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0696 kWh
+Node19: 1852.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0695 kWh
+Node20: 1846.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0692 kWh
+Node21: 1852.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0695 kWh
+Node22: 1856.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0696 kWh
+Node23: 1843.10 | C(P/S/E):    0|64603|64603 | Energy: 0.0691 kWh

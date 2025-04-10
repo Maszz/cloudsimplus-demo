@@ -46,7 +46,7 @@ public class Possion {
     private int month_num;
     private static final boolean DEBUG = false;
     private double lastTick = -1;
-    private static final int scaleFactor = 100;
+    private static final int scaleFactor = 24 * 2;
 
     public static void main(String[] args) {
         Log.setLevel(ch.qos.logback.classic.Level.ERROR);
@@ -128,10 +128,7 @@ public class Possion {
         for (Datacenter dc : datacenters) {
             for (Host host : dc.getHostList()) {
                 double time = simulation.clock();
-                host.updateProcessing(time); // ✅ KEY STEP
-                for (Vm vm : host.getVmList()) {
-                    vm.updateProcessing(time, host.getVmScheduler().getAllocatedMips(vm));
-                }
+                host.updateProcessing(time);
             }
         }
         simulation.getCis().schedule(simulation.getEntityList().get(0), 1.0, 9999);
@@ -153,12 +150,6 @@ public class Possion {
             JsonObject dcConfig = datacentersConfig.get(i).getAsJsonObject();
             int expected = dcConfig.get("cloudlets").getAsInt() / getDaysInMonth(month_num) / scaleFactor;
             DatacenterBrokerSimple broker = brokers.get(i);
-
-            long stuck = broker.getCloudletSubmittedList().stream()
-                    .filter(c -> !c.isFinished())
-                    .count();
-            System.out.printf("🕵️ %s: %d cloudlets still not finished\n", broker.getName(), stuck);
-
             int submitted = broker.getCloudletSubmittedList().size();
             int done = broker.getCloudletFinishedList().size();
             boolean noRemaining = (submitted >= expected);
@@ -192,6 +183,8 @@ public class Possion {
         JsonObject spec = config.getRoot().getAsJsonObject("cloudlet_spec");
         int length = spec.get("CLOUDLET_LENGTH").getAsInt();
         int pes = spec.get("CLOUDLET_PES").getAsInt();
+        int file_size = spec.get("CLOUDLET_FILESIZE").getAsInt();
+        int output_size = spec.get("CLOUDLET_OUTPUTSIZE").getAsInt();
         UtilizationModel cpu_utilization = config.getCloudletCPU();
         UtilizationModel ram_utilization = config.getCloudletRAM();
         UtilizationModel bw_utilization = config.getCloudletBW();
@@ -200,6 +193,8 @@ public class Possion {
                     .setUtilizationModelCpu(cpu_utilization)
                     .setUtilizationModelRam(ram_utilization)
                     .setUtilizationModelBw(bw_utilization);
+            c.setFileSize(file_size);
+            c.setOutputSize(output_size);
             cloudletList.add(c);
         }
         return cloudletList;

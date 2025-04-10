@@ -1,0 +1,490 @@
+[114.0, 135.0, 145.0, 153.0, 162.0, 171.0, 180.0, 191.0, 214.0, 253.0, 274.0]
+[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 0 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[114.0, 135.0, 145.0, 153.0, 162.0, 171.0, 180.0, 191.0, 214.0, 253.0, 274.0]
+[34mINFO  Automatically enabling computation of utilization statistics for VMs on Host 1 could not be performed because it doesn't have VMs yet. You need to enable it for each VM created.
+[0;39m[34mINFO  
+================== Starting CloudSim Plus 8.5.1 ==================
+
+[0;39m[34mINFO  0.00: #Datacenter 1 is starting...
+[0;39m[34mINFO  0.00: Host 0/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  0.00: Host 1/#DC 1 is being powered on (expected time: 5.0 seconds).
+[0;39m[34mINFO  Broker 2 is starting...
+[0;39m[34mINFO  Entities started.
+[0;39m[34mINFO  0.00: DatacenterBrokerSimple2: List of 1 datacenters(s) received.
+[0;39m[34mINFO  0.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.00: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.00: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.00: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.10: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.10: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.10: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.10: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.10: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.20: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.20: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.20: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.20: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.20: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.20: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.20: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.20: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.30: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.30: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.30: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.30: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.30: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.30: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.30: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.30: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.40: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.40: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.40: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.40: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.40: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.40: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.40: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.40: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.50: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.50: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.50: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.50: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.50: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.50: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.50: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.50: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.60: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.60: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.60: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.60: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.60: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.60: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.60: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.60: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.70: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.70: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.70: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.70: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.70: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.70: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.70: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.70: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.80: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.80: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.80: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.80: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.80: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.80: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.80: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.80: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  0.90: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  0.90: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  0.90: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  0.90: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  0.90: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  0.90: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  0.90: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  0.90: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.00: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.00: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.00: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.00: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.00: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.00: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.10: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.10: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.10: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.10: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.10: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.10: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.10: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.10: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.20: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.20: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.20: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.20: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.20: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.20: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.20: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.20: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.30: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.30: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.30: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.30: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.30: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.30: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.30: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.30: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.40: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.40: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.40: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.40: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.40: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.40: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.40: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.40: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.50: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.50: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.50: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.50: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.50: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.50: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.50: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.50: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.60: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.60: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.60: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.60: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.60: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.60: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.60: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.60: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.70: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.70: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.70: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.70: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.70: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.70: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.70: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.70: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.80: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.80: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.80: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.80: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.80: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.80: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.80: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.80: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  1.90: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  1.90: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  1.90: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  1.90: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  1.90: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  1.90: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  1.90: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  1.90: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.00: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.00: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.00: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.00: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.00: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.00: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.10: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.10: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.10: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.10: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.10: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.10: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.10: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.10: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.20: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.20: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.20: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.20: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.20: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.20: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.20: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.20: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.30: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.30: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.30: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.30: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.30: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.30: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.30: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.30: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.40: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.40: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.40: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.40: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.40: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.40: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.40: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.40: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.50: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.50: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.50: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.50: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.50: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.50: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.50: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.50: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.60: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.60: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.60: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.60: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.60: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.60: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.60: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.60: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.70: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.70: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.70: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.70: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.70: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.70: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.70: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.70: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.80: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.80: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.80: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.80: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.80: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.80: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.80: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.80: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  2.90: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  2.90: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  2.90: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  2.90: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  2.90: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  2.90: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  2.90: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  2.90: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.00: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.00: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.00: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.00: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.00: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.00: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.10: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.10: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.10: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.10: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.10: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.10: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.10: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.10: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.20: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.20: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.20: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.20: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.20: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.20: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.20: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.20: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.30: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.30: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.30: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.30: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.30: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.30: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.30: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.30: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.40: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.40: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.40: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.40: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.40: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.40: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.40: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.40: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.50: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.50: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.50: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.50: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.50: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.50: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.50: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.50: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.60: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.60: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.60: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.60: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.60: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.60: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.60: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.60: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.70: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.70: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.70: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.70: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.70: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.70: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.70: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.70: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.80: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.80: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.80: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.80: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.80: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.80: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.80: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.80: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  3.90: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  3.90: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  3.90: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  3.90: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  3.90: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  3.90: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  3.90: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  3.90: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.00: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.00: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.00: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.00: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.00: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.00: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.10: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.10: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.10: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.10: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.10: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.10: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.10: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.10: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.20: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.20: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.20: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.20: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.20: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.20: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.20: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.20: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.30: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.30: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.30: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.30: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.30: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.30: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.30: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.30: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.40: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.40: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.40: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.40: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.40: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.40: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.40: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.40: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.50: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.50: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.50: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.50: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.50: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.50: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.50: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.50: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.60: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.60: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.60: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.60: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.60: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.60: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.60: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.60: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.70: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.70: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.70: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.70: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.70: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.70: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.70: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.70: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.80: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.80: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.80: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.80: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.80: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.80: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.80: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.80: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  4.90: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  4.90: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  4.90: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  4.90: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  4.90: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  4.90: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  4.90: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  4.90: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  5.00: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  5.00: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  5.00: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  5.00: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[31mWARN  5.00: VmAllocationPolicySimple: No suitable host found for Vm 0 in #Datacenter 1
+[0;39m[31mWARN  5.00: VmAllocationPolicySimple: No suitable host found for Vm 1 in #Datacenter 1
+[0;39m[31mWARN  5.00: VmAllocationPolicySimple: No suitable host found for Vm 2 in #Datacenter 1
+[0;39m[31mWARN  5.00: VmAllocationPolicySimple: No suitable host found for Vm 3 in #Datacenter 1
+[0;39m[34mINFO  5.00: Host 0/#DC 1 is powered on.
+[0;39m[34mINFO  5.00: Host 1/#DC 1 is powered on.
+[0;39m[34mINFO  5.10: DatacenterBrokerSimple2: Trying to create Vm 0 inside #Datacenter 1
+[0;39m[34mINFO  5.10: DatacenterBrokerSimple2: Trying to create Vm 1 inside #Datacenter 1
+[0;39m[34mINFO  5.10: DatacenterBrokerSimple2: Trying to create Vm 2 inside #Datacenter 1
+[0;39m[34mINFO  5.10: DatacenterBrokerSimple2: Trying to create Vm 3 inside #Datacenter 1
+[0;39m[34mINFO  5.10: HostSimple: Vm 0 is booting up in Host 0/#DC 1 and it's expected to be ready in 5.0 seconds.
+[0;39m[34mINFO  5.10: VmAllocationPolicySimple: Vm 0 has been allocated to Host 0/#DC 1
+[0;39m[34mINFO  5.10: HostSimple: Vm 1 is booting up in Host 1/#DC 1 and it's expected to be ready in 5.0 seconds.
+[0;39m[34mINFO  5.10: VmAllocationPolicySimple: Vm 1 has been allocated to Host 1/#DC 1
+[0;39m[34mINFO  5.10: HostSimple: Vm 2 is booting up in Host 0/#DC 1 and it's expected to be ready in 5.0 seconds.
+[0;39m[34mINFO  5.10: VmAllocationPolicySimple: Vm 2 has been allocated to Host 0/#DC 1
+[0;39m[34mINFO  5.10: HostSimple: Vm 3 is booting up in Host 1/#DC 1 and it's expected to be ready in 5.0 seconds.
+[0;39m[34mINFO  5.10: VmAllocationPolicySimple: Vm 3 has been allocated to Host 1/#DC 1
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 0 to Vm 0 inside Host 0/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 1 to Vm 1 inside Host 1/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 2 to Vm 2 inside Host 0/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 3 to Vm 3 inside Host 1/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 4 to Vm 0 inside Host 0/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 5 to Vm 1 inside Host 1/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 6 to Vm 2 inside Host 0/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: Sending Cloudlet 7 to Vm 3 inside Host 1/#DC 1.
+[0;39m[34mINFO  5.20: DatacenterBrokerSimple2: All 8 waiting Cloudlets submitted to some VM.
+[0;39m[34mINFO  55.31: DatacenterBrokerSimple2: Cloudlet 0 finished in Vm 0 and returned to broker.
+[0;39m[34mINFO  55.31: DatacenterBrokerSimple2: Cloudlet 2 finished in Vm 2 and returned to broker.
+[0;39m[34mINFO  55.31: DatacenterBrokerSimple2: Cloudlet 1 finished in Vm 1 and returned to broker.
+[0;39m[34mINFO  55.31: DatacenterBrokerSimple2: Cloudlet 3 finished in Vm 3 and returned to broker.
+[0;39m[34mINFO  105.20: DatacenterBrokerSimple2: Cloudlet 4 finished in Vm 0 and returned to broker.
+[0;39m[34mINFO  105.20: DatacenterBrokerSimple2: Cloudlet 6 finished in Vm 2 and returned to broker.
+[0;39m[34mINFO  105.20: DatacenterBrokerSimple2: Cloudlet 5 finished in Vm 1 and returned to broker.
+[0;39m[34mINFO  105.20: DatacenterBrokerSimple2: Cloudlet 7 finished in Vm 3 and returned to broker.
+[0;39m[34mINFO  105.31: Processing last events before simulation shutdown.
+[0;39m[34mINFO  105.31: DatacenterBrokerSimple2 is shutting down...
+[0;39m[34mINFO  105.31: VmSimple: Requesting Vm 3 destruction on Host 1/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+[0;39m[34mINFO  105.31: VmSimple: Requesting Vm 2 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+[0;39m[34mINFO  105.31: VmSimple: Requesting Vm 1 destruction on Host 1/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+[0;39m[34mINFO  105.31: VmSimple: Requesting Vm 0 destruction on Host 0/#DC 1. Shutdown will finish immediately (since no Vm shutDownDelay was set).
+[0;39m[34mINFO  105.31: #Datacenter 1: Vm 3 destroyed on Host 1/#DC 1. 
+[0;39m[34mINFO  105.31: #Datacenter 1: Vm 2 destroyed on Host 0/#DC 1. 
+[0;39m[34mINFO  105.31: #Datacenter 1: Vm 1 destroyed on Host 1/#DC 1. 
+[0;39m[34mINFO  105.31: #Datacenter 1: Vm 0 destroyed on Host 0/#DC 1. 
+[0;39m[34mINFO  Simulation: No more future events
+
+[0;39m[34mINFO  CloudInformationService0: Notify all CloudSim Plus entities to shutdown.
+
+[0;39m[34mINFO  
+================== Simulation finished at time 105.31 ==================
+
+[0;39m------------------------------- SIMULATION FOR SCHEDULING INTERVAL = 10 -------------------------------
+
+
+                                         SIMULATION RESULTS
+
+|Cloudlet| Status|DC|Host|Host PEs |VM|   VM PEs|CloudletLen|FinishedLen|CloudletPEs|StartTime|FinishTime|ExecTime
+|--------|-------|--|----|---------|--|---------|-----------|-----------|-----------|---------|----------|--------
+|      ID|       |ID|  ID|CPU cores|ID|CPU cores|         MI|         MI|  CPU cores|  Seconds|   Seconds| Seconds
+|       0|SUCCESS| 1|   0|        8| 0|        4|      50000|      50000|          2|      5.2|      55.3|    50.1
+|       4|SUCCESS| 1|   0|        8| 0|        4|     100000|     100000|          2|      5.2|     105.2|   100.0
+|       2|SUCCESS| 1|   0|        8| 2|        4|      50000|      50000|          2|      5.2|      55.3|    50.1
+|       6|SUCCESS| 1|   0|        8| 2|        4|     100000|     100000|          2|      5.2|     105.2|   100.0
+|       1|SUCCESS| 1|   1|        8| 1|        4|      50000|      50000|          2|      5.2|      55.3|    50.1
+|       5|SUCCESS| 1|   1|        8| 1|        4|     100000|     100000|          2|      5.2|     105.2|   100.0
+|       3|SUCCESS| 1|   1|        8| 3|        4|      50000|      50000|          2|      5.2|      55.3|    50.1
+|       7|SUCCESS| 1|   1|        8| 3|        4|     100000|     100000|          2|      5.2|     105.2|   100.0
+
+
+Host  0 CPU Usage mean:   50.0% | Power Consumption mean:      180 W
+Host  1 CPU Usage mean:   50.0% | Power Consumption mean:      180 W
+

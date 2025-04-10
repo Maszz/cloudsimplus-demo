@@ -58,6 +58,3 @@ Desktop.ini
 # Environment variables or configurations
 .env
 *.properties.local
-
-output
-output/txt/Possion_monthly.txt
