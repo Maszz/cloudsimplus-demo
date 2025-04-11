@@ -7,6 +7,7 @@ import org.cloudsimplus.hosts.Host;
 import org.cloudsimplus.hosts.HostSuitability;
 import org.cloudsimplus.schedulers.MipsShare;
 import org.cloudsimplus.vms.Vm;
+import lombok.NonNull;
 
 import gpusim.hosts.GpuHost;
 import gpusim.vms.GpuVm;
@@ -17,11 +18,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.BiFunction;
-import java.util.Collection;
 import java.util.stream.Collectors;
-
-import static java.util.Objects.requireNonNull;
 
 public abstract class GpuVmAllocationPolicyAbstract implements GpuVmAllocationPolicy {
 
@@ -53,14 +52,14 @@ public abstract class GpuVmAllocationPolicyAbstract implements GpuVmAllocationPo
     }
 
     @Override
-    public GpuVmAllocationPolicy setDatacenter(final Datacenter datacenter) {
+    public GpuVmAllocationPolicy setDatacenter(@NonNull final Datacenter datacenter) {
         // Hacky method to allow CloudSim Plus to use our fake datacenters, while
         // preserving GpuDatacenter normally
         if (datacenter == null || (!(datacenter instanceof GpuDatacenter) && datacenter != Datacenter.NULL)) {
             throw new IllegalArgumentException("Datacenter must be instance of GpuDatacenter, or Datacenter.NULL.");
         }
 
-        this.datacenter = requireNonNull(datacenter);
+        this.datacenter = datacenter;
         return this;
     }
 
@@ -165,34 +164,43 @@ public abstract class GpuVmAllocationPolicyAbstract implements GpuVmAllocationPo
                     vm.getSimulation().clockStr(), getClass().getSimpleName(), vm,
                     getDatacenter().getId());
             // return new HostSuitability("GpuDatacenter has no Gpuhost.");
-            return new HostSuitability(Vm.NULL, "GpuDatacenter has no Gpuhost.");
+            return new HostSuitability(vm, "GpuDatacenter has no Gpuhost.");
 
         }
 
         if (vm.isCreated()) {
             // return new HostSuitability("GpuVM is already created");
-            return new HostSuitability(Vm.NULL, "GpuVM is already created");
+            return new HostSuitability(vm, "GpuVM is already created");
         }
 
         final var optionalGpuHost = findHostForVm(vm);
         if (optionalGpuHost.filter(Host::isActive).isPresent()) {
-            return allocateHostForVm(Vm.NULL, optionalGpuHost.get());
+            return allocateHostForVm(vm, optionalGpuHost.get());
         }
 
         LOGGER.warn("{}: {}: No suitable Gpuhost found for {} in {}", vm.getSimulation().clockStr(),
                 getClass().getSimpleName(), vm, datacenter);
         // return new HostSuitability("No suitable Gpuhost found");
-        return new HostSuitability(Vm.NULL, "No suitable Gpuhost found");
+        return new HostSuitability(vm, "No suitable Gpuhost found");
     }
 
-    // // @Override
-    // public <T extends Vm> List<T> allocateHostForVm(final Collection<T>
-    // gpuvmCollection) {
-    // requireNonNull(gpuvmCollection, "The list of GpuVMs to allocate a Gpuhost to
-    // cannot be null");
-    // return gpuvmCollection.stream().filter(gpuvm -> !allocateHostForVm(
-    // gpuvm).fully()).collect(toList());
-    // }
+    @Override
+    public final Set<HostSuitability> allocateHostForVm(@NonNull final List<Vm> vmList) {
+        if (vmList.isEmpty()) {
+            LOGGER.warn("{}: {}: No GpuVMs to allocate a Gpuhost to", getClass().getSimpleName(), vmList);
+            return Collections.emptySet();
+        }
+        if (vmList.stream().anyMatch(vm -> !(vm instanceof GpuVm))) {
+            throw new IllegalArgumentException(
+                    "The list of VMs to allocate a Gpuhost to must contain only GpuVMs");
+        }
+        // requireNonNull(vmList, "The list of GpuVMs to allocate a Gpuhost to cannot be
+        // null");
+        return vmList.stream()
+                .map(this::allocateHostForVm)
+                .filter(hostSuitability -> !hostSuitability.fully())
+                .collect(Collectors.toSet());
+    }
 
     @Override
     public HostSuitability allocateHostForVm(final Vm vm, final Host host) {
